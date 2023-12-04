@@ -1,0 +1,533 @@
+<?xml version="1.0"?>
+		<skin>
+
+		<skinname>Welcome to the Internet</skinname>
+
+		<templates>
+		 <item name='board_stats'><div id="boardstats">
+	<div class="maintitle">Board Statistics</div>
+	<stats-grid>
+		<div class="online-now">
+			<div class="sub-heading">Online Now</div>
+			<div class="online-now-numbers">
+				<span><!-- |total_mems| --></span> members & <span><!-- |total_guests| --></span> guests &
+				<span><!-- |total_anons| --></span> anons
+			</div>
+			<div class="online-now-links">
+				<a href="?act=Online&CODE=listall&sort_key=click" title="View Active Users by Last Click">
+					<i class="fa-solid fa-arrow-pointer"></i> Last Click
+				</a>
+				<a
+					href="?act=Online&CODE=listall&sort_key=name&sort_order=asc&show_mem=reg"
+					title="View Active Users by Member Name"
+				>
+					<i class="fa-solid fa-user-tag"></i> Member Name
+				</a>
+			</div>
+			<div class="online-now-users"><!-- |online_list| --></div>
+		</div>
+
+		<div class="stats-links">
+			<a href="?act=Stats&CODE=leaders" title="View Mod Team List">
+				<div class="button-box">
+					<svg>
+						<circle id="c" r="5" />
+						<use xlink:href="#c" x="100%" />
+						<use xlink:href="#c" y="100%" />
+						<use xlink:href="#c" x="100%" y="100%" />
+					</svg>
+
+					<div class="text"><i class="fa-solid fa-clipboard-user"></i> Mod Team</div>
+				</div>
+			</a>
+			<a href="?act=Search&CODE=getactive" title="View Active Topics">
+				<div class="button-box">
+					<svg>
+						<circle id="c" r="5" />
+						<use xlink:href="#c" x="100%" />
+						<use xlink:href="#c" y="100%" />
+						<use xlink:href="#c" x="100%" y="100%" />
+					</svg>
+
+					<div class="text"><i class="fa-solid fa-bullhorn"></i> Active Topics</div>
+				</div>
+			</a>
+			<a href="?act=Members&max_results=10&sort_key=posts&sort_order=desc" title="View Top 10 Posters">
+				<div class="button-box">
+					<svg>
+						<circle id="c" r="5" />
+						<use xlink:href="#c" x="100%" />
+						<use xlink:href="#c" y="100%" />
+						<use xlink:href="#c" x="100%" y="100%" />
+					</svg>
+
+					<div class="text"><i class="fa-solid fa-ranking-star"></i> Top 10</div>
+				</div>
+			</a>
+			<a href="?act=Members" title="View Member List">
+				<div class="button-box">
+					<svg>
+						<circle id="c" r="5" />
+						<use xlink:href="#c" x="100%" />
+						<use xlink:href="#c" y="100%" />
+						<use xlink:href="#c" x="100%" y="100%" />
+					</svg>
+
+					<div class="text"><i class="fa-solid fa-address-book"></i> Member List</div>
+				</div>
+			</a>
+		</div>
+
+		<div class="birthdays">
+			<script>
+				if (`<!-- |birthdays_list| -->` !== '') {
+					document.write(`
+                    <div class="birthdays-wrapper">
+                    <div class="sub-heading"><i class="fa-solid fa-cake-candles"></i> Happy Birthday!</div>
+                        <!-- |birthdays| --></b> members are celebrating their birthday today: <br /> 
+                        <!-- |birthdays_list| -->
+                    </div>
+                `);
+				}
+			</script>
+		</div>
+
+		<div class="stats-area">
+			<div class="sub-heading">Stats For Nerds</div>
+
+			<div class="site-totals">
+				<div class="site-date">
+					site established on
+					<span>February 21st, 2011</span>
+				</div>
+				<div class="site-member">
+					newest member is
+					<span><!-- |newest_member| --></span>
+				</div>
+				<div class="site-total-values">
+					<div class="total-posts">
+						<span><!-- |total_posts| --></span>
+						total posts
+					</div>
+					<div class="total-members">
+						<span><!-- |total_mem_reg| --></span>
+						total members
+					</div>
+				</div>
+				<div class="site-most-users-ever">
+					Most users ever online
+					<date>
+						<span><!-- |most_online| --></span> on <span><!-- |most_online_date| --></span>
+					</date>
+				</div>
+				<div class="site-most-users-day">
+					Most members ever online in one day
+					<date>
+						<span><!-- |most_online_oneday| --></span> on <span><!-- |most_online_oneday_date| --></span>
+					</date>
+				</div>
+			</div>
+		</div>
+
+		<div class="online-today">
+			<div class="sub-heading">
+				Online Today:
+				<span><!-- |online_today| --></span>
+				<span id="mot_explink" style="display: inline">[<a href="javascript:expand_mot()">Expand</a>]</span
+				><span id="mot_collink" style="display: none">[<a href="javascript:collapse_mot()">Collapse</a>]</span>
+			</div>
+			<div id="mot" style="display: none">
+				<!-- |online_today_list| -->
+			</div>
+		</div>
+	</stats-grid>
+</div></item>
+ <item name='cat_head'><div class="category" id="cat-<!-- |cat_id| -->">
+		<div class="maintitle<!-- |collapsed_class| -->" align="left">
+			<a href="index.php?c=<!-- |cat_id| -->"><!-- |cat_name| --></a>
+			<a href="#" onclick='catcollapse("<!-- |cat_id| -->");return false;' id="main_<!-- |cat_id| -->"
+				><!-- |collapse_img| --></a
+			>
+		</div>
+		<div id="cat_<!-- |cat_id| -->" style="<!-- |collapsed_style| -->"><% FORUM_ROWS %></div>
+</div>
+<br class="cat-lb" /></item>
+ <item name='forum_row'><div class="forum-row f<!-- |forum_id| -->">
+	<forum-wrapper>
+		<grid>
+			<name
+				><a
+					class="tooltip"
+					tooltip="<!-- |description_clean| -->"
+					href="?showforum=<!-- |forum_id| -->"
+					alt="<!-- |name| -->"
+					><!-- |name_text| --></a
+				>
+			</name>
+			<stats>
+				<!-- |topics| -->
+				topics &
+				<!-- |replies| -->
+				posts
+			</stats>
+
+			<desc><!-- |description| --></desc>
+
+			<new-post><!-- |img_new_post| --></new-post>
+			<lastpost>
+				<!-- |last_unread| -->
+				<!-- |last_topic| -->
+			</lastpost>
+			<lastposter
+				>By:
+				<!-- |last_poster| --></lastposter
+			>
+			<post-time><!-- |last_post| --></post-time>
+		</grid>
+
+		<subforums><!-- |subforums| --></subforums>
+	</forum-wrapper>
+</div></item>
+ <item name='subf_head'><div id="subforum-list-<!-- |forum_id| -->">
+   
+
+	<% FORUM_ROWS %>
+
+</div></item>
+ <item name='post_row'><!--Begin Msg Number <!-- |pid| -->-->
+<div class="<!-- |post_class| --> group<!-- |g_id| -->-<!-- |post_class| -->">
+	<a name="entry<!-- |pid| -->"></a>
+	<div class="post-wrapper">
+		<div class="post-grid">
+			<div class="miniprofile">
+				<!-- |mini_profile| -->
+			</div>
+
+			<div class="postdetails">
+				<span class="details">
+					<b>
+						[<a title="Permalink" href="#" onclick="link_to_post(<!-- |pid| -->); return false;">
+							<!-- |post_date| --> </a
+						>]
+					</b>
+				</span>
+				<div class="post-buttons">
+					<span class="details"><!-- |quote_button| --></span>
+					<span class="details"><!-- |edit_button| --></span>
+					<span class="details"><!-- |delete_button| --></span>
+					<span class="details"><!-- |report_link| --></span>
+				</div>
+			</div>
+			<div class="postcontent">
+				<!-- post area has to follow this exact layout -->
+				<div id="pid_<!-- |pid| -->">
+					<!-- THE POST <!-- |pid| -->-->
+					<div class="postcolor">
+						<!-- |post| -->
+					</div>
+					<!-- |signature| -->
+					<!-- THE POST -->
+				</div>
+			</div>
+		</div>
+
+		<div class="bottom-bar">
+			<span class="ip_address">
+				<b><!-- |ip_address| --></b>
+			</span>
+			<span class="bb-mod-checkbox">
+				<!-- |mod_checkbox| -->
+			</span>
+		</div>
+	</div>
+</div></item>
+ <item name='profile'><div id="main-profile-grid-wrapper">
+	<div class="header-area">
+		<div class="box-avatar">
+			<!-- |avatar| -->
+		</div>
+		<div class="box-username">
+			<!-- |name| -->
+		</div>
+		<div class="box-title">
+			<!-- |title| -->
+		</div>
+		<div class="box-user-details">
+			<span><!-- |age| --></span> | <span><!-- |field_2| --></span> |
+			<span><!-- |field_3| --></span>
+		</div>
+		<div class="box-quote">
+			<!-- |field_7| -->
+		</div>
+	</div>
+	<div class="links-area">
+		<div class="button-area">
+			<a href="/index.php?act=Search&CODE=getalluser&mid=<!-- |id| -->&type=posts" title="view all posts">
+				<i class="fa-solid fa-pencil"></i>
+				<span>all posts</span>
+			</a>
+			<a href="/index.php?act=Search&CODE=getalluser&mid=<!-- |id| -->&type=topics" title="view all topics">
+				<i class="fa-solid fa-table-list"></i>
+				<span>all topics</span>
+			</a>
+			<a href="/index.php?act=Msg&CODE=04&MID=<!-- |id| -->" title="send PM">
+				<i class="fa-solid fa-envelope"></i>
+				<span>send PM</span>
+			</a>
+			<a href="<!-- |field_5| -->" title="site tracker">
+				<i class="fa-solid fa-clipboard-list"></i>
+				<span>site tracker</span>
+			</a>
+			<a href="<!-- |field_6| -->" title="my ad">
+				<i class="fa-solid fa-ticket"></i>
+				<span>my ad</span>
+			</a>
+		</div>
+		<div class="text-field-area">
+			<div class="field-item">
+				<span>discord handle:</span>
+				<!-- |field_4| -->
+			</div>
+			<div class="field-item">
+				<span>status:</span>
+				<!-- |status| -->
+			</div>
+			<div class="field-item">
+				<span>search status:</span>
+				<!-- |field_12| -->
+			</div>
+			<div class="field-item">
+				<span>contact me:</span>
+				<!-- |field_13| -->
+			</div>
+		</div>
+		<div class="writing-samples-area">
+			<a href="<!-- |field_1| -->" title="Writing Samples">
+				<i class="fa-solid fa-book"></i>
+				Writing Samples
+			</a>
+		</div>
+	</div>
+	<div class="awards-area">
+		Awards:
+		<!-- |awards_total| -->
+		<span class="awards-box">
+			<!-- |awards| -->
+		</span>
+	</div>
+	<div class="about-area">
+		<div class="maintitle">About Me</div>
+		<div class="text-container"><!-- |field_8| --></div>
+	</div>
+	<div class="chars-area">
+		<div class="maintitle">I Play:</div>
+		<div class="text-container"><!-- |field_9| --></div>
+	</div>
+	<div class="genre-area">
+		<div class="maintitle">I Write In:</div>
+		<div class="text-container"><!-- |field_10| --></div>
+	</div>
+	<div class="location-area">
+		<div class="maintitle">Preferred Medium:</div>
+		<div class="text-container"><!-- |field_11| --></div>
+	</div>
+	<div class="onlinestats-area">
+		<div class="last-seen">
+			Last Seen:
+			<!-- |last_activity| -->
+		</div>
+		<div class="last-post">
+			Last Posted:
+			<!-- |last_post| -->
+		</div>
+	</div>
+</div></item>
+ <item name='mini_profile'><div class="g-<!-- |g_id| --> miniprofile-wrapper">
+	<div class="avatar-container">
+		<div class="image-container">
+			<!-- |avatar| -->
+		</div>
+	</div>
+
+	<div class="poster-name">
+		<!-- |name| -->
+	</div>
+
+	<div class="poster-info">
+		<div class="line-title"><!-- |title| --></div>
+		<div class="line-one">
+			<span><!-- |age| --></span> | <span><!-- |field_2| --></span> |
+			<span><!-- |field_3| --></span>
+		</div>
+		<div class="line-two">
+			<span
+				><!-- |posts| -->
+				posts</span
+			>
+			|
+			<span
+				>joined
+				<!-- |member_joined| --></span
+			>
+		</div>
+		<div class="line-three">
+			<span
+				>status:
+				<!-- |status| --></span
+			>
+			| <span><!-- |field_12| --></span> |
+			<span><!-- |field_13| --></span>
+		</div>
+	</div>
+</div>
+
+<div class="g-<!-- |g_id| --> guest-miniprofile-wrapper">
+	<div class="guest-avatar"><{AVATAR}></div>
+	<div class="guest-name">
+		<!-- |name| -->
+		<span><!-- |member_group| --></span>
+	</div>
+</div></item>
+ <item name='topic_list_head'><div id="topic-list" class="f-<!-- |forum_id| -->">
+	<div class="maintitle"><!-- |forum_name| --></div>
+
+	<div class="announcements"><% ANNOUNCEMENTS %></div>
+	<% TOPIC_ROWS %>
+
+	<!-- |mod_form_end| -->
+	<!-- |sort_options| -->
+</div></item>
+ <item name='topic_row'><!-- Begin Topic Entry <!-- |tid| -->
+-->
+<div class="topic-row t<!-- |tid| -->">
+	<topic-wrapper>
+		<grid>
+			<div class="posticon"><div id="topics-icons-t<!-- |tid| -->" class="icons-flex"></div></div>
+			<div class="macro-icons">
+				<div class="mod-checkbox"><!-- |mod_checkbox| --></div>
+				<div class="new-reply"><!-- |macro_img| --></div>
+			</div>
+			<div class="name"><!-- |topic| --></div>
+			<div class="topic-desc">
+				<!-- |topic_desc| -->
+			</div>
+			<div class="stats">
+				<span><!-- |views| --></span>
+				views &
+				<!-- |replies_int| -->
+				replies
+				<!-- |pages| -->
+			</div>
+
+			<div class="starter">
+				started by:
+				<!-- |starter| -->
+			</div>
+			<div class="start-post"><!-- |start_date| --></div>
+
+			<div class="last-poster">
+				latest reply:
+				<!-- |last_poster| -->
+			</div>
+			<div class="last-post"><!-- |last_post| --></div>
+		</grid>
+	</topic-wrapper>
+</div>
+<!-- End Topic Entry <!-- |tid| -->
+--></item>
+ <item name='memberlist_head'><form action='index.php' method='post'>
+<input type='hidden' name='act' value='Members' />
+<div align="left"><!-- |pages| --></div>
+<br />
+<div id="member-list" class="tableborder">
+ <div class="maintitle">Member List</div>
+
+<p>Note: List will only filter the first 1000 accounts. Not seeing someone listed? Navigate to next page and try again!</p>
+ 
+	<div id="namesearch" class="name-search"></div>
+	<div id="filters" class="filter-search"></div>
+	<div id="sortby" class="sortby-search"></div>
+
+  <div id="memberlist-wrapper">
+  <% MEMBERLIST_ROWS %>
+  </div>
+  <!-- End content Table -->
+
+
+</div>
+</form>
+
+<script src="https://files.jcink.net/uploads2/fizzyelf/sharedresources/memberlistFilters2.js"></script>
+<script>
+setUpNameSearch();
+setUpFilters({
+    Display_As_Dropdown: false,
+    Multiple_Selections: false,
+    Filter_Lists: ["Searching", "Contact", "Timezone"],
+    No_Value_Label: "N/A"
+});
+setUpSortBy();
+</script></item>
+ <item name='memberlist_row'><!-- Entry for <!-- |member_name| -->
+-->
+<div
+	class="memberlist-row"
+	data-Searching="<!-- |field_12| -->"
+	data-Contact="<!-- |field_13| -->"
+	data-Timezone="<!-- |field_3| -->"
+>
+	<div class="acct-card">
+		<div class="acct-grid-item">
+			<div class="acct-avatar">
+				<!-- |avatar| -->
+			</div>
+		</div>
+		<div class="acct-grid-item">
+			<a href="?showuser=<!-- |id| -->">
+				<div class="acct-name">
+					<!-- |member_name| -->
+				</div>
+			</a>
+		</div>
+		<div class="acct-grid-item">
+			<a href="index.php?act=Search&CODE=getalluser&mid=<!-- |id| -->&type=posts" title="<!-- |last_post| -->">
+				<!-- |posts| -->
+			</a>
+			posts
+		</div>
+		<div class="acct-grid-item">
+			<a href="/index.php?act=Search&CODE=getalluser&mid=<!-- |id| -->&type=topics" title="view all topics">
+				all topics
+			</a>
+		</div>
+		<div class="acct-grid-item">
+			<div><!-- |field_2| --></div>
+		</div>
+		<div class="acct-grid-item">
+			<div><!-- |field_3| --></div>
+		</div>
+		<div class="acct-grid-item">
+			<div><!-- |field_12| --></div>
+		</div>
+		<div class="acct-grid-item">
+			<div><!-- |field_13| --></div>
+		</div>
+		<div class="acct-grid-item">
+			joined:
+			<!-- |joined| -->
+		</div>
+		<div class="acct-grid-item">
+			last seen:
+			<!-- |last_activity| -->
+		</div>
+		<div class="acct-grid-item">
+			last post:
+			<!-- |last_post| -->
+		</div>
+	</div>
+</div>
+<!-- End of Entry --></item>
+
+		</templates>
+				
+		</skin>

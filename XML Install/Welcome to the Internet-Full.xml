@@ -1,0 +1,4967 @@
+<?xml version="1.0"?>
+		<skin>
+
+		<skinname>Welcome to the Internet</skinname>
+		<date>Sunday 3rd of December 2023 10:36:06 PM</date>
+
+		<stylesheet>
+		@import url('https://fonts.googleapis.com/css2?family=Comic+Neue&family=Livvic&family=Noto+Sans&family=Righteous&family=Rye&family=Tilt+Neon&display=swap');
+
+/*=============================================== *
+ * Jcink.com Forum Hosting Stylesheet
+ * ==============================================
+ * #Title: "Welcome to the Internet"
+ * #Version:	1.0.0
+ * =============================================== 
+ * "Welcome to the Internet" coded by LunaMora of Barbermonger
+ * using the "Jcink Hosting Purple" skin as a base.
+ * Various JS/JQuery Codes used from Lux @ JCC, Nicole @ Caution, 
+ * Cory @ Jcodes, FizzyElf @ FizzyElf, and base Jcink scripts. 
+ * All modifications and edits done by LunaMora.
+ * All scripts contain their credits in the comments.
+ * Icons from Font Awesome Free v6.4.0. Textures from Transparent Textures.
+ * Default avatar image is Cirque Américain in France, 
+ * painted by Frederic Arthur Bridgman. Courtesy of Circopedia
+ */
+
+html {
+	overflow-x: auto;
+}
+form {
+	display: inline;
+}
+
+/****************************************
+  Skin Themes
+ *****************************************/
+
+:root {
+	--defaultFontSize: 14px;
+	--aTagFontSize: var(--defaultFontSize);
+	--defaultFontFamily: 'Noto Sans', sans-serif;
+	--headerFontFamily: 'Rye', cursive;
+	--subHeaderFontFamily: 'Livvic', sans-serif;
+	--headerFontSize: calc(18px + (30 - 18) * ((100vw - 320px) / (1020 - 320)));
+	--subHeaderFontSize: calc(16px + (24 - 16) * ((100vw - 320px) / (1020 - 320)));
+	--defaultBorderRadius: 5px 5px 0px 0px;
+	--roundedCornerRadius: 5px 5px 5px 5px;
+
+	/* colors that will change with the theme toggle */
+	--bg-color: #121325;
+	--bg-color-2: #1d1e38;
+	--mainBodyColor: #d4be9f;
+	--prmcolor: #ec5d37;
+	--scdcolor: #0da9b1;
+	--bg-img-1: url('https://files.jcink.net/uploads/barbermonger/Textures/white_diamond.png');
+	--bg-img-2: url('https://files.jcink.net/uploads/barbermonger/Textures/white_diamond_dark.png');
+	--userInfoColor: var(--mainBodyColor);
+	--bg-mobile-userlinks: url('https://files.jcink.net/uploads/barbermonger/Textures/dark_brick_wall.png')
+		var(--bg-color-2);
+	--mainTextShadow: 1px 1px 2px #121325, -1px -1px 2px #121325, -1px 1px 2px #121325, 1px -1px 2px #121325;
+	--bg-forum-row: var(--bg-img-2) var(--bg-color);
+	--forum-row-borderTop: 4px dotted var(--prmcolor);
+	--mainBorder: 2px solid var(--scdcolor);
+	--mainOutline: 2px solid var(--prmcolor);
+	--maintitle-bg: var(--bg-color);
+	--maintitle-color: var(--scdcolor);
+	--maintitle-color-a: var(--scdcolor);
+	--maintitle-border: 3px solid var(--scdcolor);
+	--buttonbox-bg: var(--bg-color-2);
+	--buttonbox-outline: 4px solid var(--scdcolor);
+	--buttonbox-color: var(--prmcolor);
+	--buttonbox-textshadow: var(--mainTextShadow);
+	--linkcolor: var(--prmcolor);
+	--scd1pxBorder: 1px solid var(--scdcolor);
+	--scd2pxDottedBorder: 2px dotted var(--scdcolor);
+	--postIconOutline: 2px solid var(--prmcolor);
+	--recentTopicsBorderBottom: 2px dotted var(--scdcolor);
+	--nav-border: 5px dotted var(--prmcolor);
+	--subHeadingColor: var(--mainBodyColor);
+	--subHeadingTextShadow: none;
+	--mainProfileLinkColor: var(--linkcolor);
+	--mainProfileBorder: 15px solid var(--bg-color-2);
+	--themeSwitchIcon: var(--scdcolor);
+	--hrShadow: 0 20px 20px -20px #000;
+}
+
+[data-theme='light'] {
+	--bg-color: #ebd1ae;
+	--bg-color-2: #eed8a1;
+	--mainBodyColor: #004649;
+	--prmcolor: #0da9b1;
+	--scdcolor: #ec5d37;
+	--bg-img-1: url('https://files.jcink.net/uploads/barbermonger/Textures/white_diamond_dark.png');
+	--bg-img-2: url('https://files.jcink.net/uploads/barbermonger/Textures/white_diamond.png');
+	--userInfoColor: white;
+	--bg-mobile-userlinks: url('https://files.jcink.net/uploads/barbermonger/Textures/white_brick_wall.png')
+		var(--bg-color-2);
+	--mainTextShadow: 1px 1px 2px #000, -1px -1px 2px #000, -1px 1px 2px #000, 1px -1px 2px #000;
+	--bg-forum-row: var(--bg-img-2) var(--bg-color);
+	--maintitle-bg: var(--prmcolor);
+	--maintitle-color: white;
+	--maintitle-color-a: white;
+	--maintitle-border: 3px solid var(--bg-color-2);
+	--buttonbox-bg: var(--prmcolor);
+	--buttonbox-outline: 4px solid var(--scdcolor);
+	--buttonbox-color: white;
+	--buttonbox-textshadow: var(--mainTextShadow);
+	--linkcolor: var(--scdcolor);
+	--scd1pxBorder: 1px solid var(--scdcolor);
+	--scd2pxDottedBorder: 2px dotted var(--scdcolor);
+	--postIconOutline: 2px solid var(--prmcolor);
+	--recentTopicsBorderBottom: 2px dotted var(--scdcolor);
+	--nav-border: 5px dotted var(--prmcolor);
+	--subHeadingColor: var(--mainBodyColor);
+	--subHeadingTextShadow: none;
+	--mainProfileLinkColor: var(--linkcolor);
+	--mainProfileBorder: 15px solid var(--bg-color-2);
+	--themeSwitchIcon: var(--scdcolor);
+	--hrShadow: 0 20px 20px -20px #fff;
+}
+
+.Classic {
+	--aTagFontSize: 13px;
+	--defaultFontFamily: 'Noto Sans', sans-serif;
+	--headerFontFamily: 'Righteous', cursive;
+	--subHeaderFontFamily: Verdana, Tahoma, Arial, sans-serif;
+
+	--bg-color: #2b2f32;
+	--bg-color-2: #1d1e38;
+	--mainBodyColor: #858988;
+	--prmcolor: #04e2e5;
+	--scdcolor: #ec5d37;
+	--gold: #e3a72f;
+	--bg-img-1: url('https://files.jcink.net/uploads/barbermonger/Textures/Classic_BG_Dark.jpg');
+	--bg-img-2: url('https://files.jcink.net/uploads/barbermonger/Textures/white_diamond_dark.png');
+	--userInfoColor: var(--scdcolor);
+	--bg-mobile-userlinks: url('https://files.jcink.net/uploads/barbermonger/Textures/dark_brick_wall.png')
+		var(--bg-color-2);
+	--mainTextShadow: none;
+	--mainBorder: 2px solid var(--mainBodyColor);
+	--mainOutline: 2px solid var(--mainBodyColor);
+	--bg-forum-row: var(--bg-color);
+	--forum-row-borderTop: 4px solid var(--gold);
+	--maintitle-bg: var(--prmcolor);
+	--maintitle-color: var(--bg-color);
+	--maintitle-color-a: var(--bg-color);
+	--maintitle-border: 3px solid var(--mainBodyColor);
+	--buttonbox-bg: var(--bg-color-2);
+	--buttonbox-outline: 4px solid var(--scdcolor);
+	--buttonbox-color: var(--prmcolor);
+	--buttonbox-textshadow: var(--mainTextShadow);
+	--linkcolor: var(--prmcolor);
+	--scd1pxBorder: 1px solid var(--gold);
+	--scd2pxDottedBorder: 2px solid var(--gold);
+	--postIconOutline: 2px solid var(--scdcolor);
+	--recentTopicsBorderBottom: 2px solid var(--gold);
+	--nav-border: 5px solid var(--scdcolor);
+	--subHeadingColor: var(--scdcolor);
+	--subHeadingTextShadow: 1px 1px 1px #000, -1px -1px 1px #000, -1px 1px 1px #000, 1px -1px 1px #000;
+	--mainProfileLinkColor: var(--scdcolor);
+	--mainProfileBorder: 15px solid var(--bg-color);
+	--themeSwitchIcon: var(--scdcolor);
+	--hrShadow: 0 20px 20px -20px #000;
+}
+
+.Classic[data-theme='light'] {
+	--bg-color: #fff;
+	--bg-color-2: #f1f1f1;
+	--mainBodyColor: #503d2e;
+	--prmcolor: #058789;
+	--scdcolor: #d54b1a;
+	--gold: #e3a72f;
+	--bg-img-1: url('https://files.jcink.net/uploads/barbermonger/Textures/Classic_BG_Light.png');
+	--bg-img-2: url('https://files.jcink.net/uploads/barbermonger/Textures/white_diamond.png');
+	--userInfoColor: var(--scdcolor);
+	--bg-mobile-userlinks: url('https://files.jcink.net/uploads/barbermonger/Textures/white_brick_wall.png')
+		var(--bg-color-2);
+	--mainTextShadow: none;
+	--mainBorder: 2px solid var(--mainBodyColor);
+	--mainOutline: 2px solid var(--mainBodyColor);
+	--bg-forum-row: var(--bg-color);
+	--forum-row-borderTop: 4px solid var(--gold);
+	--maintitle-bg: var(--prmcolor);
+	--maintitle-color: var(--bg-color);
+	--maintitle-color-a: var(--bg-color);
+	--maintitle-border: 3px solid var(--mainBodyColor);
+	--buttonbox-bg: var(--bg-color-2);
+	--buttonbox-outline: 4px solid var(--scdcolor);
+	--buttonbox-color: var(--prmcolor);
+	--buttonbox-textshadow: var(--mainTextShadow);
+	--linkcolor: var(--prmcolor);
+	--scd1pxBorder: 1px solid var(--gold);
+	--scd2pxDottedBorder: 2px solid var(--gold);
+	--postIconOutline: 2px solid var(--scdcolor);
+	--recentTopicsBorderBottom: 2px solid var(--gold);
+	--nav-border: 5px solid var(--scdcolor);
+	--subHeadingColor: var(--scdcolor);
+	--subHeadingTextShadow: none;
+	--mainProfileLinkColor: var(--scdcolor);
+	--mainProfileBorder: 15px solid var(--bg-color);
+	--themeSwitchIcon: var(--scdcolor);
+	--hrShadow: 0 20px 20px -20px #fff;
+}
+
+.TalkShow {
+	--defaultFontFamily: 'Noto Sans', sans-serif;
+	--headerFontFamily: 'Tilt Neon', cursive;
+	--subHeaderFontFamily: 'Livvic', sans-serif;
+
+	--bg-color: #020014;
+	--bg-color-2: #0b0f26;
+	--mainBodyColor: #ffd6ff;
+	--prmcolor: #ff25d6;
+	--scdcolor: #ff81ff;
+	--bg-img-1: url('https://files.jcink.net/uploads/barbermonger/Textures/TalkShowBG.png');
+	--bg-img-2: url('https://files.jcink.net/uploads/barbermonger/Textures/dark_brick_wall.png');
+	--userInfoColor: var(--mainBodyColor);
+	--bg-mobile-userlinks: url('https://files.jcink.net/uploads/barbermonger/Textures/dark_brick_wall.png')
+		var(--bg-color-2);
+	--mainTextShadow: 1px 1px 2px #121325, -1px -1px 2px #121325, -1px 1px 2px #121325, 1px -1px 2px #121325;
+	--bg-forum-row: var(--bg-img-2) var(--bg-color);
+	--forum-row-borderTop: 4px dotted var(--prmcolor);
+	--mainBorder: 2px solid var(--scdcolor);
+	--mainOutline: 2px solid var(--prmcolor);
+	--maintitle-bg: var(--bg-color);
+	--maintitle-color: var(--scdcolor);
+	--maintitle-color-a: var(--scdcolor);
+	--maintitle-border: 3px solid var(--scdcolor);
+	--buttonbox-bg: var(--bg-color-2);
+	--buttonbox-outline: 4px solid var(--scdcolor);
+	--buttonbox-color: var(--prmcolor);
+	--buttonbox-textshadow: var(--mainTextShadow);
+	--linkcolor: var(--prmcolor);
+	--scd1pxBorder: 1px solid var(--scdcolor);
+	--scd2pxDottedBorder: 2px dotted var(--scdcolor);
+	--postIconOutline: 2px solid var(--prmcolor);
+	--recentTopicsBorderBottom: 2px dotted var(--scdcolor);
+	--nav-border: 5px dotted var(--prmcolor);
+	--subHeadingColor: var(--mainBodyColor);
+	--subHeadingTextShadow: none;
+	--mainProfileLinkColor: var(--linkcolor);
+	--mainProfileBorder: 15px solid var(--bg-color-2);
+	--themeSwitchIcon: var(--scdcolor);
+	--hrShadow: 0 20px 20px -20px #000;
+}
+
+.TalkShow[data-theme='light'] {
+	--bg-color: #ffd6ff;
+	--bg-color-2: #ffcdff;
+	--mainBodyColor: #ff00e9;
+	--prmcolor: #7e277e;
+	--scdcolor: #ff7cf5;
+	--bg-img-1: url('https://files.jcink.net/uploads/barbermonger/Textures/TalkShowBG.png');
+	--bg-img-2: url('https://files.jcink.net/uploads/barbermonger/Textures/white_brick_wall.png');
+	--userInfoColor: var(--mainBodyColor);
+	--bg-mobile-userlinks: url('https://files.jcink.net/uploads/barbermonger/Textures/white_brick_wall.png')
+		var(--bg-color-2);
+	--mainTextShadow: 1px 1px 2px #000, -1px -1px 2px #000, -1px 1px 2px #000, 1px -1px 2px #000;
+	--bg-forum-row: var(--bg-img-2) var(--bg-color);
+	--forum-row-borderTop: 4px dotted var(--prmcolor);
+	--mainBorder: 2px solid var(--scdcolor);
+	--mainOutline: 2px solid var(--prmcolor);
+	--maintitle-bg: var(--bg-color);
+	--maintitle-color: var(--scdcolor);
+	--maintitle-color-a: var(--scdcolor);
+	--maintitle-border: 3px solid var(--scdcolor);
+	--buttonbox-bg: var(--bg-color-2);
+	--buttonbox-outline: 4px solid var(--scdcolor);
+	--buttonbox-color: var(--prmcolor);
+	--buttonbox-textshadow: none;
+	--linkcolor: var(--prmcolor);
+	--scd1pxBorder: 1px solid var(--scdcolor);
+	--scd2pxDottedBorder: 2px dotted var(--scdcolor);
+	--postIconOutline: 2px solid var(--prmcolor);
+	--recentTopicsBorderBottom: 2px dotted var(--scdcolor);
+	--nav-border: 5px dotted var(--prmcolor);
+	--subHeadingColor: var(--mainBodyColor);
+	--subHeadingTextShadow: var(--mainTextShadow);
+	--mainProfileLinkColor: var(--linkcolor);
+	--mainProfileBorder: 15px solid var(--bg-color-2);
+	--themeSwitchIcon: var(--mainBodyColor);
+	--hrShadow: 0 20px 20px -20px #fff;
+}
+
+.BMonger {
+	--aTagFontSize: 12px;
+	--defaultFontFamily: 'Comic Neue', cursive;
+	--headerFontFamily: 'Comic Sans MS', sans-serif;
+	--subHeaderFontFamily: 'Comic Sans MS', sans-serif;
+
+	--bg-color: #000000;
+	--bg-color-2: #000000;
+	--mainBodyColor: #858988;
+	--prmcolor: #db4396;
+	--scdcolor: #70c4dc;
+	--gold: #d4e324;
+	--bg-img-1: url('https://files.jcink.net/uploads/barbermonger/Textures/BMonger_BG_Dark.jpg');
+	--bg-img-2: url('https://files.jcink.net/uploads/barbermonger/Textures/white_diamond_dark.png');
+	--userInfoColor: var(--scdcolor);
+	--bg-mobile-userlinks: url('https://files.jcink.net/uploads/barbermonger/Textures/dark_brick_wall.png')
+		var(--bg-color-2);
+	--mainTextShadow: none;
+	--mainBorder: 2px solid var(--mainBodyColor);
+	--mainOutline: 2px solid var(--mainBodyColor);
+	--bg-forum-row: var(--bg-color);
+	--forum-row-borderTop: 4px solid var(--gold);
+	--maintitle-bg: var(--prmcolor);
+	--maintitle-color: var(--bg-color);
+	--maintitle-color-a: var(--bg-color);
+	--maintitle-border: 3px solid var(--mainBodyColor);
+	--buttonbox-bg: var(--bg-color-2);
+	--buttonbox-outline: 4px solid var(--scdcolor);
+	--buttonbox-color: var(--prmcolor);
+	--buttonbox-textshadow: var(--mainTextShadow);
+	--linkcolor: var(--prmcolor);
+	--scd1pxBorder: 1px solid var(--gold);
+	--scd2pxDottedBorder: 2px solid var(--gold);
+	--postIconOutline: 2px solid var(--scdcolor);
+	--recentTopicsBorderBottom: 2px solid var(--gold);
+	--nav-border: 5px solid var(--scdcolor);
+	--subHeadingColor: var(--scdcolor);
+	--subHeadingTextShadow: 1px 1px 1px #000, -1px -1px 1px #000, -1px 1px 1px #000, 1px -1px 1px #000;
+	--mainProfileLinkColor: var(--scdcolor);
+	--mainProfileBorder: 15px solid var(--bg-color);
+	--themeSwitchIcon: var(--scdcolor);
+	--hrShadow: 0 20px 20px -20px #000;
+}
+
+.BMonger[data-theme='light'] {
+	--bg-color: #fff;
+	--bg-color-2: #f1f1f1;
+	--mainBodyColor: #6700d3;
+	--prmcolor: #ec5d37;
+	--scdcolor: #51e800;
+	--gold: #fff200;
+	--bg-img-1: url('https://files.jcink.net/uploads/barbermonger/Textures/BMonger_BG_Light.jpg');
+	--bg-img-2: url('https://files.jcink.net/uploads/barbermonger/Textures/white_diamond.png');
+	--userInfoColor: var(--scdcolor);
+	--bg-mobile-userlinks: url('https://files.jcink.net/uploads/barbermonger/Textures/white_brick_wall.png')
+		var(--bg-color-2);
+	--mainTextShadow: none;
+	--mainBorder: 2px solid var(--mainBodyColor);
+	--mainOutline: 2px solid var(--mainBodyColor);
+	--bg-forum-row: var(--bg-color);
+	--forum-row-borderTop: 4px solid var(--gold);
+	--maintitle-bg: var(--prmcolor);
+	--maintitle-color: var(--bg-color);
+	--maintitle-color-a: var(--bg-color);
+	--maintitle-border: 3px solid var(--mainBodyColor);
+	--buttonbox-bg: var(--bg-color-2);
+	--buttonbox-outline: 4px solid var(--scdcolor);
+	--buttonbox-color: var(--prmcolor);
+	--buttonbox-textshadow: var(--mainTextShadow);
+	--linkcolor: var(--prmcolor);
+	--scd1pxBorder: 1px solid var(--gold);
+	--scd2pxDottedBorder: 2px solid var(--gold);
+	--postIconOutline: 2px solid var(--scdcolor);
+	--recentTopicsBorderBottom: 2px solid var(--gold);
+	--nav-border: 5px solid var(--scdcolor);
+	--subHeadingColor: var(--scdcolor);
+	--subHeadingTextShadow: none;
+	--mainProfileLinkColor: var(--scdcolor);
+	--mainProfileBorder: 15px solid var(--bg-color);
+	--themeSwitchIcon: var(--scdcolor);
+	--hrShadow: 0 20px 20px -20px #fff;
+}
+
+/****************************************
+  Body Background & Text Style
+ *****************************************/
+
+body {
+	width: 100%;
+	margin: 0;
+	padding: 0;
+	font: var(--defaultFontSize) var(--defaultFontFamily);
+	color: var(--mainBodyColor);
+	text-align: center;
+
+	background: var(--bg-img-1) var(--bg-color);
+	background-attachment: fixed;
+	background-position: top center;
+}
+
+/****************************************
+  Sticky Navbar Styling - Mobile
+ *****************************************/
+
+#mobilenav .mcp-0, #desktopnav .mcp-0,
+#mobilenav .acp-0, #desktopnav .acp-0,
+#mobilenav .m-2, #desktopnav .m-2 {
+	display: none;
+}
+
+#mobilenav .g-2, #desktopnav .g-2 {
+	display: block !important;
+}
+
+#mobilenav .g-2.logging {
+	margin-top: 5px;
+}
+
+#mobilenav .g-2.logging a:first-child {
+	margin-right: 55px;
+}
+
+#mobilenav .g-2.logging a:last-child {
+	margin-left: 50px;
+}
+
+.icons {
+	font-size: 20px;
+	width: 30px;
+}
+
+#desktopnav {
+	display: none;
+}
+
+#mobilenav {
+	position: sticky;
+	top: 0;
+	background-color: var(--bg-color-2);
+	border-bottom: var(--nav-border);
+	z-index: 9999;
+	width: 100%;
+	padding: 10px 0;
+}
+
+#navbar {
+	display: grid;
+	align-items: center;
+	grid-template-columns: 0.7fr 1fr 0.7fr;
+	grid-template-areas: 'to-top mobile-menu toggle';
+}
+
+.back-to-top {
+	grid-area: to-top;
+	display: flex;
+	color: var(--prmcolor);
+	cursor: pointer;
+}
+
+.togglecontainer {
+	grid-area: toggle;
+	color: var(--prmcolor);
+}
+
+.mobile-menu {
+	grid-area: mobile-menu;
+	margin: auto;
+	width: 70%;
+}
+
+.mobile-menu button {
+	width: 100%;
+	height: 30px;
+	padding-bottom: 2px;
+	border: none;
+	background: transparent;
+	color: var(--scdcolor);
+	font: 20px var(--headerFontFamily);
+}
+
+#mobilenav .rotate {
+	-moz-transition: all 0.5s linear;
+	-webkit-transition: all 0.5s linear;
+	transition: all 0.5s linear;
+}
+
+#mobilenav .rotate.down {
+	-moz-transform: rotate(-180deg);
+	-webkit-transform: rotate(-180deg);
+	transform: rotate(-180deg);
+}
+
+/*slider switch css */
+.theme-switch {
+	display: flex;
+	align-items: flex-end;
+	justify-content: flex-end;
+	cursor: pointer;
+}
+
+.theme-switch input {
+	display: none;
+}
+
+.theme-switch i {
+	color: var(--themeSwitchIcon);
+}
+
+#mobile-userlinks {
+	background: var(--bg-mobile-userlinks);
+	background-position: center top;
+	border-radius: 10px 10px 10px 10px;
+	display: grid;
+	grid-template-columns: 1.1fr 1fr;
+	grid-row-gap: 15px;
+	grid-column-gap: 5px;
+	grid-template-areas:
+		'user-info user-info'
+		'admin-cp mod-cp'
+		'view-profile my-controls'
+		'topics messages'
+		'view-new-posts alerts';
+	justify-items: start;
+}
+
+#mobile-userlinks i {
+	margin-left: 15px;
+	margin-right: 5px;
+}
+
+.user-info {
+	grid-area: user-info;
+	display: inline-grid;
+	margin-top: 5px;
+	width: 100%;
+	word-break: break-word;
+}
+
+.user-info a {
+	margin-top: 5px;
+}
+
+.user-info strong {
+	font: 20px var(--headerFontFamily);
+	text-transform: uppercase;
+	color: var(--userInfoColor);
+	text-shadow: var(--mainTextShadow);
+}
+
+#mobile-userlinks .admin-cp > a,
+#mobile-userlinks .mod-cp > a,
+#mobile-userlinks .view-profile > a,
+#mobile-userlinks .my-controls > a,
+#mobile-userlinks .active-topics > a,
+#mobile-userlinks .my-messages > a,
+#mobile-userlinks .view-new-posts > a,
+#mobile-userlinks .mu-alerts > a {
+	font-size: 12px;
+}
+
+.admin-cp {
+	grid-area: admin-cp;
+}
+
+.mod-cp {
+	grid-area: mod-cp;
+}
+
+.view-profile {
+	grid-area: view-profile;
+}
+
+.my-controls {
+	grid-area: my-controls;
+}
+
+.active-topics {
+	grid-area: topics;
+}
+
+.my-messages {
+	grid-area: messages;
+}
+
+.view-new-posts {
+	grid-area: view-new-posts;
+}
+
+.mu-alerts {
+	grid-area: alerts;
+}
+
+.dropdown-menu {
+	position: fixed;
+	overflow-x: hidden;
+	overflow-y: hidden;
+	left: calc(100% - 94%);
+	top: 60px;
+	margin: auto;
+	width: 85%;
+	max-height: 0;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	-webkit-transition: max-height, 0.5s ease-in-out;
+	transition: max-height, 0.5s ease-in-out;
+}
+
+.display-menu {
+	max-height: 300px;
+	padding: 10px 5px 15px;
+}
+
+/****************************************
+    Cbox Styling
+ *****************************************/
+
+#cbox-toggle {
+	display: block;
+	color: var(--prmcolor);
+}
+
+#cbox-heading {
+	display: none;
+}
+
+#cboxdiv {
+	position: relative;
+	top: 5px;
+	margin: 0 auto;
+	max-width: 400px;
+	font-size: 0;
+	line-height: 0;
+}
+
+.cboxcontainer {
+	position: absolute;
+	overflow-x: hidden;
+	overflow-y: hidden;
+	max-height: 0;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	-webkit-transition: max-height, 0.5s ease-in-out;
+	transition: max-height, 0.5s ease-in-out;
+}
+
+.display-cbox {
+	max-height: 100%;
+}
+
+.cbox .button-box {
+	margin: 0px 0 0 -65px;
+	left: 50%;
+}
+
+/****************************************
+    Recent Topics Redesign
+ *****************************************/
+#idx .recent-topics-toggle {
+	display: block;
+}
+
+.recent-topics-toggle {
+	display: none;
+}
+
+#recent-topics-clip {
+	margin-top: 5px;
+}
+
+#recent-topics-clip .maintitle {
+	display: none;
+}
+
+#recent-topics .row4 strong {
+	display: block;
+}
+
+#recent-topics .row4 a > strong > .hold-tags {
+	display: flex;
+	flex-wrap: wrap;
+	align-content: center;
+	justify-content: center;
+	align-items: center;
+}
+
+#recent-topics table,
+#recent-topics table tbody,
+#recent-topics tr,
+#recent-topics table tbody tr td {
+	all: unset;
+}
+
+#recent-topics.tableborder {
+	background-color: var(--bg-color);
+	border: var(--scd1pxBorder);
+	margin: 5px;
+	padding: 0px;
+}
+
+#recent-topics tr {
+	display: flex;
+	flex-direction: column;
+	margin: 10px 0;
+	padding: 0 0 10px;
+	border-bottom: var(--recentTopicsBorderBottom);
+}
+
+#recent-topics tr:last-child {
+	border-bottom: none;
+}
+
+/****************************************
+    Table Styles
+ *****************************************/
+
+table,
+tr,
+td {
+	font-family: 'Noto Sans', sans-serif;
+	font-size: 14px;
+	color: var(--mainBodyColor);
+}
+
+/****************************************
+    Board Width
+ *****************************************/
+
+#wrapper {
+	text-align: left;
+	max-width: 1020px;
+	padding: 0 10px 0;
+	margin: auto;
+	position: relative;
+	padding-bottom: 15px;
+}
+
+#innerwrapper {
+	width: 100%;
+}
+
+/****************************************
+    Link colors
+ *****************************************/
+
+a:link,
+a:visited,
+a:active {
+	text-decoration: none;
+	color: var(--linkcolor);
+	font-family: var(--subHeaderFontFamily);
+	text-transform: uppercase;
+}
+
+a:hover {
+	color: var(--scdcolor);
+	text-decoration: none;
+}
+
+/****************************************
+    Profile styles 
+ *****************************************/
+
+#profilename {
+	font-size: 28px;
+	font-weight: bold;
+}
+
+#photowrap {
+	padding: 6px;
+}
+
+#phototitle {
+	font-size: 24px;
+	border-bottom: 1px solid black;
+}
+
+#photoimg {
+	text-align: center;
+	margin-top: 15px;
+}
+
+/****************************************
+    UserCP/My Controls styles
+ *****************************************/
+
+#UserCP .button-box {
+	margin: 5px 0;
+}
+
+#UserCP .cbox .button-box {
+	margin: 0px 0 0 -65px;
+	left: 50%;
+}
+
+#UserCP tr,
+#UserCP td {
+	all: unset;
+	display: flex;
+	flex-direction: column;
+	background-color: var(--bg-color);
+	color: var(--mainBodyColor);
+	width: 100%;
+}
+
+#UserCP table {
+	table-layout: fixed;
+}
+
+#UserCP #ucpmenu {
+	margin-bottom: 10px;
+}
+
+#UserCP #ucpmenu .outer-grid {
+	display: grid;
+	align-content: center;
+	grid-template-columns: 1fr 1fr;
+	gap: 5px;
+	grid-template-areas:
+		'outer-grid-item outer-grid-item'
+		'outer-grid-item-2 outer-grid-item-3'
+		'outer-grid-item-4 outer-grid-item-4';
+}
+
+.ucp-heading {
+	display: block;
+	width: 100%;
+	background-color: var(--bg-color-2);
+	color: var(--mainBodyColor);
+	font-weight: bold;
+	padding: 4px 0;
+	margin-top: 1px;
+	text-align: center;
+	font-family: var(--subHeaderFontFamily);
+	font-size: 16px;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+}
+
+.outer-grid-item-4,
+.outer-grid-item-2,
+.outer-grid-item-3 {
+	display: flex;
+	flex-direction: column;
+}
+
+#UserCP #ucpmenu .outer-grid-item {
+	grid-area: outer-grid-item;
+	width: 100%;
+}
+
+.outer-grid-item-2 {
+	grid-area: outer-grid-item-2;
+}
+
+.outer-grid-item-2 a {
+	margin-left: 5px;
+}
+
+.outer-grid-item-2 a,
+.outer-grid-item-3 a,
+.outer-grid-item-4 a {
+	margin-bottom: 4px;
+}
+
+.outer-grid-item-3 {
+	grid-area: outer-grid-item-3;
+}
+
+.outer-grid-item-4 {
+	grid-area: outer-grid-item-4;
+	width: 100%;
+	align-items: center;
+}
+
+#UserCP #ucpmenu .inner-grid {
+	display: grid;
+	gap: 5px;
+	margin-left: 5px;
+	align-content: center;
+	justify-content: center;
+	align-items: center;
+	grid-template-columns: 1fr 1fr;
+}
+
+.inner-grid .inner-grid-item:nth-child(2) {
+	grid-row: 2;
+	grid-column: 1;
+}
+
+.inner-grid .inner-grid-item:nth-child(3) {
+	grid-row: 3;
+	grid-column: 1;
+}
+
+.inner-grid .inner-grid-item:nth-child(5) {
+	grid-row: 1;
+	grid-column: 2;
+}
+
+/* Main Screen Styling */
+#UserCP #ucpcontent table tbody tr {
+	text-align: center;
+}
+
+#UserCP #ucpcontent table tbody tr td:nth-child(1) {
+	margin-top: 10px;
+	font-weight: bold;
+	font-family: var(--subHeaderFontFamily);
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	color: var(--scdcolor);
+}
+
+#UserCP form[name='notepad'] {
+	font-size: 0px;
+}
+
+form[name='notepad'] br,
+form[name='notepad'] select[name='ta_size'] {
+	display: none;
+}
+
+form[name='notepad'] textarea[name='notes'] {
+	width: 100%;
+	max-width: calc(270px + (600 - 270) * (100vw - 320px) / (1020 - 320));
+}
+
+#UserCP form[name='notepad'] input[type='submit'] {
+	margin: 10px 0 0;
+	padding: 5px 0px;
+	max-width: calc(270px + (600 - 270) * (100vw - 320px) / (1020 - 320));
+}
+
+/* Edit Profile Styling */
+
+#UserCP #ucpcontent > form[name='theForm'] > table > tbody > tr td.pformleft {
+	font-size: 10px;
+	font-family: var(--defaultFontFamily);
+	color: var(--mainBodyColor);
+	text-transform: unset;
+	flex-direction: column;
+}
+
+#UserCP #ucpcontent > form[name='theForm'] > table > tbody > tr td.pformleft label {
+	font-size: var(--defaultFontSize);
+	font-family: var(--subHeaderFontFamily);
+	color: var(--scdcolor);
+	text-transform: uppercase;
+}
+
+#UserCP #ucpcontent > form[name='theForm'] br {
+	display: none;
+}
+
+#UserCP tr#field-website,
+#UserCP tr#field-location,
+#UserCP tr#field-interests {
+	display: none;
+}
+
+/* Edit Avatar Styling */
+
+#gallery_form {
+	display: none;
+}
+
+#UserCP #ucpcontent > form[name='creator'] > .pformstrip {
+	display: flex;
+	justify-content: center;
+}
+
+#UserCP #ucpcontent > form[name='creator'] input[type='submit'] {
+	width: 50%;
+}
+
+#UserCP #ucpcontent > form[name='creator'] > table.tablebasic:last-of-type > tbody > tr > td.pformleft {
+	display: none;
+}
+
+#UserCP #ucpcontent > form[name='creator'] > table.tablebasic:last-of-type > tbody > tr > td.pformright {
+	flex-wrap: nowrap;
+	flex-direction: column;
+}
+
+#UserCP #ucpcontent > form[name='creator'] > table.tablebasic > tbody > tr > td.pformright br {
+	display: none;
+}
+
+/* Edit Signature Styling */
+
+form[name='REPLIER'] input[name='helpbox'] {
+	width: 100%;
+	max-width: calc(270px + (600 - 270) * (100vw - 320px) / (1020 - 320));
+	margin: 5px 0;
+	background-color: var(--bg-color-2);
+	border-radius: var(--defaultBorderRadius);
+	color: var(--mainBodyColor);
+}
+
+form[name='REPLIER'] textarea[name='Post'] {
+	width: 100%;
+	max-width: calc(270px + (600 - 270) * (100vw - 320px) / (1020 - 320));
+}
+
+form[name='REPLIER'] input[type='submit'] {
+	max-width: calc(270px + (600 - 270) * (100vw - 320px) / (1020 - 320));
+}
+
+#UserCP #ucpcontent > form[name='REPLIER'] > table > tbody > tr td.pformright input[type='button'] {
+	margin: 3px;
+	padding: 1px 6px;
+}
+
+#UserCP .pformright a[href='javascript:closeall();'] {
+	flex-basis: 100%;
+	text-align: center;
+}
+
+/* Change Password Styling */
+
+#UserCP #ucpcontent > form[name='form1'] p {
+	margin: 15px;
+}
+
+/* Board Settings */
+
+#UserCP.code-04 table > tbody > tr > td > form > p {
+	padding: 10px 25px 10px;
+}
+
+#UserCP.code-04 .forminput {
+	width: unset;
+}
+
+#UserCP.code-04 form[name='jumpmenu'] {
+	width: unset;
+}
+
+/* Alerts Styling */
+
+#UserCP.code-alerts td#ucpcontent > form[name='mutliact'] table > tbody > tr {
+	flex-direction: row;
+	align-items: center;
+}
+
+#UserCP.code-alerts td#ucpcontent > table {
+	padding: unset;
+}
+
+#UserCP.code-alerts td#ucpcontent > table > tbody > tr > td > table {
+	max-width: 280px;
+}
+
+#UserCP.code-alerts td#ucpcontent > table > tbody > tr > td > table > tbody > tr > td {
+	margin-bottom: 10px;
+}
+
+#UserCP.code-alerts table td img {
+	width: 16px;
+	height: 16px;
+}
+
+#UserCP.code-alerts table tr td img {
+	width: 35px;
+	height: 35px;
+	margin-left: 5px;
+}
+
+#UserCP.code-alerts td#ucpcontent > form[name='mutliact'] table > tbody > tr th {
+	width: 100%;
+}
+
+#UserCP.code-alerts td#ucpcontent > form[name='mutliact'] table > tbody > tr > th:nth-child(1),
+#UserCP.code-alerts td#ucpcontent > form[name='mutliact'] table > tbody > tr > td:nth-child(1) {
+	flex: 3%;
+	margin: 0;
+}
+
+#UserCP.code-alerts td#ucpcontent > form[name='mutliact'] table > tbody > tr > th:nth-child(2),
+#UserCP.code-alerts td#ucpcontent > form[name='mutliact'] table > tbody > tr > td:nth-child(2) {
+	flex: 60%;
+}
+
+#UserCP.code-alerts td#ucpcontent > form[name='mutliact'] table > tbody > tr > th:nth-child(3),
+#UserCP.code-alerts td#ucpcontent > form[name='mutliact'] table > tbody > tr > td:nth-child(3) {
+	flex: 25%;
+}
+
+#UserCP.code-alerts td#ucpcontent > form[name='mutliact'] table > tbody > tr > th:nth-child(4),
+#UserCP.code-alerts td#ucpcontent > form[name='mutliact'] table > tbody > tr > td:nth-child(4) {
+	flex: 1%;
+}
+
+#UserCP.code-alerts td#ucpcontent > form[name='mutliact'] table > tbody > tr td.alert-text {
+	display: block;
+	margin-top: 10px;
+	word-break: break-word;
+}
+
+#UserCP.code-alerts td#ucpcontent > form[name='mutliact'] table > tbody > tr td.alert-text a:nth-child(3) {
+	display: block;
+	margin-top: 1px;
+}
+
+#UserCP.code-alerts td.alert-text a > .hold-tags {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+
+#UserCP.code-alerts td#ucpcontent > div:last-child {
+	display: none;
+}
+
+#UserCP.code-alerts td#ucpcontent > form[name='mutliact'] > .tableborder {
+	padding-bottom: 10px;
+}
+
+#UserCP.code-alerts
+	td#ucpcontent
+	> form[name='mutliact']
+	> .tableborder
+	> table
+	> tbody
+	> tr:last-child
+	> td
+	select.forminput[name='type'] {
+	margin-bottom: 10px;
+}
+
+#UserCP.code-alerts
+	td#ucpcontent
+	> form[name='mutliact']
+	> .tableborder
+	> table
+	> tbody
+	> tr:last-child
+	> td
+	input[type='submit'] {
+	margin-bottom: 10px;
+}
+
+#UserCP.code-alerts td#ucpcontent > form[name='mutliact'] > .tableborder > table > tbody > tr.dlight {
+	border-bottom: 1px solid var(--prmcolor);
+}
+
+#UserCP.code-alerts
+	td#ucpcontent
+	> form[name='mutliact']
+	> .tableborder
+	> table
+	> tbody
+	> tr.dlight
+	> td
+	> input[type='checkbox'] {
+	width: 15px;
+}
+
+#UserCP.code-alerts
+	td#ucpcontent
+	> form[name='mutliact']
+	> .tableborder
+	> table
+	> tbody
+	> tr:last-child
+	> td.titlemedium
+	> div:first-child {
+	display: flex;
+	flex-direction: column;
+}
+
+/* Forums Sub Styling */
+
+#UserCP.code-50 #ucpcontent > .tableborder > table > tbody > tr:first-child {
+	display: flex;
+	flex-direction: row;
+}
+
+#UserCP.code-50 #ucpcontent > .tableborder > table > tbody > tr:first-child td {
+	display: none;
+}
+
+#UserCP.code-50 td#ucpcontent > .tableborder > table > tbody > tr th {
+	width: 100%;
+}
+
+#UserCP.code-50 td#ucpcontent > .tableborder > table > tbody > tr {
+	text-align: left;
+	flex-direction: row;
+}
+
+#UserCP.code-50 td#ucpcontent > .tableborder > table > tbody > tr:first-child > th:nth-child(2),
+#UserCP.code-50 td#ucpcontent > .tableborder > table > tbody > tr > td.row1:nth-child(2) {
+	flex: 70%;
+}
+
+#UserCP.code-50 td#ucpcontent > .tableborder > table > tbody > tr > td.row1:nth-child(2) {
+	margin-left: 5px;
+}
+
+#UserCP.code-50 td#ucpcontent > .tableborder > table > tbody > tr > td.row1:first-child,
+#UserCP.code-50 td#ucpcontent > .tableborder > table > tbody > tr > td.row1 span.desc,
+#UserCP.code-50 td#ucpcontent > .tableborder > table > tbody > tr > td.row1:nth-child(2) br {
+	display: none;
+}
+
+#UserCP.code-50 td#ucpcontent > .tableborder > table > tbody > tr > td.row1:nth-child(3),
+#UserCP.code-50 td#ucpcontent > .tableborder > table > tbody > tr > td.row1:nth-child(4) {
+	align-items: center;
+	flex: 30%;
+}
+
+#UserCP.code-50 td#ucpcontent > .tableborder > table > tbody > tr:first-child > th:nth-child(3),
+#UserCP.code-50 td#ucpcontent > .tableborder > table > tbody > tr:first-child > th:nth-child(4) {
+	flex: 30%;
+}
+
+#UserCP.code-50 td#ucpcontent > .tableborder > table > tbody > tr:first-child > th:nth-child(5),
+#UserCP.code-50 td#ucpcontent > .tableborder > table > tbody > tr > td.row1:nth-child(5) {
+	flex: 50%;
+}
+
+#UserCP.code-50 td#ucpcontent > .tableborder > table > tbody > tr:last-child {
+	text-align: center;
+}
+
+/* Topics Sub Styling */
+
+#UserCP.code-26 .forminput {
+	margin: unset;
+}
+
+#UserCP.code-26 td.row3 a > .hold-tags {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+
+#UserCP.code-26 #ucpcontent > form[name='mutliact'] > .tableborder > table > tbody > tr:first-child {
+	display: flex;
+	flex-direction: row;
+}
+
+#UserCP.code-26 #ucpcontent > form[name='mutliact'] > .tableborder > table > tbody > tr:first-child td:first-child {
+	display: none;
+}
+
+#UserCP.code-26 td#ucpcontent > form[name='mutliact'] > .tableborder > table > tbody > tr {
+	flex-direction: row;
+	text-align: left;
+}
+
+#UserCP.code-26 td#ucpcontent > form[name='mutliact'] > .tableborder > table > tbody > tr th {
+	width: 100%;
+}
+
+#UserCP.code-26 td#ucpcontent > form[name='mutliact'] > .tableborder > table > tbody > tr > td.row3:first-child {
+	display: none;
+}
+
+#UserCP.code-26 td#ucpcontent > form[name='mutliact'] > .tableborder > table > tbody > tr:first-child > th:nth-child(2),
+#UserCP.code-26 td#ucpcontent > form[name='mutliact'] > .tableborder > table > tbody > tr > td.row3:nth-child(2) {
+	flex: 70%;
+	text-align: center;
+}
+
+#UserCP.code-26 td#ucpcontent > form[name='mutliact'] > .tableborder > table > tbody > tr:first-child > th:nth-child(3),
+#UserCP.code-26 td#ucpcontent > form[name='mutliact'] > .tableborder > table > tbody > tr > td.row3:nth-child(3),
+#UserCP.code-26 td#ucpcontent > form[name='mutliact'] > .tableborder > table > tbody > tr:first-child > th:nth-child(4),
+#UserCP.code-26 td#ucpcontent > form[name='mutliact'] > .tableborder > table > tbody > tr > td.row3:nth-child(4) {
+	flex: 20%;
+	text-align: center;
+}
+
+#UserCP.code-26 td#ucpcontent > form[name='mutliact'] > .tableborder > table > tbody > tr:first-child > th:nth-child(5),
+#UserCP.code-26 td#ucpcontent > form[name='mutliact'] > .tableborder > table > tbody > tr > td.row3:nth-child(5) {
+	flex: 50%;
+	text-align: left;
+}
+
+#UserCP.code-26 td#ucpcontent > form[name='mutliact'] > .tableborder > table > tbody > tr:first-child > td:last-child,
+#UserCP.code-26 td#ucpcontent > form[name='mutliact'] > .tableborder > table > tbody > tr > td.row2 {
+	width: unset;
+}
+
+#UserCP.code-26 td#ucpcontent > form[name='mutliact'] > .tableborder > table > tbody > tr:last-child {
+	justify-content: center;
+}
+
+#UserCP.code-26 td#ucpcontent > form[name='mutliact'] > .tableborder > table > tbody > tr > td.row3:nth-child(2) {
+	font-size: 0px;
+}
+
+#UserCP.code-26
+	td#ucpcontent
+	> form[name='mutliact']
+	> .tableborder
+	> table
+	> tbody
+	> tr
+	> td.row3:nth-child(2)
+	a:first-of-type {
+	font-size: var(--defaultFontSize);
+}
+
+#UserCP.code-26 td#ucpcontent > form[name='mutliact'] > .tableborder > table > tbody > tr:last-child > td {
+	width: unset;
+}
+
+#UserCP.code-26 td#ucpcontent > div:last-child > form {
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+	gap: 10px;
+}
+
+#UserCP.code-26 td#ucpcontent > div:last-child > form > select[name='datecut'] {
+	width: 50%;
+}
+
+#UserCP.code-26 td#ucpcontent > div:last-child > form > input[type='submit'] {
+	width: 15%;
+}
+
+/* Alerts Settings */
+
+#UserCP.code-alerts_settings table > tbody > tr > td#ucpcontent > form table > tbody > tr {
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+}
+
+#UserCP.code-alerts_settings table > tbody > tr > td#ucpcontent > form table > tbody > tr td.pformstrip {
+	background-color: var(--bg-color-2);
+	margin: 0;
+}
+
+/* Email Settings */
+
+#UserCP.code-02 #ucpcontent > form > table > tbody > tr {
+	flex-direction: row;
+	border-bottom: var(--scd2pxDottedBorder);
+	padding-bottom: 10px;
+	margin-bottom: 10px;
+}
+
+#UserCP.code-02 #ucpcontent > form > table > tbody > tr td:first-child {
+	width: 10%;
+	margin-top: unset;
+}
+
+#UserCP .forminput,
+.textinput {
+	width: 100%;
+	max-width: calc(270px + (600 - 270) * (100vw - 320px) / (1020 - 320));
+	margin: auto;
+}
+
+#UserCP form[name='jumpmenu'] {
+	display: flex;
+	width: 50%;
+}
+
+#UserCP form[name='jumpmenu'] input[type='submit'] {
+	width: 25%;
+}
+
+input[name='tagcount'] {
+	background-color: var(--bg-color-2);
+	border-radius: var(--defaultBorderRadius);
+	color: var(--mainBodyColor);
+}
+
+#UserCP td.pformright,
+#UserCP td.pformleft {
+	flex-direction: row;
+	flex-wrap: wrap;
+	row-gap: 5px;
+	justify-content: center;
+	align-content: center;
+	align-items: center;
+}
+
+#UserCP td.pformleft {
+	margin-bottom: 10px;
+}
+
+/****************************************
+    Messenger / My Messages Styles
+ *****************************************/
+
+#Msg #innerwrapper > table {
+	background-color: var(--bg-color);
+}
+
+#Msg td#ucpmenu .outer-grid {
+	display: grid;
+	grid-template-columns: 1fr;
+}
+
+#Msg td#ucpmenu .outer-grid-item {
+	display: flex;
+	flex-direction: column;
+}
+
+#Msg td#ucpmenu .outer-grid-item a {
+	margin-left: 5px;
+	margin-bottom: 4px;
+}
+
+#Msg td#ucpmenu .outer-grid-item a > i {
+	margin: 0 3px 0 5px;
+}
+
+#Msg td#ucpmenu .outer-grid-item:last-child a {
+	text-align: center;
+	margin: 5px 0 0 0;
+}
+
+#friends_popup .row2 {
+	background: var(--bg-color);
+}
+
+#Msg.code-01 td#ucpcontent > form[name='mutliact'] > .tableborder > table > tbody > tr:last-child > td.titlemedium {
+	padding-bottom: 5px;
+}
+
+#Msg
+	td#ucpcontent
+	> form[name='mutliact']
+	> .tableborder
+	> table
+	> tbody
+	> tr:last-child
+	> td.titlemedium
+	> div[style='float: left;'] {
+	float: unset !important;
+	display: flex;
+	justify-content: flex-end;
+	margin: 5px;
+}
+
+#Msg
+	td#ucpcontent
+	> form[name='mutliact']
+	> .tableborder
+	> table
+	> tbody
+	> tr:last-child
+	> td.titlemedium
+	> div
+	> input[type='text'] {
+	width: 85%;
+	margin: 0 5px 5px 0;
+}
+
+#Msg span.no-new-post-macro,
+#Msg span.new-post-macro {
+	font-size: 15px;
+}
+
+#Msg td.miniprofile .postdetails {
+	flex-direction: column;
+	word-break: break-word;
+}
+
+#Msg td.miniprofile .postdetails > br {
+	display: none;
+}
+
+#Msg td#ucpcontent > .tableborder td.row4 {
+	word-break: break-word;
+}
+
+/****************************************
+   Active Topics Area
+ *****************************************/
+
+#active-topics {
+	background-color: var(--bg-color);
+}
+
+#Search.code-getactive td a > .hold-tags {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+#Search.code-getactive td.row2 {
+	word-break: break-word;
+}
+
+#Search.code-getactive td span.no-new-post-macro {
+	font-size: 20px;
+}
+
+@media only screen and (max-width: 768px) {
+	#Search.code-getactive #innerwrapper > form[name='dateline'] div[align='right'] {
+		width: unset !important;
+	}
+
+	#Search.code-getactive #active-topics table.tablebasic > tbody {
+		display: grid;
+	}
+
+	#Search.code-getactive #active-topics table.tablebasic > tbody > tr:first-child {
+		display: none;
+	}
+
+	#Search.code-getactive #active-topics table.tablebasic > tbody > tr {
+		display: grid;
+		grid-template-columns: 0.5fr 1fr 1fr;
+		align-items: center;
+		border-bottom: var(--scd2pxDottedBorder);
+	}
+
+	#Search.code-getactive #active-topics table.tablebasic > tbody > tr > td.row1 {
+		grid-column: span 3;
+	}
+
+	#Search.code-getactive #active-topics table.tablebasic > tbody > tr:last-child {
+		border-bottom: none;
+	}
+
+	#Search.code-getactive #active-topics table.tablebasic > tbody > tr > td:nth-child(2) {
+		display: none;
+	}
+
+	#Search.code-getactive #active-topics table.tablebasic > tbody > tr > td:nth-child(3) {
+		grid-column: span 2;
+	}
+
+	#Search.code-getactive #active-topics table.tablebasic > tbody > tr > td:nth-child(4) {
+		width: 100%;
+		grid-row: 2;
+		grid-column: 2;
+		display: flex;
+		flex-direction: column;
+	}
+
+	#Search.code-getactive #active-topics table.tablebasic > tbody > tr > td:nth-child(4)::before {
+		content: 'In Forum:';
+	}
+
+	#Search.code-getactive #active-topics table.tablebasic > tbody > tr > td:nth-child(5) {
+		display: flex;
+		flex-direction: column;
+		word-break: break-word;
+	}
+
+	#Search.code-getactive #active-topics table.tablebasic > tbody > tr > td:nth-child(5)::before {
+		content: 'Started By:';
+	}
+
+	#Search.code-getactive #active-topics table.tablebasic > tbody > tr > td:nth-child(6) {
+		grid-row: 3;
+		grid-column: 1;
+	}
+
+	#Search.code-getactive #active-topics table.tablebasic > tbody > tr > td:nth-child(6)::after {
+		content: ' replies';
+	}
+
+	#Search.code-getactive #active-topics table.tablebasic > tbody > tr > td:nth-child(7) {
+		grid-row: 2;
+		grid-column: 1;
+	}
+
+	#Search.code-getactive #active-topics table.tablebasic > tbody > tr > td:nth-child(7)::after {
+		content: ' views';
+	}
+
+	#Search.code-getactive #active-topics table.tablebasic > tbody > tr > td:nth-child(8) {
+		grid-column: span 2;
+	}
+}
+
+/****************************************
+   'View New Posts' & Search (Topics) Area
+ *****************************************/
+
+#search-topics {
+	background-color: var(--bg-color);
+}
+
+#Search.code-show td a > .hold-tags,
+#Search.code-show .maintitle a > .hold-tags {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+
+#Search.code-show td span.no-new-post-macro {
+	font-size: 20px;
+}
+
+#Search.code-show td.row4 {
+	word-break: break-word;
+	width: unset;
+}
+
+#Search.code-show #innerwrapper > .tableborder > table.tablebasic > tbody > tr > td.row4 {
+	background: var(--bg-color-2);
+}
+
+@media only screen and (max-width: 768px) {
+	#Search.code-show #innerwrapper > form[name='dateline'] div[align='right'] {
+		width: unset !important;
+	}
+
+	#Search.code-show #search-topics table.tablebasic > tbody {
+		display: grid;
+	}
+
+	#Search.code-show #search-topics table.tablebasic > tbody > tr:first-child {
+		display: none;
+	}
+
+	#Search.code-show #search-topics table.tablebasic > tbody > tr {
+		display: grid;
+		grid-template-columns: 0.5fr 1fr 1fr;
+		align-items: center;
+		border-bottom: var(--scd2pxDottedBorder);
+	}
+
+	#Search.code-show #search-topics table.tablebasic > tbody > tr > td.row1 {
+		grid-column: span 3;
+	}
+
+	#Search.code-show #search-topics table.tablebasic > tbody > tr:last-child {
+		border-bottom: none;
+	}
+
+	#Search.code-show #search-topics table.tablebasic > tbody > tr > td:nth-child(2) {
+		display: none;
+	}
+
+	#Search.code-show #search-topics table.tablebasic > tbody > tr > td:nth-child(3) {
+		grid-column: span 2;
+	}
+
+	#Search.code-show #search-topics table.tablebasic > tbody > tr > td:nth-child(4) {
+		width: 100%;
+		grid-row: 2;
+		grid-column: 2;
+		display: flex;
+		flex-direction: column;
+	}
+
+	#Search.code-show #search-topics table.tablebasic > tbody > tr > td:nth-child(4)::before {
+		content: 'In Forum:';
+	}
+
+	#Search.code-show #search-topics table.tablebasic > tbody > tr > td:nth-child(5) {
+		display: flex;
+		flex-direction: column;
+		word-break: break-word;
+	}
+
+	#Search.code-show #search-topics table.tablebasic > tbody > tr > td:nth-child(5)::before {
+		content: 'Started By:';
+	}
+
+	#Search.code-show #search-topics table.tablebasic > tbody > tr > td:nth-child(6) {
+		grid-row: 3;
+		grid-column: 1;
+	}
+
+	#Search.code-show #search-topics table.tablebasic > tbody > tr > td:nth-child(6)::after {
+		content: ' replies';
+	}
+
+	#Search.code-show #search-topics table.tablebasic > tbody > tr > td:nth-child(7) {
+		grid-row: 2;
+		grid-column: 1;
+	}
+
+	#Search.code-show #search-topics table.tablebasic > tbody > tr > td:nth-child(7)::after {
+		content: ' views';
+	}
+
+	#Search.code-show #search-topics table.tablebasic > tbody > tr > td:nth-child(8) {
+		grid-column: span 2;
+	}
+
+	#Search.code-show #innerwrapper > .tableborder > table.tablebasic > tbody > tr {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+	}
+
+	#Search.code-show
+		#innerwrapper
+		> .tableborder
+		> table.tablebasic
+		> tbody
+		> tr:nth-child(2)
+		> td.post1:nth-child(1)
+		br,
+	#Search.code-show
+		#innerwrapper
+		> .tableborder
+		> table.tablebasic
+		> tbody
+		> tr:nth-child(2)
+		> td.post1:nth-child(1)
+		img {
+		display: none;
+	}
+
+	#Search.code-show #innerwrapper > .tableborder > table.tablebasic > tbody > tr:nth-child(2) > td.post1 b {
+		margin: 0 5px 0 2px;
+	}
+
+	#Search.code-show #innerwrapper > .tableborder > table.tablebasic > tbody > tr:nth-child(2) > td.post1:nth-child(2) {
+		padding: 6px 0;
+	}
+
+	#Search.code-show #innerwrapper > .tableborder > table.tablebasic > tbody > tr:nth-child(3) > td.row4:nth-child(1) {
+		display: none;
+	}
+}
+
+/****************************************
+   ALL NEW Search Grid for #Search.code-00
+ *****************************************/
+
+#Search.code-00 #search-grid {
+	display: grid;
+	grid-template-columns: 1fr;
+}
+
+#Search.code-00 .keyword-search-heading {
+	grid-area: 1 / 1 / 2 / 2;
+	margin-bottom: 2px;
+}
+
+#Search.code-00 .keyword-search {
+	display: flex;
+	grid-area: 2 / 1 / 3 / 1;
+	flex-direction: column;
+}
+
+#Search.code-00 .member-search {
+	display: flex;
+	flex-direction: column;
+	grid-area: 3 / 1 / 4 / 1;
+}
+
+#Search.code-00 .search-options-heading {
+	grid-area: 4 / 1 / 5 / 1;
+	margin-bottom: 2px;
+}
+
+#Search.code-00 .search-where {
+	display: flex;
+	flex-direction: column;
+	grid-area: 5 / 1 / 6 / 1;
+}
+
+#Search.code-00 #search-grid .pformstrip {
+	margin-bottom: 10px;
+}
+
+#Search.code-00 .refine-search {
+	grid-area: 6 / 1 / 7 / 1;
+	display: grid;
+	grid-template-columns: 1fr;
+}
+
+#Search.code-00 .refine-search > .pformstrip {
+	grid-row: 1;
+	grid-column: 1 / 2;
+}
+
+#Search.code-00 .submit-search-form {
+	grid-area: 7 / 1 / 8 / 1;
+	display: flex;
+	justify-content: center;
+	background: var(--bg-color);
+	padding: 0 0 15px;
+}
+
+#Search.code-00 .submit-search-form > input[type='submit'] {
+	padding: 5px 10px;
+}
+
+.keyword-search,
+.member-search,
+.search-where,
+.refine-search {
+	background-color: var(--bg-color);
+	padding: 15px;
+}
+
+/****************************************
+   Member List Styling
+ *****************************************/
+
+#member-list > p {
+	padding: 1em 25px;
+	background: var(--bg-color-2);
+	margin: 0 auto;
+	font-style: italic;
+	text-align: center;
+}
+
+#sortMemberlist {
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-template-areas:
+		'name'
+		'sortby'
+		'filter';
+	align-items: center;
+	padding: 10px 0px 20px 20px;
+	background: var(--bg-color-2);
+	border-bottom: 5px dotted var(--prmcolor);
+	margin-bottom: 15px;
+}
+
+.name-search {
+	grid-area: name;
+	text-align: center;
+}
+
+.filter-search {
+	grid-area: filter;
+	text-transform: uppercase;
+}
+
+.filterlabel {
+	display: block;
+}
+
+.sortby-search {
+	grid-area: sortby;
+	text-align: center;
+}
+
+#memberlist-wrapper {
+	display: grid;
+	justify-items: center;
+	row-gap: 10px;
+	margin-bottom: 15px;
+}
+
+.memberlist-row {
+	width: 100%;
+}
+
+.acct-card {
+	margin: 0 15px 0;
+	padding: 15px;
+	background: var(--bg-img-2) var(--bg-color);
+	border: var(--mainBorder);
+	outline: var(--mainOutline);
+	border-radius: 10px 10px 10px 10px;
+	display: grid;
+	align-items: center;
+	align-content: center;
+	grid-template-columns: 1fr 1fr 1fr 1fr;
+	gap: 5px 0px;
+}
+
+.acct-grid-item:nth-child(1) {
+	grid-area: 2 / 1 / 3 / 3;
+}
+
+.acct-grid-item:nth-child(2) {
+	grid-area: 1 / 1 / 1 / 5;
+}
+
+.acct-grid-item:nth-child(5) {
+	grid-area: 3 / 1 / 3 / 3;
+}
+
+.acct-grid-item:nth-child(6) {
+	grid-area: 3 / 3 / 3 / 5;
+	margin-left: 10px;
+}
+
+.acct-grid-item:nth-child(7) {
+	grid-area: 4 / 1 / 4 / 3;
+}
+
+.acct-grid-item:nth-child(8) {
+	grid-area: 4 / 3 / 4 / 5;
+	margin-left: 10px;
+}
+
+.acct-grid-item:nth-child(9) {
+	grid-area: 5 / 1 / 5 / 5;
+}
+
+.acct-grid-item:nth-child(10) {
+	grid-area: 6 / 1 / 6 / 5;
+}
+
+.acct-grid-item:nth-child(11) {
+	grid-area: 7 / 1 / 7 / 5;
+}
+
+.acct-avatar > img {
+	width: 100px;
+	height: 100px;
+	object-fit: cover;
+	border-radius: var(--roundedCornerRadius);
+}
+
+.acct-name {
+	word-break: break-word;
+	text-align: center;
+	font-size: 20px;
+}
+
+#Members #filters .filters [type='radio'] + label {
+	border-radius: var(--defaultBorderRadius);
+	color: var(--linkcolor);
+	font-size: 14px;
+	font-weight: bold;
+	margin: 3px;
+	padding: 1px 6px;
+	text-decoration: none;
+	border: var(--scd1pxBorder);
+	outline: 2px solid var(--prmcolor);
+	background: var(--bg-color-2);
+	min-width: unset;
+	max-width: unset;
+}
+
+#Members #filters .filters [type='radio']:checked + label {
+	color: black;
+	background-color: var(--scdcolor);
+	text-shadow: none;
+}
+
+#Members #namesearch input {
+	background: var(--bg-color);
+	border: var(--scd1pxBorder);
+	color: var(--mainBodyColor);
+}
+
+/****************************************
+   Mod CP Styling
+ *****************************************/
+
+#modcp .tableborder {
+	background-color: var(--bg-color);
+}
+
+/****************************************
+   Logo Strip & Welcome Box
+ *****************************************/
+
+#logostrip {
+	display: none;
+}
+
+#logo {
+	min-height: 60px;
+	width: 100%;
+	text-align: center;
+	margin: 10px auto 10px;
+	background-image: var(--mainlogo);
+}
+
+#logo img {
+	width: 100%;
+	object-fit: cover;
+	margin-bottom: 15px;
+}
+
+#welcome-box {
+	text-align: left;
+	color: var(--mainBodyColor);
+	background: var(--bg-color);
+}
+
+#welcome-box-grid {
+	display: grid;
+	grid-template-areas:
+		'info'
+		'buttons'
+		'cbox';
+	padding: 10px;
+}
+
+.subHeading {
+	text-align: center;
+	text-transform: uppercase;
+	color: var(--subHeadingColor);
+	font: var(--subHeaderFontSize) var(--subHeaderFontFamily);
+	text-shadow: var(--subHeadingTextShadow);
+	letter-spacing: 1px;
+	margin-bottom: 5px;
+}
+
+.info-box {
+	grid-area: info;
+}
+
+.info-box .subHeading {
+	color: var(--mainBodyColor);
+}
+
+.button-links {
+	grid-area: buttons;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-evenly;
+	gap: 5px;
+	margin: 10px auto;
+}
+
+.button-links > a {
+	font-size: var(--aTagFontSize);
+}
+
+.cbox {
+	grid-area: cbox;
+}
+
+/**************************************************
+  Category Styling
+ ***************************************************/
+
+.maintitle {
+	font-size: var(--headerFontSize);
+	font-family: var(--headerFontFamily);
+	padding: 8px;
+	color: var(--maintitle-color);
+	text-shadow: var(--mainTextShadow);
+	text-transform: uppercase;
+	text-align: center;
+	outline: var(--mainOutline);
+	border: var(--maintitle-border);
+	background: var(--maintitle-bg);
+}
+
+.maintitle a {
+	color: var(--maintitle-color-a);
+	text-decoration: none;
+	font-family: var(--headerFontFamily);
+	font-size: unset;
+}
+
+.maintitle a img {
+	vertical-align: unset;
+	float: right;
+	margin-top: 5px;
+}
+
+/**************************************************
+  Forum Rows
+ ***************************************************/
+
+.forum-row forum-wrapper {
+	display: block;
+	background: var(--bg-forum-row);
+	margin: 15px 0;
+	border-radius: 10px 10px 10px 10px;
+	border: var(--mainBorder);
+	outline: var(--mainOutline);
+}
+
+.forum-row grid {
+	display: grid;
+	padding: 1em;
+	grid-template-columns: 1fr 0.2fr;
+	grid-template-areas:
+		'name new-post'
+		'stats new-post'
+		'desc desc'
+		'lastpost lastpost'
+		'lastposter lastposter'
+		'post-time post-time';
+}
+
+.forum-row name {
+	grid-area: name;
+	font-family: var(--subHeaderFontFamily);
+	font-size: 20px;
+	text-transform: uppercase;
+}
+
+.forum-row name > a {
+	font-size: unset;
+}
+
+.forum-row stats {
+	grid-area: stats;
+	font-size: 12px;
+}
+
+.forum-row desc {
+	grid-area: desc;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	width: 100%;
+	text-align: center;
+}
+
+.forum-row new-post {
+	grid-area: new-post;
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+}
+
+.forum-row new-post i {
+	width: 30px;
+	height: 30px;
+}
+
+.forum-row lastpost {
+	grid-area: lastpost;
+	text-align: right;
+}
+
+.forum-row lastpost > a,
+.forum-row lastposter > a {
+	font-size: unset;
+}
+
+.forum-row lastposter {
+	grid-area: lastposter;
+	grid-row: 5;
+	margin-bottom: 5px;
+	text-align: right;
+}
+
+.forum-row post-time {
+	grid-area: post-time;
+	text-align: right;
+}
+
+.forum-row subforums {
+	display: block;
+	padding: 10px 5px;
+	border-top: var(--forum-row-borderTop);
+}
+
+subforums:empty {
+	display: none;
+}
+
+span.subforums {
+	display: flex;
+	gap: 5px;
+	align-items: center;
+}
+
+/****************************************
+    Macro Icons Styling
+ *****************************************/
+
+span.no-new-post-macro {
+	color: var(--mainBodyColor);
+	font-size: 30px;
+}
+
+span.new-post-macro,
+span.moved-macro {
+	font-size: 30px;
+	color: var(--scdcolor);
+}
+
+span.pinned-macro,
+span.locked-macro {
+	font-size: 30px;
+	color: var(--prmcolor);
+}
+
+span.forum-topics-macro {
+	display: flex;
+	width: 100%;
+	margin-top: 10px;
+	border-bottom: 2px dotted var(--prmcolor);
+}
+
+/* Topic Macros */
+
+.wrapmini {
+	float: left;
+	font-size: 10px;
+	margin-bottom: 10px;
+}
+
+.wrapmini span {
+	font-size: 20px;
+}
+
+/* Topic Icon Styling */
+
+input[type='radio'] input[name='tic'] {
+	margin: 10px;
+}
+
+span.post-icon {
+	border-radius: var(--defaultBorderRadius);
+	color: var(--linkcolor);
+	font-size: 10px;
+	font-weight: bold;
+	margin: 3px;
+	padding: 1px 6px;
+	text-decoration: none;
+	border: var(--scd1pxBorder);
+	outline: var(--postIconOutline);
+	background: var(--bg-color-2);
+}
+
+/**************************************************
+  Topic List Headers
+ ***************************************************/
+
+.announcements {
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+/**************************************************
+  Topics Rows
+ ***************************************************/
+
+.topic-row topic-wrapper {
+	display: block;
+	background: var(--bg-forum-row);
+	margin: 15px 0;
+	border-radius: 10px 10px 10px 10px;
+	border: var(--mainBorder);
+	outline: var(--mainOutline);
+}
+
+.topic-row grid {
+	display: grid;
+	padding: 1em;
+	grid-template-areas:
+		'posticon posticon macro-icons'
+		'name name name'
+		'stats stats stats'
+		'desc desc desc'
+		'starter starter starter'
+		'start-post start-post start-post'
+		'last-poster last-poster last-poster'
+		'last-post last-post last-post';
+}
+
+.topic-row .posticon {
+	grid-area: posticon;
+	display: inline-flex;
+	justify-content: flex-start;
+	flex-basis: 90%;
+}
+
+.topic-row .icons-flex {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.topic-row .macro-icons {
+	grid-area: macro-icons;
+	display: flex;
+	justify-content: flex-end;
+}
+
+.topic-row .new-reply span {
+	font-size: 16px;
+}
+
+.topic-row .name {
+	grid-area: name;
+	font-size: 20px;
+}
+
+.topic-row .name > a {
+	font-size: unset;
+}
+
+.topic-row .topic-desc {
+	grid-area: desc;
+	text-align: center;
+	padding: 15px 0;
+	border-bottom: var(--scd2pxDottedBorder);
+}
+
+.topic-row .stats {
+	grid-area: stats;
+	font-size: 12px;
+}
+
+.topic-row .starter {
+	grid-area: starter;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+}
+
+.topic-row .starter > a {
+	font-size: unset;
+}
+
+.topic-row .start-post {
+	grid-area: start-post;
+	text-align: left;
+}
+
+.topic-row .last-poster {
+	grid-area: last-poster;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-end;
+}
+
+.topic-row .last-poster > a {
+	font-size: unset;
+}
+
+.topic-row .last-post {
+	grid-area: last-post;
+	text-align: right;
+}
+
+/****************************************
+    Board Stats
+ *****************************************/
+
+#boardstats {
+	width: 100%;
+	background-color: var(--bg-color);
+	border: var(--scd1pxBorder);
+}
+
+#boardstats stats-grid {
+	padding: 1em;
+	display: grid;
+	row-gap: 10px;
+	grid-template-areas:
+		'online-now'
+		'stats-links'
+		'birthdays'
+		'stats-area'
+		'online-today';
+}
+
+.online-now {
+	grid-area: online-now;
+}
+
+.sub-heading {
+	font: 20px var(--subHeaderFontFamily);
+	color: var(--mainBodyColor);
+	text-transform: uppercase;
+}
+
+.online-now-numbers,
+.online-now-links {
+	font-size: 12px;
+}
+
+.online-now-numbers span {
+	color: var(--scdcolor);
+}
+
+.online-now-links a {
+	margin-right: 9px;
+}
+
+.online-now-users {
+	margin-top: 10px;
+	min-height: 75px;
+	font-size: 16px;
+	text-align: center;
+}
+
+.stats-links {
+	grid-area: stats-links;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-evenly;
+}
+
+.stats-links {
+	font-size: var(--aTagFontSize);
+}
+
+#boardstats .stats-links .button-box {
+	margin: 6px 3px;
+}
+
+.birthdays {
+	grid-area: birthdays;
+	text-align: center;
+}
+
+.birthdays-wrapper {
+  margin-top: 5px;
+	padding: 10px 0;
+	border-top: var(--scd2pxDottedBorder);
+	border-bottom: var(--scd2pxDottedBorder);
+}
+
+.stats-area {
+	grid-area: stats-area;
+}
+
+.stats-area span {
+	color: var(--scdcolor);
+	font: bold 16px var(--subHeaderFontFamily);
+}
+
+.site-totals {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	row-gap: 5px;
+	margin-top: 10px;
+	text-transform: capitalize;
+}
+
+.site-date,
+.site-member,
+.site-most-users-ever,
+.site-most-users-day {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding-bottom: 10px;
+	width: 100%;
+	border-bottom: 2px dotted var(--prmcolor);
+}
+
+.site-member a {
+	font-size: 18px;
+	word-break: break-word;
+}
+
+.site-total-values {
+	display: flex;
+	border-bottom: 2px dotted var(--prmcolor);
+	width: 100%;
+	justify-content: space-evenly;
+	padding-bottom: 10px;
+}
+
+.site-total-values .total-posts {
+	display: inline-flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.site-total-values .total-members {
+	display: inline-flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.site-most-users-day {
+	border-bottom: none;
+}
+
+.online-today {
+	grid-area: online-today;
+}
+
+.online-today .sub-heading {
+	margin-bottom: 5px;
+}
+
+.online-today .sub-heading span {
+	color: var(--scdcolor);
+	font-size: 16px;
+	font-family: var(--subHeaderFontFamily);
+}
+
+/****************************************
+    Mod Team Styling
+ *****************************************/
+
+#moderating-team > .tableborder > table > tbody > tr:first-child {
+	display: none;
+}
+
+#moderating-team > .tableborder > table > tbody > tr > td:nth-child(3),
+#moderating-team > .tableborder > table > tbody > tr > td:nth-child(4),
+#moderating-team > .tableborder > table > tbody > tr > td:last-child {
+	display: none;
+}
+
+#moderating-team > .tableborder > table > tbody > tr > td:nth-child(5):after {
+	content: ' posts';
+}
+
+/****************************************
+    Affiliates Table
+ *****************************************/
+
+#affiliates-index {
+	margin: 10px 0;
+	background: var(--bg-color);
+	border: var(--scd1pxBorder);
+}
+
+#affiliates-index .maintitle {
+	letter-spacing: 3px;
+}
+
+.affiliates-table {
+	display: flex;
+	flex-wrap: wrap;
+	align-content: center;
+	justify-content: center;
+	align-items: center;
+	gap: 10px;
+	margin: 25px 0;
+	padding: 0 10px;
+}
+
+.affiliates-table img {
+	width: 88px;
+	height: 31px;
+}
+
+/****************************************
+    Post View Styling
+ *****************************************/
+
+#ST .maintitle .topic-title-space {
+	display: none;
+}
+
+#ST .maintitle .topic-title {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+#ST .maintitle .topic-title > .hold-tags {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	font-family: var(--subHeaderFontFamily);
+	text-shadow: none;
+	letter-spacing: 0;
+}
+
+#ST .maintitle > .topic-desc {
+	font: var(--subHeaderFontSize) var(--subHeaderFontFamily);
+	letter-spacing: 1px;
+}
+
+#ST .tableborder {
+	border: none;
+}
+
+#ST .post-normal {
+	margin-bottom: 20px;
+}
+
+#ST .post-wrapper {
+	background: var(--bg-color);
+}
+
+.image-container img {
+	width: 200px;
+	max-width: calc(100px + (200 - 100) * (100vw - 320px) / (1020 - 320));
+	height: 200px;
+	max-height: calc(100px + (200 - 100) * (100vw - 320px) / (1020 - 320));
+	object-fit: cover;
+	border-radius: var(--roundedCornerRadius);
+}
+
+#ST .miniprofile {
+	background: var(--bg-img-2) var(--bg-color);
+	padding: 10px 0;
+	border: var(--mainBorder);
+	outline: var(--mainOutline);
+	border-radius: 10px 10px 10px 10px;
+}
+
+#ST .g-2.guest-miniprofile-wrapper {
+	display: grid;
+	grid-template-columns: 0.4fr 1fr;
+	align-items: center;
+	justify-items: left;
+}
+
+#ST .g-2 .guest-avatar {
+	justify-self: end;
+	margin-left: 15px;
+}
+
+#ST .g-2 .guest-avatar > img {
+	width: 200px;
+	max-width: calc(100px + (200 - 100) * (100vw - 320px) / (1020 - 320));
+	height: 200px;
+	max-height: calc(100px + (200 - 100) * (100vw - 320px) / (1020 - 320));
+	object-fit: cover;
+	border-radius: var(--roundedCornerRadius);
+}
+
+#ST .g-2 .guest-name {
+	font-size: var(--headerFontSize);
+	word-break: break-word;
+	margin-left: 25px;
+}
+
+#ST .g-2 .guest-name > span {
+	display: block;
+	font-size: var(--defaultFontSize);
+	font-family: var(--defaultFontFamily);
+	font-style: italic;
+}
+
+#ST .g-4.guest-miniprofile-wrapper,
+#ST .g-3.guest-miniprofile-wrapper,
+#ST .g-6.guest-miniprofile-wrapper {
+	display: none;
+}
+
+#ST .g-4.miniprofile-wrapper,
+#ST .g-3.miniprofile-wrapper,
+#ST .g-6.miniprofile-wrapper {
+	display: grid;
+	grid-template-columns: 0.8fr 1fr;
+	grid-template-areas:
+		'avatar name'
+		'info info';
+	justify-items: center;
+	align-items: center;
+	justify-content: center;
+}
+
+#ST .g-2.miniprofile-wrapper {
+	display: none;
+}
+
+#ST .avatar-container {
+	grid-area: avatar;
+	text-align: center;
+}
+
+#ST .poster-name {
+	grid-area: name;
+	justify-self: start;
+	font-size: var(--headerFontSize);
+	word-break: break-word;
+}
+
+#ST .poster-info {
+	grid-area: info;
+	display: inline-grid;
+	justify-items: center;
+	font-size: 12px;
+	text-transform: capitalize;
+}
+
+#ST .line-title {
+	font-style: italic;
+	word-break: break-all;
+	padding: 0 15px;
+}
+
+#ST .postdetails {
+	background-color: var(--bg-color-2);
+	text-align: center;
+	padding: 10px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.postdetails img {
+	width: 200px;
+	height: 200px;
+	object-fit: cover;
+	max-width: calc(100px + (200 - 100) * (100vw - 320px) / (1020 - 320));
+	max-height: calc(100px + (200 - 100) * (100vw - 320px) / (1020 - 320));
+}
+
+.post-buttons span.details > a > i {
+	font-size: 20px;
+	margin: 0 10px;
+}
+
+.postcontent {
+	padding: 20px;
+}
+
+.bottom-bar {
+	background: var(--bg-color-2);
+	padding: 3px 15px;
+	display: flex;
+	justify-content: space-between;
+}
+
+.activeuserstrip {
+	background-color: var(--bg-color-2);
+	padding: 6px;
+}
+
+.normalname {
+	font-size: 14px;
+	font-weight: bold;
+	color: #003;
+}
+
+.normalname a {
+	font-size: 14px;
+}
+
+.unreg {
+	font-size: 11px;
+	font-weight: bold;
+	color: #900;
+}
+
+.post1 {
+	background-color: var(--bg-color);
+}
+
+.post2 {
+	background-color: var(--bg-color);
+}
+
+.postcolor {
+	font-size: 14px;
+	line-height: 160%;
+}
+
+.postcolor img {
+	max-width: 400px;
+    max-height: 400px;
+    object-fit: scale-down;
+    width: 100%;
+    height: auto;
+}
+
+img[src*="Emojis"], img[src*="emoticons"] {
+    max-width: 20px;
+    max-height: 20px;
+}
+
+.postlinksbar {
+	background-color: var(--bg-color-2);
+	padding: 5px;
+	text-align: center;
+	font-size: 10px;
+}
+
+.signature {
+	font-size: 10px;
+	color: var(--mainBodyColor);
+	line-height: 150%;
+}
+
+#report td.row1 a > .hold-tags {
+	display: flex;
+	flex-wrap: wrap;
+	align-content: center;
+	justify-content: flex-start;
+	align-items: center;
+}
+
+.spoiler {
+	margin: 0 20px;
+}
+
+.spoiler-title {
+	font-weight: bold;
+	text-transform: uppercase;
+	margin: 2px;
+	letter-spacing: 2px;
+}
+
+.spoiler-content {
+	padding: 2px 10px;
+	border: var(--scd1pxBorder);
+}
+
+/****************************************
+    Posting/Editing/Previewing View Styling
+ *****************************************/
+
+#post-icon-options {
+	display: none;
+}
+
+#Post #innerwrapper > .tableborder > .row1 {
+	background: var(--bg-color);
+}
+
+#Post table#posting-form > tbody > tr > td.maintitle > .hold-tags {
+	display: flex;
+	flex-wrap: wrap;
+	align-content: center;
+	justify-content: center;
+	align-items: center;
+	text-shadow: none;
+}
+
+#topic-summary td.post2 {
+	word-break: break-word;
+}
+
+#bbcode-buttons .codebuttons {
+	margin: 5px;
+}
+
+#label-holder {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 5px;
+}
+
+/* BBCode Styles for Posts */
+
+.heading-one {
+	font-family: var(--headerFontFamily);
+	margin-top: 10px;
+    padding: 15px 8px;
+    color: var(--maintitle-color);
+    text-shadow: var(--mainTextShadow);
+    text-transform: uppercase;
+    outline: var(--mainOutline);
+    border: var(--maintitle-border);
+    background: var(--maintitle-bg);
+    font-size: var(--headerFontSize);
+}
+
+.heading-two {
+    text-transform: uppercase;
+    color: var(--prmcolor);
+    font: var(--subHeaderFontSize) var(--subHeaderFontFamily);
+    text-shadow: var(--subHeadingTextShadow);
+    letter-spacing: 1px;
+	margin-top: 10px;
+}
+
+hr {
+	border: none;
+    height: 50px;
+    border-bottom: var(--scd1pxBorder);
+    box-shadow: var(--hrShadow);
+    margin: -30px auto 10px;
+}
+
+.divider-wrap {
+	display: flex;
+}
+
+.divider-wrap > span {
+	max-width: 40px;
+	max-height: 40px;
+}
+
+.divider-wrap > span > img {
+	max-width: 40px;
+    max-height: 40px;
+    vertical-align: baseline;
+}
+
+.divider-left {
+	margin: auto;
+    text-align: center;
+    border-top: 10px double var(--scdcolor);
+    width: 50%;
+    margin-right: 10px;
+}
+
+.divider-right {
+	margin: auto;
+    text-align: center;
+    border-top: 10px double var(--scdcolor);
+    width: 50%;
+    margin-left: 10px;
+}
+
+/*******************************
+  Pagination e.g. [1],2,3 ...
+ *******************************/
+
+span.pagination {
+	display: flex;
+	align-items: flex-end;
+}
+
+.pagination .pagination_current,
+.pagination a {
+	padding: 2px 5px;
+}
+
+.pagination a:link,
+.pagination a:visited,
+.pagination a:active {
+	border: 1px solid var(--prmcolor);
+	border-radius: 3px;
+	background-color: var(--bg-color);
+	padding-left: 6px;
+	padding-right: 6px;
+	color: var(--mainBodyColor);
+	text-decoration: none;
+}
+
+.pagination a:hover {
+	background: var(--bg-color-2);
+	text-decoration: none;
+	color: var(--prmcolor);
+	box-shadow: 0pt 2px 3px rgba(0, 0, 0, 0.4);
+}
+
+.pagination .pagination_current {
+	background: var(--bg-color-2);
+	border: var(--mainBorder);
+	border-radius: 3px;
+	padding-left: 6px;
+	padding-right: 6px;
+	color: var(--scdcolor);
+}
+
+.pagination_first,
+.pagination_last,
+.pagination_page {
+	background: none repeat scroll 0% 0% var(--bg-color);
+	border: 1px solid var(--prmcolor);
+}
+
+.pagination_pagetxt {
+	display: none;
+}
+
+span.goto-firstunread {
+	display: flex;
+	width: 100%;
+	margin-top: 10px;
+}
+
+/****************************************
+   Default Jcink Styles
+ *****************************************/
+
+#searchbar {
+	display: none;
+}
+
+#submenu {
+	display: none;
+}
+
+#navi br {
+	display: none;
+}
+
+#navstrip {
+	font-weight: bold;
+	padding: 6px 0px 16px 0px;
+}
+
+.caldate {
+	text-align: right;
+	font-weight: bold;
+	font-size: 11px;
+	color: #555;
+	background-color: #f2f2f2;
+	padding: 4px;
+	margin: 0px;
+}
+
+#calendarname {
+	font-size: 22px;
+	font-weight: bold;
+}
+
+#padandcenter {
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+	padding: 14px 0px 14px 0px;
+}
+
+#userlinks {
+	display: none;
+}
+
+.row1,
+.row3,
+.row4,
+.row2 {
+	padding: 5px;
+}
+
+.row2[style='padding:6px'] {
+	background-color: var(--bg-color);
+}
+
+#boardstats .row2 {
+	text-align: center;
+}
+
+.darkrow1 {
+	background-color: var(--bg-color-2);
+	color: var(--mainBodyColor);
+}
+
+.darkrow2 {
+	background-color: var(--bg-color-2);
+	color: var(--mainBodyColor);
+}
+
+.darkrow2 .forminput {
+	font-size: 10px;
+}
+
+td.darkrow2 {
+	display: none;
+}
+
+.darkrow3 {
+	background-color: var(--bg-color-2);
+	color: var(--mainBodyColor);
+	padding: 3px;
+}
+
+.hlight {
+	background-color: var(--bg-color);
+}
+
+.dlight {
+	background-color: var(--bg-color);
+	word-break: break-word;
+}
+
+.titlemedium {
+	font-weight: bold;
+	color: var(--mainBodyColor);
+	padding: 2px 6px;
+	margin: 0px;
+	background-color: var(--bg-color-2);
+}
+
+.titlemedium a:link,
+.titlemedium a:visited,
+.titlemedium a:active {
+	color: var(--prmcolor);
+}
+
+.tableborder {
+	border: 1px solid var(--prmcolor);
+	padding: 0px;
+	margin: 0;
+}
+
+.tablefill {
+	background-color: var(--bg-color);
+	border: 1px solid var(--prmcolor);
+	padding: 6px;
+}
+
+.tablepad {
+	background-color: var(--bg-color);
+	padding: 6px;
+}
+
+.tablepad img {
+	max-width: 200px;
+	max-height: 200px;
+	object-fit: cover;
+}
+
+.tablebasic {
+	width: 100%;
+	padding: 0;
+	margin: 0px;
+	border: 0px;
+}
+
+.plainborder {
+	border: 1px solid #555;
+	background-color: var(--bg-color);
+}
+
+/* image tag styles */
+img {
+	vertical-align: middle;
+	border: 0px;
+}
+img.attach {
+	border: 2px outset #555;
+	padding: 2px;
+}
+
+/* Forum Descriptions */
+.desc {
+	font-size: 11px;
+	color: var(--mainBodyColor);
+}
+
+/* Edited by text */
+.edit {
+	font-size: 9px;
+}
+
+/* Warning CSS */
+.warngood {
+	color: green;
+}
+.warnbad {
+	color: red;
+}
+
+/* Skin selector dropdown */
+#skin_selector {
+	margin: 10px 0;
+}
+
+/* Online users list row */
+.thin {
+	padding: 6px 0px 6px 0px;
+	line-height: 140%;
+	margin: 2px 0px 2px 0px;
+	border-top: 1px solid #545454;
+	border-bottom: 1px solid #545454;
+}
+
+#Online.code-listall td a > .hold-tags {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+/* Latest news area */
+.newstext {
+	background-color: var(--bg-color);
+	border: 1px solid #555;
+	padding: 6px 6px 2px 6px;
+	margin-bottom: 10px;
+}
+
+/* Highlighted text in search */
+.searchlite {
+	color: #f00;
+	font-weight: bold;
+	background-color: #ff0;
+}
+
+/****************************************
+   QUOTE and CODE BBCode boxes
+ *****************************************/
+
+#QUOTE {
+	white-space: normal;
+	font-family: Arial, sans-serif;
+	font-size: 11px;
+	color: var(--mainBodyColor);
+	background-color: var(--bg-color);
+	border: 0px;
+	padding: 2px 10px;
+	border: var(--scd1pxBorder);
+	margin-top: 2px;
+}
+
+/****************************************
+CODE AREA CSS
+*****************************************/
+
+#CODE {
+	white-space: pre-line;
+	word-break: break-word;
+	font-family: monospace;
+	font-size: 11px;
+	color: var(--mainBodyColor);
+	background-color: var(--bg-color);
+	padding: 10px;
+	border: var(--scd1pxBorder);
+	margin-top: 2px;
+}
+
+.code-scroll {
+	max-height: 250px;
+	overflow: auto;
+	padding-right: 5px;
+}
+
+.code-top {
+	margin: 0;
+	padding: 0;
+}
+
+.code-highlight {
+	color: var(--mainBodyColor);
+	padding: 0px 3px 2px;
+	margin: 0px;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	cursor: crosshair;
+}
+
+.code-top .code-title {
+	text-transform: uppercase;
+	font-weight: bold;
+	margin-left: 3px;
+}
+
+.code-toggle {
+	cursor: crosshair;
+}
+
+.code-scroll.auto-code {
+	height: auto;
+	max-height: none;
+}
+
+#CODE-WRAP.nicole-code {
+	border-collapse: collapse;
+}
+
+/**********************************************
+   Input buttons, e.g. submit, text input, etc
+ ***********************************************/
+
+.button-box {
+	position: relative;
+	margin: 6px;
+	outline: var(--buttonbox-outline);
+	background: var(--buttonbox-bg);
+	width: 130px;
+	height: 30px;
+}
+
+.button-box .text {
+	text-align: center;
+	padding-top: 5px;
+	font-family: var(--subHeaderFontFamily);
+	text-transform: uppercase;
+	color: var(--buttonbox-color);
+	text-shadow: var(--buttonbox-textshadow);
+}
+
+.button-box .text i {
+	margin-right: 5px;
+}
+
+svg {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	outline: solid 2px var(--scdcolor);
+}
+
+circle {
+	fill: var(--scdcolor);
+}
+
+.stats-info-button {
+	position: relative;
+	margin: 5px;
+	outline: solid 4px var(--scdcolor);
+	background: var(--bg-color-2);
+	width: 110px;
+	height: 55px;
+}
+
+.stats-info-button .text {
+	text-align: center;
+	padding-top: 5px;
+	font-family: var(--subHeaderFontFamily);
+	text-transform: uppercase;
+	display: flex;
+	flex-direction: column;
+}
+
+.button-large {
+	display: inline-block;
+	border-radius: 3px;
+	padding: 5px 12px;
+	text-align: center;
+	min-width: 75px;
+	color: var(--linkcolor);
+	font-size: 14px;
+	font-weight: bold;
+	margin: 3px;
+	text-decoration: none;
+	border: var(--scd1pxBorder);
+	outline: var(--postIconOutline);
+	background: var(--bg-color-2);
+}
+
+.button-small {
+	margin: 3px;
+	padding: 4px 7px;
+	border-radius: var(--defaultBorderRadius);
+	color: var(--linkcolor);
+	font-size: 12px;
+	font-weight: bold;
+	text-decoration: none;
+	border: var(--scd1pxBorder);
+	outline: var(--postIconOutline);
+	background: var(--bg-color-2);
+}
+
+.post-buttons-top {
+	margin-top: 3px;
+	font-size: 18px;
+}
+
+.button-large.closed {
+	background: var(--bg-color);
+	padding: 7px 12px;
+	text-align: center;
+	margin: 0px 5px 0px 5px;
+	border: 1px solid #d8d8d8;
+	color: #660000;
+	font-weight: bold;
+}
+
+.forminput,
+.codebuttons,
+.textinput,
+.radiobutton,
+.checkbox {
+	border-radius: 2px;
+	background: var(--bg-color);
+	border: var(--scd1pxBorder);
+	color: var(--mainBodyColor);
+	font-family: 'Noto Sans', sans-serif;
+	font-size: 14px;
+	padding: 2px;
+	vertical-align: middle;
+}
+
+input[type='submit'],
+input[type='button'],
+input[type='reset'] {
+	border-radius: var(--defaultBorderRadius);
+	color: var(--linkcolor);
+	font-size: 12px;
+	font-weight: bold;
+	text-decoration: none;
+	border: var(--scd1pxBorder);
+	outline: var(--postIconOutline);
+	background: var(--bg-color-2);
+}
+
+.codebuttons {
+	font-size: 10px;
+	background-color: var(--bg-color-2);
+	margin: 0 3px;
+}
+
+/****************************************
+   Form table cell styles, left/right/top
+ *****************************************/
+
+.pformstrip {
+	background-color: var(--bg-color-2);
+	color: var(--mainBodyColor);
+	font-weight: bold;
+	padding: 4px 5px;
+	margin-top: 1px;
+	text-align: center;
+	font-family: var(--subHeaderFontFamily);
+	font-size: 16px;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+}
+
+.pformleft {
+	background-color: var(--bg-color);
+	padding: 6px;
+	margin-top: 1px;
+	width: 25%;
+	border-top: var(--scd1pxBorder);
+	border-right: var(--scd1pxBorder);
+}
+
+.pformleftw {
+	background-color: var(--bg-color);
+	padding: 6px;
+	margin-top: 1px;
+	width: 40%;
+	border-top: 1px solid var(--prmcolor);
+	border-right: 1px solid var(--prmcolor);
+}
+
+.pformright {
+	background-color: var(--bg-color);
+	padding: 6px;
+	margin-top: 1px;
+	border-top: var(--scd1pxBorder);
+}
+
+/****************************************
+    Delete all cookies / mark read
+ *****************************************/
+
+#delcookiesrow,
+#mark-as-read-subto {
+	background: var(--bg-color);
+	border: var(--scd1pxBorder);
+	font-size: 10px;
+	padding: 5px;
+}
+
+#mark-as-read-subto {
+	float: none;
+	padding-top: 3px;
+}
+
+/****************************************
+    Main Profile Styling
+ *****************************************/
+
+#main-profile-grid-wrapper {
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-template-areas:
+		'mp-header'
+		'mp-links'
+		'mp-awards'
+		'mp-about'
+		'mp-play'
+		'mp-genre'
+		'mp-location'
+		'mp-onlinestats';
+}
+
+.header-area {
+	grid-area: mp-header;
+	background: var(--bg-img-2) var(--bg-color);
+	padding: 10px 0;
+	border: var(--mainBorder);
+	outline: var(--mainOutline);
+	border-radius: 10px 10px 10px 10px;
+	display: grid;
+	grid-template-columns: 0.8fr 1fr;
+	grid-template-areas:
+		'mph-avatar mph-username'
+		'mph-title mph-title'
+		'mph-details mph-details'
+		'mph-quote mph-quote';
+	justify-items: center;
+	align-items: center;
+	justify-content: center;
+}
+
+.box-avatar {
+	grid-area: mph-avatar;
+}
+
+.box-avatar > img {
+	width: 200px;
+	border-radius: var(--roundedCornerRadius);
+	height: 200px;
+	max-height: calc(100px + (200 - 100) * (100vw - 320px) / (1020 - 320));
+	max-width: calc(100px + (200 - 100) * (100vw - 320px) / (1020 - 320));
+	object-fit: cover;
+}
+
+.box-username {
+	grid-area: mph-username;
+	font-family: var(--subHeaderFontFamily);
+	font-size: var(--headerFontSize);
+	color: var(--scdcolor);
+	word-break: break-word;
+	justify-self: flex-start;
+}
+
+.box-title {
+	grid-area: mph-title;
+	font-style: italic;
+	word-break: break-all;
+	padding: 0 15px;
+}
+
+.box-user-details {
+	grid-area: mph-details;
+}
+
+.box-quote {
+	grid-area: mph-quote;
+	display: block;
+	position: relative;
+	text-align: justify;
+	padding: 15px 25px 5px 25px;
+	font-style: italic;
+	word-break: break-all;
+}
+
+.box-quote:before {
+	content: '“';
+	font-size: 65px;
+	font-style: normal;
+	font-family: Georgia, serif;
+	color: var(--scdcolor);
+	position: absolute;
+	top: 4px;
+	left: 0px;
+	opacity: 0.6;
+}
+
+.links-area {
+	grid-area: mp-links;
+	max-height: 175px;
+	background: var(--bg-color);
+	margin-top: 2px;
+	padding: 10px;
+	text-align: center;
+}
+
+.links-area > .button-area {
+	display: flex;
+	justify-content: space-evenly;
+	gap: 6px;
+}
+
+.links-area > .button-area > a {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	color: var(--mainProfileLinkColor);
+}
+
+.links-area > .button-area > a > i {
+	font-size: 20px;
+}
+
+.links-area > .text-field-area {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	justify-items: center;
+	align-items: center;
+	align-content: center;
+	justify-content: center;
+	margin-top: 10px;
+	gap: 5px;
+}
+
+.links-area > .text-field-area > .field-item {
+	display: flex;
+	flex-direction: column;
+	color: var(--prmcolor);
+	font-size: 16px;
+}
+
+.links-area > .text-field-area > .field-item:nth-child(1) {
+	word-wrap: break-word;
+}
+
+.links-area > .text-field-area > .field-item > span {
+	font-family: var(--subHeaderFontFamily);
+	color: var(--mainBodyColor);
+	text-transform: uppercase;
+	font-size: var(--defaultFontSize);
+}
+
+.links-area > .writing-samples-area {
+	letter-spacing: 1px;
+	margin-top: 5px;
+	font-size: 16px;
+}
+
+.awards-area {
+	grid-area: mp-awards;
+	height: 165px;
+	background: var(--bg-color);
+	margin-top: 2px;
+	padding: 10px;
+	text-align: center;
+	text-transform: uppercase;
+}
+
+.awards-box {
+	border: 1px dotted var(--prmcolor);
+	display: block;
+	height: 130px;
+	margin: 5px auto;
+	overflow: auto;
+	width: 80%;
+}
+
+.awards-box img {
+	width: 25px;
+	margin: 4px;
+}
+
+.about-area {
+	grid-area: mp-about;
+}
+
+.about-area,
+.chars-area,
+.genre-area,
+.location-area {
+	background-color: var(--bg-color);
+	margin: 10px 0 0;
+}
+
+.chars-area {
+	grid-area: mp-play;
+}
+
+.genre-area {
+	grid-area: mp-genre;
+}
+
+.location-area {
+	grid-area: mp-location;
+}
+
+.chars-area > .maintitle,
+.genre-area > .maintitle,
+.location-area > .maintitle {
+	font-size: 20px;
+}
+
+#main-profile-grid-wrapper .text-container {
+	border-top: var(--mainProfileBorder);
+	padding: 5px 40px;
+	border-bottom: var(--mainProfileBorder);
+	height: 150px;
+	overflow: auto;
+}
+
+.onlinestats-area {
+	grid-area: mp-onlinestats;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-between;
+	background: var(--bg-color);
+	padding: 10px;
+	margin-top: 10px;
+}
+
+/****************************************
+  Media Query Styles
+ *****************************************/
+@media only screen and (max-width: 351px) {
+	#navbar {
+		grid-template-columns: max-content;
+	}
+
+	#navbar .mobile-menu {
+		width: 100%;
+	}
+
+	#mobile-userlinks {
+		grid-template-columns: 1.2fr 1fr;
+	}
+
+	#mobile-userlinks.display-menu {
+		max-width: 325px;
+		padding: 10px 0px 15px;
+	}
+
+	#mobile-userlinks.dropdown-menu {
+		left: calc(100% - 99%);
+		width: 100%;
+	}
+
+	.forum-row name {
+		font-size: 18px;
+	}
+
+	.button-links a .button-box {
+		margin: 5px 3px;
+	}
+
+	.postdetails > span.details {
+		font-size: 12px;
+	}
+
+	.post-buttons span.details > a > i {
+		margin: 0 6px;
+	}
+}
+
+@media only screen and (min-width: 320px) and (max-width: 576px) {
+	.wrapmini {
+		width: 50%;
+	}
+}
+
+@media only screen and (max-width: 768px) {
+	#Msg #innerwrapper > table > tbody > tr > td {
+		display: flex;
+		flex-direction: column;
+	}
+
+	#Msg #innerwrapper > table > tbody > tr > td#ucpcontent > form[name='REPLIER'] input[type='text'],
+	#Msg #innerwrapper > table > tbody > tr > td#ucpcontent > form[name='REPLIER'] textarea[name='carbon_copy'] {
+		width: 100%;
+		max-width: calc(270px + (600 - 270) * (100vw - 320px) / (1020 - 320));
+	}
+
+	#Msg td#ucpcontent table[style='width:250px'] {
+		width: 100% !important;
+	}
+
+	#Msg #ucpmenu {
+		margin-bottom: 10px;
+	}
+
+	#Post #innerwrapper > form[name='REPLIER'] > table > tbody > tr td.pformright input[type='text'] {
+		width: 100%;
+		max-width: calc(270px + (600 - 270) * (100vw - 320px) / (1020 - 320));
+	}
+}
+
+@media only screen and (min-width: 420px) {
+	#Search.code-00 .refine-search {
+		grid-template-columns: 1fr 1fr;
+	}
+
+	#Search.code-00 .refine-search > .pformstrip {
+		grid-row: 1;
+		grid-column: 1 / 3;
+	}
+
+	.acct-card {
+		justify-items: start;
+	}
+
+	.acct-grid-item:nth-child(1) {
+		grid-area: 2 / 1 / 3 / 3;
+	}
+
+	.acct-grid-item:nth-child(3) {
+		grid-area: 2 / 3 / 2 / 4;
+		margin-left: 10px;
+	}
+
+	.acct-grid-item:nth-child(4) {
+		grid-area: 2 / 4 / 2 / 5;
+	}
+}
+
+@media only screen and (min-width: 576px) and (max-width: 768px) {
+	.acct-card {
+		grid-template-columns: 1fr 1fr 1fr 1fr;
+	}
+
+	.acct-name {
+		font-size: 30px;
+	}
+
+	.acct-grid-item:nth-child(5) {
+		grid-area: unset;
+	}
+
+	.acct-grid-item:nth-child(6) {
+		grid-area: unset;
+		justify-self: center;
+		margin-left: unset;
+	}
+
+	.acct-grid-item:nth-child(7) {
+		grid-area: unset;
+		justify-self: flex-start;
+	}
+
+	.acct-grid-item:nth-child(8) {
+		grid-area: unset;
+	}
+
+	.acct-grid-item:nth-child(9) {
+		grid-area: 5 / 1 / 5 / 5;
+	}
+
+	.acct-grid-item:nth-child(10) {
+		grid-area: 5 / 3 / 5 / 5;
+	}
+}
+
+/* Desktop Mode */
+@media only screen and (min-width: 769px) {
+	#mobilenav {
+		display: none;
+	}
+
+	#desktopnav {
+		display: block;
+		position: sticky;
+		top: 0;
+		background-color: var(--bg-color-2);
+		border-bottom: var(--nav-border);
+		z-index: 9999;
+		padding: 10px;
+	}
+
+	#desktop-navbar {
+		display: grid;
+		align-items: center;
+		grid-template-columns: 0.1fr 2fr 0.2fr;
+		grid-template-areas: 'to-top desktop-menu toggle';
+	}
+
+	#desktopnav .user-info .g-2 {
+		display: inline-flex !important;
+		gap: 10px;
+		align-items: center;
+	}
+
+	.desktop-userlinks {
+		grid-area: desktop-menu;
+		display: grid;
+		grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+		row-gap: 5px;
+		grid-template-areas:
+			'. user-info user-info user-info admin-cp mod-cp'
+			'view-profile my-controls topics messages view-new-posts alerts';
+	}
+
+	.user-info {
+		display: flex;
+		margin-top: 0;
+		width: 100%;
+		justify-content: center;
+		align-items: stretch;
+		gap: 50px;
+	}
+
+	.maintitle {
+		font-size: 30px;
+	}
+
+	#welcome-box-grid {
+		grid-template-columns: 1.3fr 1fr;
+		grid-template-areas:
+			'info cbox'
+			'buttons cbox';
+	}
+
+	.info-box .subHeading {
+		text-align: center;
+		text-transform: uppercase;
+		color: var(--mainBodyColor);
+		font: var(--subHeaderFontSize) var(--subHeaderFontFamily);
+		text-shadow: var(--subHeadingTextShadow);
+		letter-spacing: 1px;
+		margin-bottom: 25px;
+	}
+
+	#cboxdiv {
+		position: relative;
+		top: 0;
+		margin: 0 auto;
+		max-width: 400px;
+		font-size: 0;
+		line-height: 0;
+	}
+
+	#cbox-toggle {
+		display: none;
+	}
+
+	#cbox-heading {
+		display: block;
+	}
+
+	#cbox-heading > .subHeading {
+		color: var(--mainBodyColor);
+	}
+
+	.cboxcontainer {
+		position: unset;
+		overflow-x: unset;
+		overflow-y: unset;
+		max-height: 100%;
+	}
+
+	.forum-row grid {
+		grid-template-columns: 1.5fr 1fr;
+		grid-template-areas:
+			'name new-post'
+			'stats new-post'
+			'desc lastpost'
+			'desc lastposter'
+			'desc post-time';
+	}
+
+	.forum-row desc {
+		margin-bottom: 0;
+		text-align: left;
+	}
+
+	.forum-row lastposter {
+		grid-row: 4;
+		margin-bottom: 0;
+	}
+
+	.topic-row grid {
+		display: grid;
+		padding: 1em;
+		grid-template-areas:
+			'posticon posticon posticon'
+			'name name name'
+			'desc macro-icons macro-icons'
+			'stats stats stats'
+			'starter . last-poster'
+			'start-post . last-post';
+	}
+
+	.topic-row .starter {
+		display: unset;
+	}
+
+	.topic-row .last-poster {
+		display: unset;
+		text-align: right;
+	}
+
+	.topic-row .topic-desc {
+		padding: 0;
+		border-bottom: unset;
+		text-align: left;
+	}
+
+	.topic-row .stats {
+		border-bottom: var(--scd2pxDottedBorder);
+		padding-bottom: 10px;
+	}
+
+	span.post-icon {
+		font-size: 12px;
+	}
+
+	#boardstats stats-grid {
+		grid-template-columns: 0.5fr 1fr 0.6fr;
+		grid-template-rows: 1fr 1fr;
+		column-gap: 10px;
+		row-gap: 0;
+		grid-template-areas:
+			'stats-links online-now stats-area'
+			'birthdays online-today stats-area';
+	}
+
+	#mot {
+		max-height: 128px;
+		overflow: auto;
+	}
+
+	#UserCP form[name='jumpmenu'] {
+		display: flex;
+		width: 50%;
+	}
+
+	#UserCP form[name='jumpmenu'] input[type='submit'] {
+		width: 25%;
+	}
+
+	#UserCP #innerwrapper > table:first-of-type > tbody > tr {
+		flex-direction: row;
+	}
+
+	#UserCP #innerwrapper > table > tbody > tr > td:nth-child(2) {
+		display: none;
+	}
+
+	#UserCP #innerwrapper > table:first-of-type > tbody > tr > td#ucpmenu {
+		width: 30%;
+		border-right: var(--scd2pxDottedBorder);
+		margin-bottom: 0px;
+	}
+
+	#UserCP #ucpmenu .outer-grid {
+		grid-template-columns: 1fr;
+		grid-template-areas:
+			'outer-grid-item'
+			'outer-grid-item-2'
+			'outer-grid-item-3'
+			'outer-grid-item-4';
+	}
+
+	#UserCP #ucpmenu .inner-grid {
+		grid-template-columns: 1fr;
+	}
+
+	.inner-grid .inner-grid-item:nth-child(5) {
+		grid-column: 1;
+		grid-row: 4;
+	}
+
+	.outer-grid-item-3 a {
+		margin-left: 5px;
+	}
+
+	#UserCP #ucpcontent > form[name='theForm'] > table > tbody > tr {
+		flex-direction: row;
+		margin-bottom: 10px;
+	}
+
+	#UserCP #ucpcontent > form[name='theForm'] > table > tbody > tr td.pformleft {
+		width: 60%;
+	}
+
+	#UserCP #ucpcontent > form[name='theForm'] > table > tbody > tr td.pformright {
+		flex-wrap: nowrap;
+		column-gap: 5px;
+	}
+
+	#UserCP #ucpcontent > form[name='creator'] > table.tablebasic > tbody > tr {
+		flex-direction: row;
+		justify-content: space-around;
+	}
+
+	#UserCP #ucpcontent > form[name='creator'] > table.tablebasic > tbody > tr > td.pformleft {
+		width: 30%;
+	}
+
+	#UserCP #ucpcontent > form[name='creator'] > table.tablebasic > tbody > tr > td.pformright {
+		width: 50%;
+	}
+
+	#UserCP #ucpcontent > form[name='creator'] > table.tablebasic:last-of-type > tbody > tr > td.pformleft {
+		display: block;
+	}
+
+	#UserCP #ucpcontent > form[name='form1'] > table > tbody > tr {
+		flex-direction: row;
+		align-items: center;
+	}
+
+	#UserCP #ucpcontent > form[name='form1'] input[type='submit'] {
+		width: 50%;
+	}
+
+	#Msg #innerwrapper > table > tbody > tr > td#ucpmenu {
+		width: 20%;
+		border-right: var(--scd2pxDottedBorder);
+		margin-bottom: 0px;
+	}
+
+	#ST .maintitle > .topic-title {
+		letter-spacing: 1px;
+	}
+
+	#ST .maintitle > .topic-title span.post-icon {
+		font-size: 16px;
+	}
+
+	#ST .maintitle > .topic-desc {
+		font-size: 20px;
+	}
+
+	.postlinksbar {
+		font-size: var(--defaultFontSize);
+	}
+
+	#ST .g-4.miniprofile-wrapper,
+	#ST .g-3.miniprofile-wrapper,
+	#ST .g-6.miniprofile-wrapper {
+		display: grid;
+		grid-template-columns: 0.4fr 1fr;
+		grid-template-areas:
+			'avatar name'
+			'avatar info';
+	}
+
+	#ST .avatar-container {
+		justify-self: end;
+	}
+
+	#ST .poster-name {
+		font-size: 35px;
+		align-self: end;
+		justify-self: center;
+	}
+
+	#ST .poster-name > a {
+		font-size: unset;
+	}
+
+	#ST .poster-info {
+		align-self: start;
+		font-size: var(--defaultFontSize);
+	}
+
+	#ST .postdetails {
+		padding: 10px 15px;
+	}
+
+	.postcontent {
+		padding: 40px 100px;
+	}
+
+	#Profile #main-profile-grid-wrapper {
+		grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+		grid-template-areas:
+			'mp-header mp-header mp-header mp-header mp-header mp-header'
+		'mp-links mp-links mp-links mp-awards mp-awards mp-awards'
+		'mp-about mp-about mp-about mp-about mp-about mp-about'
+		'mp-play mp-play mp-genre mp-genre mp-location mp-location'
+		'mp-onlinestats mp-onlinestats mp-onlinestats mp-onlinestats mp-onlinestats mp-onlinestats';
+	}
+
+	#Profile .header-area {
+		max-height: 200px;
+		grid-template-columns: 0.3fr 1fr;
+		grid-template-rows: 0.8fr 0.2fr 0.6fr 1fr;
+		column-gap: 30px;
+		justify-items: start;
+		grid-template-areas:
+			'mph-avatar mph-username'
+			'mph-avatar mph-title'
+			'mph-avatar mph-details'
+			'mph-avatar mph-quote';
+	}
+
+	#Profile .box-avatar {
+		justify-self: end;
+	}
+
+	#Profile .box-title {
+		padding: 0;
+	}
+
+	#Profile .box-username {
+		align-self: end;
+		font-size: 32px;
+	}
+
+	#Profile .box-quote:before {
+		font-size: 85px;
+		top: -10px;
+		left: -10px;
+		opacity: 1;
+	}
+
+	#Profile .links-area {
+		height: 165px;
+	}
+
+	#Profile .chars-area {
+		margin-right: 10px;
+	}
+
+	#Profile .location-area {
+		margin-left: 10px;
+	}
+
+	#Profile .onlinestats-area {
+		flex-direction: row;
+		align-items: unset;
+	}
+
+	#Search.code-00 #search-grid {
+		grid-template-columns: 1fr 1fr;
+	}
+
+	#Search.code-00 .keyword-search-heading {
+		grid-area: 1 / 1 / 2 / 3;
+	}
+
+	#Search.code-00 .keyword-search {
+		grid-area: 2 / 1 / 3 / 2;
+	}
+
+	#Search.code-00 .member-search {
+		grid-area: 2 / 2 / 3 / 3;
+	}
+
+	#Search.code-00 .search-options-heading {
+		grid-area: 3 / 1 / 4 / 3;
+	}
+
+	#Search.code-00 .search-where {
+		grid-area: 4 / 1 / 5 / 2;
+	}
+
+	#Search.code-00 .search-where > select[name='forums[]'] {
+		height: 150px;
+	}
+
+	#Search.code-00 #search-grid .pformstrip {
+		margin-bottom: 10px;
+	}
+
+	#Search.code-00 .refine-search {
+		grid-area: 4 / 2 / 5 / 3;
+	}
+
+	#Search.code-00 .submit-search-form {
+		grid-area: 6 / 1 / 7 / 3;
+	}
+
+	#sortMemberlist {
+		grid-template-columns: 1fr 1fr;
+		grid-template-areas:
+			'name sortby'
+			'filter filter';
+	}
+
+	.acct-card {
+		grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+		gap: unset;
+	}
+
+	.acct-name {
+		font-size: 30px;
+	}
+
+	.acct-grid-item:nth-child(1) {
+		grid-area: 1 / 1 / 4 / 2;
+	}
+
+	.acct-grid-item:nth-child(2) {
+		grid-area: 1 / 2 / 1 / 8;
+		align-self: end;
+		justify-self: flex-start;
+	}
+
+	.acct-grid-item:nth-child(3) {
+		grid-area: unset;
+		justify-self: flex-start;
+		margin-left: unset;
+	}
+
+	.acct-grid-item:nth-child(4) {
+		grid-area: unset;
+	}
+
+	.acct-grid-item:nth-child(5) {
+		grid-area: unset;
+	}
+
+	.acct-grid-item:nth-child(6) {
+		grid-area: unset;
+	}
+
+	.acct-grid-item:nth-child(7) {
+		grid-area: unset;
+	}
+
+	.acct-grid-item:nth-child(8) {
+		grid-area: unset;
+	}
+
+	.acct-grid-item:nth-child(9) {
+		grid-area: 3 / 2 / 3 / 4;
+		align-self: start;
+		justify-self: flex-start;
+	}
+
+	.acct-grid-item:nth-child(10) {
+		grid-area: 3 / 4 / 3 / 6;
+		align-self: start;
+		justify-self: flex-start;
+	}
+
+	.acct-grid-item:nth-child(11) {
+		grid-area: 3 / 6 / 3 / 8;
+		align-self: start;
+	}
+}
+
+@media only screen and (min-width: 769px) and (max-width: 1024px) {
+	.desktop-userlinks {
+		grid-area: desktop-menu;
+		display: grid;
+		row-gap: 5px;
+		grid-template-areas:
+			'user-info user-info user-info user-info admin-cp mod-cp'
+			'view-profile my-controls topics messages view-new-posts alerts';
+	}
+
+	.view-profile a,
+	.my-controls a,
+	.active-topics a,
+	.my-messages a,
+	.view-new-posts a,
+	.mu-alerts a {
+		display: flex;
+		flex-direction: column;
+	}
+}
+
+@media only screen and (min-width: 769px) and (max-width: 1290px) {
+	.theme-switch {
+		flex-direction: column;
+		align-items: center;
+	}
+}
+
+/***********************************
+  Copyright: Removal is against Terms
+ ************************************/
+
+#copyright {
+	border: 1px solid var(--prmcolor);
+	background: var(--bg-color);
+}
+
+#copyright .tableborder {
+	border: none;
+}
+
+.copyright {
+	font-size: 10px;
+	line-height: 12px;
+}
+
+.skin-info {
+	text-align: center;
+	text-transform: uppercase;
+	font-family: var(--subHeaderFontFamily);
+}
+		</stylesheet>
+
+		<wrappers>
+		<!DOCTYPE html>
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width" />
+		<meta
+			name="keywords"
+			content="one on one roleplay, roleplay, one on one roleplays, roleplayer, one on one roleplay search, roleplay search, roleplay partner, roleplay partners, find a roleplay, barbermonger"
+		/>
+		<meta
+			name="description"
+			content="BARBERMONGER is a site designed to help roleplayers find other roleplayers, specifically one-on-one roleplayers, as opposed to larger roleplay games. Functioning like a pinboard, BARBERMONGER allows users to create advertisements, bump advertisements, and respond to other advertisements, without requiring them to register an account."
+		/>
+		<title><% TITLE %></title>
+		<link rel="icon" type="image/x-icon" href="https://files.jcink.net/uploads/barbermonger/Logos/faviconcirucs.ico">
+		<% CSS %>
+		<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+		<script type="text/javascript" src="//files.jcink.net/html/jquery.cookie-1.3.1.js"></script>
+		<script type="text/javascript" src="//files.jcink.net/html/catcollapse.js"></script>
+		<script>
+			// set dark/light mode before page load
+			if (localStorage.theme) document.documentElement.setAttribute('data-theme', localStorage.theme);
+		</script>
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.4.2/css/all.css" />
+	</head>
+	<body id="<!-- |input_act| -->" class="skin-<!-- |skin_id| --> act-<!-- |input_act| --> code-<!-- |input_CODE| -->">
+		<% navbar %>
+
+		<div id="wrapper">
+			<div id="logo">
+				<a href="/index.php" title="homepage">
+					<img src="" id="logo-img" />
+				</a>
+				<% welcome %>
+			</div>
+			<% BOARD HEADER %> <% NAVIGATION %>
+			<div id="innerwrapper">
+				<% BOARD %>
+
+				<div id="affiliates-index">
+					<div class="maintitle">Affiliates</div>
+					<div class="affiliates-table"><% affiliates %></div>
+				</div>
+				<div id="skin_selector"><% SKIN_SELECTOR %></div>
+				<div id="copyright">
+					<% COPYRIGHT %>
+					<div class="skin-info">Skinned by Luna of Barbermonger</div>
+				</div>
+			</div>
+		</div>
+
+		<% USER_SCRIPTS %>
+	</body>
+</html>
+		</wrappers>
+
+		<macros>
+		<item name='B_MOVED'><span class="moved-macro"><i class="fa-solid fa-right-long"></i></span></item>
+			<item name='T_PIN_SUBHEAD'><div class="subHeading"><i class="fa-solid fa-thumbtack"></i> Pinned Topics</div></item>
+			<item name='B_NORM'><span class="no-new-post-macro"><i class="fa-solid fa-splotch"></i></span></item>
+			<item name='T_ANNO_SUBHEAD'><div class="subHeading"><i class="fa-solid fa-bullhorn"></i> Announcements</div></item>
+			<item name='B_NEW'><span class="new-post-macro"><i class="fa-solid fa-burst"></i></span></item>
+			<item name='B_LOCKED'><span class="locked-macro"><i class="fa-solid fa-lock"></i></span></item>
+			<item name='B_PIN'><span class="pinned-macro"><i class="fa-solid fa-thumbtack"></i></span></item>
+			<item name='B_POLL'><span class="new-post-macro"><i class="fa-solid fa-burst"></i></span></item>
+			<item name='B_POLL_NN'><span class="no-new-post-macro"><i class="fa-solid fa-splotch"></i></span></item>
+			<item name='B_HOT_DOT'><span class="new-post-macro"><i class="fa-solid fa-burst"></i></span></item>
+			<item name='B_NEW_DOT'><span class="new-post-macro"><i class="fa-solid fa-burst"></i></span></item>
+			<item name='B_HOT_NN_DOT'><span class="no-new-post-macro"><i class="fa-solid fa-splotch"></i></span></item>
+			<item name='B_NORM_DOT'><span class="no-new-post-macro"><i class="fa-solid fa-splotch"></i></span></item>
+			<item name='B_POLL_DOT'><span class="new-post-macro"><i class="fa-solid fa-burst"></i></span></item>
+			<item name='B_POLL_NN_DOT'><span class="no-new-post-macro"><i class="fa-solid fa-splotch"></i></span></item>
+			<item name='C_LOCKED'><i class="fa-solid fa-ban" title="Read Only"></i></item>
+			<item name='C_OFF'><span class="no-new-post-macro"><i class="fa-solid fa-splotch"></i></span></item>
+			<item name='MOBILE_LOGO'><script src="https://code.jquery.com/jquery-3.6.0.min.js"></script><script type='text/javascript' src='//files.jcink.net/html/jquery.cookie-1.3.1.js'></script><link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.4.0/css/all.css"></item>
+			<item name='C_OFF_CAT'><span class="no-new-post-macro"><i class="fa-solid fa-splotch"></i></span></item>
+			<item name='C_OFF_RES'><span class="no-new-post-macro"><i class="fa-solid fa-splotch"></i></span></item>
+			<item name='C_ON'><span class="new-post-macro"><i class="fa-solid fa-burst"></i></span></item>
+			<item name='WARN_3'> <img src='https://files.jcink.net/themes/purple/purple-block.png'>  <img src='https://files.jcink.net/themes/purple/purple-block.png'>  <img src='https://files.jcink.net/themes/purple/purple-block.png'> <img src='https://files.jcink.net/themes/default/gray-block.png'> <img src='https://files.jcink.net/themes/default/gray-block.png'> </item>
+			<item name='WARN_2'> <img src='https://files.jcink.net/themes/purple/purple-block.png'>  <img src='https://files.jcink.net/themes/purple/purple-block.png'> <img src='https://files.jcink.net/themes/default/gray-block.png'> <img src='https://files.jcink.net/themes/default/gray-block.png'> <img src='https://files.jcink.net/themes/default/gray-block.png'> </item>
+			<item name='WARN_1'> <img src='https://files.jcink.net/themes/purple/purple-block.png'> <img src='https://files.jcink.net/themes/default/gray-block.png'> <img src='https://files.jcink.net/themes/default/gray-block.png'> <img src='https://files.jcink.net/themes/default/gray-block.png'> <img src='https://files.jcink.net/themes/default/gray-block.png'> </item>
+			<item name='WARN_0'> <img src='https://files.jcink.net/themes/default/gray-block.png'> <img src='https://files.jcink.net/themes/default/gray-block.png'> <img src='https://files.jcink.net/themes/default/gray-block.png'> <img src='https://files.jcink.net/themes/default/gray-block.png'> <img src='https://files.jcink.net/themes/default/gray-block.png'> </item>
+			<item name='F_RULES'><i class="fa-solid fa-triangle-exclamation"></i></item>
+			<item name='CAL_NEWEVENT'><div class='button-large'>Add Event</div></item>
+			<item name='T_QREPLY'><div class='button-large'>Fast Reply</div></item>
+			<item name='T_OPTS'><div class='button-large'>Topic Options</div></item>
+			<item name='ADDRESS_CARD'><span class='button-small'>Card</span></item>
+			<item name='INTEGRITY_MSGR'><span class='button-small'>Skype</span></item>
+			<item name='BR_REDIRECT'><span class="moved-macro"><i class="fa-solid fa-right-long"></i></span></item>
+			<item name='LAST_POST'><img src="https://files.jcink.net/themes/default/double-arrow.gif" /></item>
+			<item name='CAT_IMG'></item>
+			<item name='NEW_POST'><img src="https://files.jcink.net/themes/default/double-arrow.gif" /></item>
+			<item name='P_REPORT'><i class="fa-solid fa-flag" title="Report"></i></item>
+			<item name='P_ICON2'><span class="post-icon">CW</span></item>
+			<item name='P_ICON3'><span class="post-icon">Discord</span></item>
+			<item name='P_QUOTE'><i class="fa-solid fa-quote-left" title="Quote"></i></item>
+			<item name='P_WEBSITE'><span class='button-small'>Website</span></item>
+			<item name='ALERT_NEW'></item>
+			<item name='P_MSG'><span class='button-small'>PM</span></item>
+			<item name='P_EMAIL'><span class='button-small'>Email</span></item>
+			<item name='P_EDIT'><i class="fa-regular fa-pen-to-square" title="Edit Post"></i></item>
+			<item name='P_ICON1'><span class="post-icon">NSFW</span></item>
+			<item name='P_DELETE'><i class="fa-regular fa-trash-can" title="Delete"></i></item>
+			<item name='M_UNREAD'><span class="new-post-macro"><i class="fa-solid fa-burst"></i></span></item>
+			<item name='M_READ'><span class="no-new-post-macro"><i class="fa-solid fa-splotch"></i></span></item>
+			<item name='CAMERA'>View</item>
+			<item name='NO_PHOTO'><img src='https://files.jcink.net/themes/default/active-users.png'></item>
+			<item name='F_NAV'> &raquo; </item>
+			<item name='F_STATS'><img alt="Statistics" title="Statistics" src="https://files.jcink.net/themes/default/statistics.png" /></item>
+			<item name='F_NAV_SEP'>&nbsp;&rarr;&nbsp;</item>
+			<item name='F_ACTIVE'><img alt="Users" title="Users" src="https://files.jcink.net/themes/default/active-users.png" /></item>
+			<item name='C_ON_RES'><span class="new-post-macro"><i class="fa-solid fa-burst"></i></span></item>
+			<item name='C_ON_CAT'><span class="new-post-macro"><i class="fa-solid fa-burst"></i></span></item>
+			<item name='B_MINUS_HIDE'><img alt='Collapse' title='Collapse' src='https://files.jcink.net/themes/default/cat-collapse.png' /></item>
+			<item name='B_PLUS_SHOW'><img alt='Expand' title='Expand' src='https://files.jcink.net/themes/default/cat-expand.png' /></item>
+			<item name='WARN_ADD'><img src='https://files.jcink.net/themes/purple/purple-block-plus.png'></item>
+			<item name='WARN_MINUS'><img src='https://files.jcink.net/themes/purple/purple-block-minus.png'></item>
+			<item name='LOGO'><img width='207' height='57' src="style_images/1/spacer.gif" /><!-- You can insert a logo image here in place of the white spacer --></item>
+			<item name='CUST_PROF'><div class="postbit"><div align='center'><!-- |avatar| --><br><!-- |title| --><br></div></div><div class="postbit"><img src='https://files.jcink.net/themes/default/users.png'> Group: <!-- |member_group| --> </div><div class="postbit"><img src='https://files.jcink.net/themes/default/posts.png'> Posts: <!-- |posts| --></div><div class="postbit"><img src='https://files.jcink.net/themes/default/joined.png'> Joined: <!-- |member_joined| --></div><div class="postbit">Age: <!-- |age| --><br>Location: <!-- |location| --><br>Status: <!-- |status| --><br></div><br><div style="margin-left: 14px;"><!-- |warn_text| --> <!-- |warn_minus| --><!-- |warn_img| --><!-- |warn_add| --></div></item>
+			<item name='WARN_5'> <img src='https://files.jcink.net/themes/purple/purple-block.png'>  <img src='https://files.jcink.net/themes/purple/purple-block.png'>  <img src='https://files.jcink.net/themes/purple/purple-block.png'>  <img src='https://files.jcink.net/themes/purple/purple-block.png'>  <img src='https://files.jcink.net/themes/purple/purple-block.png'> </item>
+			<item name='A_LOCKED_B'><div class='button-large closed'>Closed</div></item>
+			<item name='A_POLLONLY_B'><div class='button-large closed'>Closed</div></item>
+			<item name='A_MOVED_B'><div class='button-large closed'>Moved</div></item>
+			<item name='A_POST'><div class='button-large'>New Topic</div></item>
+			<item name='A_POLL'><div class='button-large'>New Poll</div></item>
+			<item name='A_REPLY'><div class='button-large'>Add Reply</div></item>
+			<item name='A_STAR'><img src='https://files.jcink.net/themes/purple/purple-block.png' /></item>
+			<item name='B_HOT'><span class="new-post-macro"><i class="fa-solid fa-burst"></i></span></item>
+			<item name='B_HOT_NN'><span class="no-new-post-macro"><i class="fa-solid fa-splotch"></i></span></item>
+			<item name='WARN_4'> <img src='https://files.jcink.net/themes/purple/purple-block.png'>  <img src='https://files.jcink.net/themes/purple/purple-block.png'>  <img src='https://files.jcink.net/themes/purple/purple-block.png'>  <img src='https://files.jcink.net/themes/purple/purple-block.png'> <img src='https://files.jcink.net/themes/default/gray-block.png'> </item>
+			<item name='T_REG_SUBHEAD'><div class="subHeading"><i class="fa-solid fa-table-list"></i> Topics List</div></item>
+			<item name='P_ICON4'><span class="post-icon">Email</span></item>
+			<item name='P_ICON5'><span class="post-icon">Forum</span></item>
+			<item name='P_ICON6'><span class="post-icon">Other</span></item>
+			<item name='P_ICON7'><span class="post-icon">Fandom</span></item>
+			<item name='P_ICON8'><span class="post-icon">OC</span></item>
+			<item name='P_ICON9'><span class="post-icon">MxM</span></item>
+			<item name='P_ICON10'><span class="post-icon">MxF</span></item>
+			<item name='P_ICON11'><span class="post-icon">FxF</span></item>
+			<item name='P_ICON12'><span class="post-icon">MxA</span></item>
+			<item name='P_ICON13'><span class="post-icon">FxA</span></item>
+			<item name='P_ICON14'><span class="post-icon">AxA</span></item>
+			<item name='AVATAR'><img src="https://files.jcink.net/uploads/barbermonger/avatars/DefaultPFP_CirqueAmericaininFrance.png"></item>
+			
+		</macros>
+
+		<templates>
+		 <item name='board_stats'><div id="boardstats">
+	<div class="maintitle">Board Statistics</div>
+	<stats-grid>
+		<div class="online-now">
+			<div class="sub-heading">Online Now</div>
+			<div class="online-now-numbers">
+				<span><!-- |total_mems| --></span> members & <span><!-- |total_guests| --></span> guests &
+				<span><!-- |total_anons| --></span> anons
+			</div>
+			<div class="online-now-links">
+				<a href="?act=Online&CODE=listall&sort_key=click" title="View Active Users by Last Click">
+					<i class="fa-solid fa-arrow-pointer"></i> Last Click
+				</a>
+				<a
+					href="?act=Online&CODE=listall&sort_key=name&sort_order=asc&show_mem=reg"
+					title="View Active Users by Member Name"
+				>
+					<i class="fa-solid fa-user-tag"></i> Member Name
+				</a>
+			</div>
+			<div class="online-now-users"><!-- |online_list| --></div>
+		</div>
+
+		<div class="stats-links">
+			<a href="?act=Stats&CODE=leaders" title="View Mod Team List">
+				<div class="button-box">
+					<svg>
+						<circle id="c" r="5" />
+						<use xlink:href="#c" x="100%" />
+						<use xlink:href="#c" y="100%" />
+						<use xlink:href="#c" x="100%" y="100%" />
+					</svg>
+
+					<div class="text"><i class="fa-solid fa-clipboard-user"></i> Mod Team</div>
+				</div>
+			</a>
+			<a href="?act=Search&CODE=getactive" title="View Active Topics">
+				<div class="button-box">
+					<svg>
+						<circle id="c" r="5" />
+						<use xlink:href="#c" x="100%" />
+						<use xlink:href="#c" y="100%" />
+						<use xlink:href="#c" x="100%" y="100%" />
+					</svg>
+
+					<div class="text"><i class="fa-solid fa-bullhorn"></i> Active Topics</div>
+				</div>
+			</a>
+			<a href="?act=Members&max_results=10&sort_key=posts&sort_order=desc" title="View Top 10 Posters">
+				<div class="button-box">
+					<svg>
+						<circle id="c" r="5" />
+						<use xlink:href="#c" x="100%" />
+						<use xlink:href="#c" y="100%" />
+						<use xlink:href="#c" x="100%" y="100%" />
+					</svg>
+
+					<div class="text"><i class="fa-solid fa-ranking-star"></i> Top 10</div>
+				</div>
+			</a>
+			<a href="?act=Members" title="View Member List">
+				<div class="button-box">
+					<svg>
+						<circle id="c" r="5" />
+						<use xlink:href="#c" x="100%" />
+						<use xlink:href="#c" y="100%" />
+						<use xlink:href="#c" x="100%" y="100%" />
+					</svg>
+
+					<div class="text"><i class="fa-solid fa-address-book"></i> Member List</div>
+				</div>
+			</a>
+		</div>
+
+		<div class="birthdays">
+			<script>
+				if (`<!-- |birthdays_list| -->` !== '') {
+					document.write(`
+                    <div class="birthdays-wrapper">
+                    <div class="sub-heading"><i class="fa-solid fa-cake-candles"></i> Happy Birthday!</div>
+                        <!-- |birthdays| --></b> members are celebrating their birthday today: <br /> 
+                        <!-- |birthdays_list| -->
+                    </div>
+                `);
+				}
+			</script>
+		</div>
+
+		<div class="stats-area">
+			<div class="sub-heading">Stats For Nerds</div>
+
+			<div class="site-totals">
+				<div class="site-date">
+					site established on
+					<span>February 21st, 2011</span>
+				</div>
+				<div class="site-member">
+					newest member is
+					<span><!-- |newest_member| --></span>
+				</div>
+				<div class="site-total-values">
+					<div class="total-posts">
+						<span><!-- |total_posts| --></span>
+						total posts
+					</div>
+					<div class="total-members">
+						<span><!-- |total_mem_reg| --></span>
+						total members
+					</div>
+				</div>
+				<div class="site-most-users-ever">
+					Most users ever online
+					<date>
+						<span><!-- |most_online| --></span> on <span><!-- |most_online_date| --></span>
+					</date>
+				</div>
+				<div class="site-most-users-day">
+					Most members ever online in one day
+					<date>
+						<span><!-- |most_online_oneday| --></span> on <span><!-- |most_online_oneday_date| --></span>
+					</date>
+				</div>
+			</div>
+		</div>
+
+		<div class="online-today">
+			<div class="sub-heading">
+				Online Today:
+				<span><!-- |online_today| --></span>
+				<span id="mot_explink" style="display: inline">[<a href="javascript:expand_mot()">Expand</a>]</span
+				><span id="mot_collink" style="display: none">[<a href="javascript:collapse_mot()">Collapse</a>]</span>
+			</div>
+			<div id="mot" style="display: none">
+				<!-- |online_today_list| -->
+			</div>
+		</div>
+	</stats-grid>
+</div></item>
+ <item name='cat_head'><div class="category" id="cat-<!-- |cat_id| -->">
+		<div class="maintitle<!-- |collapsed_class| -->" align="left">
+			<a href="index.php?c=<!-- |cat_id| -->"><!-- |cat_name| --></a>
+			<a href="#" onclick='catcollapse("<!-- |cat_id| -->");return false;' id="main_<!-- |cat_id| -->"
+				><!-- |collapse_img| --></a
+			>
+		</div>
+		<div id="cat_<!-- |cat_id| -->" style="<!-- |collapsed_style| -->"><% FORUM_ROWS %></div>
+</div>
+<br class="cat-lb" /></item>
+ <item name='forum_row'><div class="forum-row f<!-- |forum_id| -->">
+	<forum-wrapper>
+		<grid>
+			<name
+				><a
+					class="tooltip"
+					tooltip="<!-- |description_clean| -->"
+					href="?showforum=<!-- |forum_id| -->"
+					alt="<!-- |name| -->"
+					><!-- |name_text| --></a
+				>
+			</name>
+			<stats>
+				<!-- |topics| -->
+				topics &
+				<!-- |replies| -->
+				posts
+			</stats>
+
+			<desc><!-- |description| --></desc>
+
+			<new-post><!-- |img_new_post| --></new-post>
+			<lastpost>
+				<!-- |last_unread| -->
+				<!-- |last_topic| -->
+			</lastpost>
+			<lastposter
+				>By:
+				<!-- |last_poster| --></lastposter
+			>
+			<post-time><!-- |last_post| --></post-time>
+		</grid>
+
+		<subforums><!-- |subforums| --></subforums>
+	</forum-wrapper>
+</div></item>
+ <item name='subf_head'><div id="subforum-list-<!-- |forum_id| -->">
+   
+
+	<% FORUM_ROWS %>
+
+</div></item>
+ <item name='post_row'><!--Begin Msg Number <!-- |pid| -->-->
+<div class="<!-- |post_class| --> group<!-- |g_id| -->-<!-- |post_class| -->">
+	<a name="entry<!-- |pid| -->"></a>
+	<div class="post-wrapper">
+		<div class="post-grid">
+			<div class="miniprofile">
+				<!-- |mini_profile| -->
+			</div>
+
+			<div class="postdetails">
+				<span class="details">
+					<b>
+						[<a title="Permalink" href="#" onclick="link_to_post(<!-- |pid| -->); return false;">
+							<!-- |post_date| --> </a
+						>]
+					</b>
+				</span>
+				<div class="post-buttons">
+					<span class="details"><!-- |quote_button| --></span>
+					<span class="details"><!-- |edit_button| --></span>
+					<span class="details"><!-- |delete_button| --></span>
+					<span class="details"><!-- |report_link| --></span>
+				</div>
+			</div>
+			<div class="postcontent">
+				<!-- post area has to follow this exact layout -->
+				<div id="pid_<!-- |pid| -->">
+					<!-- THE POST <!-- |pid| -->-->
+					<div class="postcolor">
+						<!-- |post| -->
+					</div>
+					<!-- |signature| -->
+					<!-- THE POST -->
+				</div>
+			</div>
+		</div>
+
+		<div class="bottom-bar">
+			<span class="ip_address">
+				<b><!-- |ip_address| --></b>
+			</span>
+			<span class="bb-mod-checkbox">
+				<!-- |mod_checkbox| -->
+			</span>
+		</div>
+	</div>
+</div></item>
+ <item name='profile'><div id="main-profile-grid-wrapper">
+	<div class="header-area">
+		<div class="box-avatar">
+			<!-- |avatar| -->
+		</div>
+		<div class="box-username">
+			<!-- |name| -->
+		</div>
+		<div class="box-title">
+			<!-- |title| -->
+		</div>
+		<div class="box-user-details">
+			<span><!-- |age| --></span> | <span><!-- |field_2| --></span> |
+			<span><!-- |field_3| --></span>
+		</div>
+		<div class="box-quote">
+			<!-- |field_7| -->
+		</div>
+	</div>
+	<div class="links-area">
+		<div class="button-area">
+			<a href="/index.php?act=Search&CODE=getalluser&mid=<!-- |id| -->&type=posts" title="view all posts">
+				<i class="fa-solid fa-pencil"></i>
+				<span>all posts</span>
+			</a>
+			<a href="/index.php?act=Search&CODE=getalluser&mid=<!-- |id| -->&type=topics" title="view all topics">
+				<i class="fa-solid fa-table-list"></i>
+				<span>all topics</span>
+			</a>
+			<a href="/index.php?act=Msg&CODE=04&MID=<!-- |id| -->" title="send PM">
+				<i class="fa-solid fa-envelope"></i>
+				<span>send PM</span>
+			</a>
+			<a href="<!-- |field_5| -->" title="site tracker">
+				<i class="fa-solid fa-clipboard-list"></i>
+				<span>site tracker</span>
+			</a>
+			<a href="<!-- |field_6| -->" title="my ad">
+				<i class="fa-solid fa-ticket"></i>
+				<span>my ad</span>
+			</a>
+		</div>
+		<div class="text-field-area">
+			<div class="field-item">
+				<span>discord handle:</span>
+				<!-- |field_4| -->
+			</div>
+			<div class="field-item">
+				<span>status:</span>
+				<!-- |status| -->
+			</div>
+			<div class="field-item">
+				<span>search status:</span>
+				<!-- |field_12| -->
+			</div>
+			<div class="field-item">
+				<span>contact me:</span>
+				<!-- |field_13| -->
+			</div>
+		</div>
+		<div class="writing-samples-area">
+			<a href="<!-- |field_1| -->" title="Writing Samples">
+				<i class="fa-solid fa-book"></i>
+				Writing Samples
+			</a>
+		</div>
+	</div>
+	<div class="awards-area">
+		Awards:
+		<!-- |awards_total| -->
+		<span class="awards-box">
+			<!-- |awards| -->
+		</span>
+	</div>
+	<div class="about-area">
+		<div class="maintitle">About Me</div>
+		<div class="text-container"><!-- |field_8| --></div>
+	</div>
+	<div class="chars-area">
+		<div class="maintitle">I Play:</div>
+		<div class="text-container"><!-- |field_9| --></div>
+	</div>
+	<div class="genre-area">
+		<div class="maintitle">I Write In:</div>
+		<div class="text-container"><!-- |field_10| --></div>
+	</div>
+	<div class="location-area">
+		<div class="maintitle">Preferred Medium:</div>
+		<div class="text-container"><!-- |field_11| --></div>
+	</div>
+	<div class="onlinestats-area">
+		<div class="last-seen">
+			Last Seen:
+			<!-- |last_activity| -->
+		</div>
+		<div class="last-post">
+			Last Posted:
+			<!-- |last_post| -->
+		</div>
+	</div>
+</div></item>
+ <item name='mini_profile'><div class="g-<!-- |g_id| --> miniprofile-wrapper">
+	<div class="avatar-container">
+		<div class="image-container">
+			<!-- |avatar| -->
+		</div>
+	</div>
+
+	<div class="poster-name">
+		<!-- |name| -->
+	</div>
+
+	<div class="poster-info">
+		<div class="line-title"><!-- |title| --></div>
+		<div class="line-one">
+			<span><!-- |age| --></span> | <span><!-- |field_2| --></span> |
+			<span><!-- |field_3| --></span>
+		</div>
+		<div class="line-two">
+			<span
+				><!-- |posts| -->
+				posts</span
+			>
+			|
+			<span
+				>joined
+				<!-- |member_joined| --></span
+			>
+		</div>
+		<div class="line-three">
+			<span
+				>status:
+				<!-- |status| --></span
+			>
+			| <span><!-- |field_12| --></span> |
+			<span><!-- |field_13| --></span>
+		</div>
+	</div>
+</div>
+
+<div class="g-<!-- |g_id| --> guest-miniprofile-wrapper">
+	<div class="guest-avatar"><{AVATAR}></div>
+	<div class="guest-name">
+		<!-- |name| -->
+		<span><!-- |member_group| --></span>
+	</div>
+</div></item>
+ <item name='topic_list_head'><div id="topic-list" class="f-<!-- |forum_id| -->">
+	<div class="maintitle"><!-- |forum_name| --></div>
+
+	<div class="announcements"><% ANNOUNCEMENTS %></div>
+	<% TOPIC_ROWS %>
+
+	<!-- |mod_form_end| -->
+	<!-- |sort_options| -->
+</div></item>
+ <item name='topic_row'><!-- Begin Topic Entry <!-- |tid| -->
+-->
+<div class="topic-row t<!-- |tid| -->">
+	<topic-wrapper>
+		<grid>
+			<div class="posticon"><div id="topics-icons-t<!-- |tid| -->" class="icons-flex"></div></div>
+			<div class="macro-icons">
+				<div class="mod-checkbox"><!-- |mod_checkbox| --></div>
+				<div class="new-reply"><!-- |macro_img| --></div>
+			</div>
+			<div class="name"><!-- |topic| --></div>
+			<div class="topic-desc">
+				<!-- |topic_desc| -->
+			</div>
+			<div class="stats">
+				<span><!-- |views| --></span>
+				views &
+				<!-- |replies_int| -->
+				replies
+				<!-- |pages| -->
+			</div>
+
+			<div class="starter">
+				started by:
+				<!-- |starter| -->
+			</div>
+			<div class="start-post"><!-- |start_date| --></div>
+
+			<div class="last-poster">
+				latest reply:
+				<!-- |last_poster| -->
+			</div>
+			<div class="last-post"><!-- |last_post| --></div>
+		</grid>
+	</topic-wrapper>
+</div>
+<!-- End Topic Entry <!-- |tid| -->
+--></item>
+ <item name='memberlist_head'><form action='index.php' method='post'>
+<input type='hidden' name='act' value='Members' />
+<div align="left"><!-- |pages| --></div>
+<br />
+<div id="member-list" class="tableborder">
+ <div class="maintitle">Member List</div>
+
+<p>Note: List will only filter the first 1000 accounts. Not seeing someone listed? Navigate to next page and try again!</p>
+ 
+	<div id="namesearch" class="name-search"></div>
+	<div id="filters" class="filter-search"></div>
+	<div id="sortby" class="sortby-search"></div>
+
+  <div id="memberlist-wrapper">
+  <% MEMBERLIST_ROWS %>
+  </div>
+  <!-- End content Table -->
+
+
+</div>
+</form>
+
+<script src="https://files.jcink.net/uploads2/fizzyelf/sharedresources/memberlistFilters2.js"></script>
+<script>
+setUpNameSearch();
+setUpFilters({
+    Display_As_Dropdown: false,
+    Multiple_Selections: false,
+    Filter_Lists: ["Searching", "Contact", "Timezone"],
+    No_Value_Label: "N/A"
+});
+setUpSortBy();
+</script></item>
+ <item name='memberlist_row'><!-- Entry for <!-- |member_name| -->
+-->
+<div
+	class="memberlist-row"
+	data-Searching="<!-- |field_12| -->"
+	data-Contact="<!-- |field_13| -->"
+	data-Timezone="<!-- |field_3| -->"
+>
+	<div class="acct-card">
+		<div class="acct-grid-item">
+			<div class="acct-avatar">
+				<!-- |avatar| -->
+			</div>
+		</div>
+		<div class="acct-grid-item">
+			<a href="?showuser=<!-- |id| -->">
+				<div class="acct-name">
+					<!-- |member_name| -->
+				</div>
+			</a>
+		</div>
+		<div class="acct-grid-item">
+			<a href="index.php?act=Search&CODE=getalluser&mid=<!-- |id| -->&type=posts" title="<!-- |last_post| -->">
+				<!-- |posts| -->
+			</a>
+			posts
+		</div>
+		<div class="acct-grid-item">
+			<a href="/index.php?act=Search&CODE=getalluser&mid=<!-- |id| -->&type=topics" title="view all topics">
+				all topics
+			</a>
+		</div>
+		<div class="acct-grid-item">
+			<div><!-- |field_2| --></div>
+		</div>
+		<div class="acct-grid-item">
+			<div><!-- |field_3| --></div>
+		</div>
+		<div class="acct-grid-item">
+			<div><!-- |field_12| --></div>
+		</div>
+		<div class="acct-grid-item">
+			<div><!-- |field_13| --></div>
+		</div>
+		<div class="acct-grid-item">
+			joined:
+			<!-- |joined| -->
+		</div>
+		<div class="acct-grid-item">
+			last seen:
+			<!-- |last_activity| -->
+		</div>
+		<div class="acct-grid-item">
+			last post:
+			<!-- |last_post| -->
+		</div>
+	</div>
+</div>
+<!-- End of Entry --></item>
+
+		</templates>
+		
+		</skin>

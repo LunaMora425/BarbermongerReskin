@@ -1,0 +1,168 @@
+<div id="mobilenav">
+	<div id="navbar">
+		<div class="back-to-top">
+			<i class="fas fa-arrow-up icons" onclick="scrollToTop()" title="Back to Top"></i>
+			<i class="fas fa-arrow-down icons" onclick="scrollToBottom()" title="Down to Bottom"></i>
+			<a href="/index.php" title="Site Index"><i class="fas fa-home icons"></i></a>
+		</div>
+		<div class="togglecontainer">
+			<div class="theme-switch-wrapper">
+				<label class="theme-switch" for="checkbox">
+					<input type="checkbox" id="checkbox" title="Toggle Theme" />
+					<span class="mode-text-1"></span>
+				</label>
+			</div>
+		</div>
+		<div class="mobile-menu">
+			<button class="button-action">
+				Menu
+				<i class="fa-solid fa-circle-chevron-down rotate" title="Toggle Menu"></i>
+			</button>
+		</div>
+	</div>
+	<div id="mobile-userlinks" class="dropdown-menu">
+		<div class="user-info">
+			<strong class="m-<!-- |g_id| -->">
+				<!-- |name| -->
+			</strong>
+			<a href="?act=Login&CODE=03" title="Log Out" id="log-out" class="m-<!-- |g_id| -->"
+				>Log Out <i class="fa-solid fa-arrow-right-from-bracket fa-lg"></i
+			></a>
+			<a class="g-<!-- |g_id| -->" style="display: none">
+				<strong> HI GUEST! </strong>
+			</a>
+			<div class="g-<!-- |g_id| --> logging" style="display: none">
+				<a href="/index.php?act=Login&CODE=00" title="Log In"
+					>LOG IN <i class="fa-solid fa-arrow-right-to-bracket fa-lg"></i
+				></a>
+				<a href="/index.php?act=Reg&CODE=00" title="Register"
+					>REGISTER <i class="fa-solid fa-image-portrait fa-lg"></i
+				></a>
+			</div>
+		</div>
+
+		<div class="admin-cp m-<!-- |g_id| -->">
+			<a href="/admin.php" class="acp-<!-- |g_access_cp| -->" target="_blank" title="Admin CP">
+				<i class="fa-solid fa-screwdriver-wrench"></i> Admin CP
+			</a>
+		</div>
+		<div class="mod-cp m-<!-- |g_id| -->">
+			<a href="?act=modcp" class="mcp-<!-- |g_access_cp| -->" title="Mod CP">
+				<i class="fa-solid fa-hammer"></i> Mod CP
+			</a>
+		</div>
+		<div class="view-profile m-<!-- |g_id| -->">
+			<a href="?showuser=<!-- |id| -->" title="View Profile"> <i class="fa-solid fa-circle-user"></i> View Profile </a>
+		</div>
+		<div class="my-controls m-<!-- |g_id| -->">
+			<a href="?act=UserCP&CODE=00" title="My Controls"> <i class="fa-solid fa-gear"></i> My Controls </a>
+		</div>
+		<div class="active-topics m-<!-- |g_id| -->">
+			<a href="?act=Search&CODE=getactive" title="View Active Topics">
+				<i class="fa-solid fa-bullhorn"></i> View Active Topics
+			</a>
+		</div>
+		<div class="my-messages m-<!-- |g_id| -->">
+			<a href="?act=Msg&CODE=01" title="View Inbox">
+				<i class="fa-solid fa-inbox"></i>
+				<!-- |new_msg| -->
+				messages
+			</a>
+		</div>
+		<div class="view-new-posts m-<!-- |g_id| -->">
+			<a href="?act=Search&CODE=getnew" title="View New Posts">
+				<i class="fa-solid fa-envelope-open"></i> View New Posts
+			</a>
+		</div>
+		<div class="mu-alerts m-<!-- |g_id| -->">
+			<a href="?act=UserCP&CODE=alerts" title="View All Alerts">
+				<i class="fa-solid fa-bell"></i>
+				<!-- |new_alerts| -->
+				alerts
+			</a>
+		</div>
+	</div>
+</div>
+<div id="desktopnav">
+	<div id="desktop-navbar">
+		<div class="back-to-top">
+			<i class="fas fa-arrow-up icons" onclick="scrollToTop()" title="Scroll to Top"></i>
+			<i class="fas fa-arrow-down icons" onclick="scrollToBottom()" title="Down to Bottom"></i>
+			<a href="/index.php" title="index"><i class="fas fa-home icons"></i></a>
+		</div>
+
+		<div class="desktop-userlinks">
+			<div class="user-info">
+				<strong class="m-<!-- |g_id| -->">
+					<!-- |name| -->
+				</strong>
+				<a href="?act=Login&CODE=03" title="Log Out" id="log-out" class="m-<!-- |g_id| -->"
+					>Log Out <i class="fa-solid fa-arrow-right-from-bracket fa-lg"></i
+				></a>
+				<a class="g-<!-- |g_id| -->" style="display: none">
+					<strong> HI GUEST! </strong>
+				</a>
+				<div class="g-<!-- |g_id| --> logging" style="display: none">
+					<a href="/index.php?act=Login&CODE=00" title="Log In"
+						>LOG IN <i class="fa-solid fa-arrow-right-to-bracket fa-lg"></i
+					></a>
+					<a href="/index.php?act=Reg&CODE=00" title="Register"
+						>REGISTER <i class="fa-solid fa-image-portrait fa-lg"></i
+					></a>
+				</div>
+			</div>
+
+			<div class="admin-cp m-<!-- |g_id| -->">
+				<a href="/admin.php" class="acp-<!-- |g_access_cp| -->" target="_blank" title="Admin CP">
+					<i class="fa-solid fa-screwdriver-wrench"></i> Admin CP
+				</a>
+			</div>
+			<div class="mod-cp m-<!-- |g_id| -->">
+				<a href="?act=modcp" class="mcp-<!-- |g_access_cp| -->" title="Mod CP">
+					<i class="fa-solid fa-hammer"></i> Mod CP
+				</a>
+			</div>
+			<div class="view-profile m-<!-- |g_id| -->">
+				<a href="?showuser=<!-- |id| -->" title="View My Profile">
+					<i class="fa-solid fa-circle-user"></i> View Profile
+				</a>
+			</div>
+			<div class="my-controls m-<!-- |g_id| -->">
+				<a href="?act=UserCP&CODE=00" title="My Controls"> <i class="fa-solid fa-gear"></i> My Controls </a>
+			</div>
+			<div class="active-topics m-<!-- |g_id| -->">
+				<a href="?act=Search&CODE=getactive" title="Get Active Topics">
+					<i class="fa-solid fa-bullhorn"></i> View Active Topics
+				</a>
+			</div>
+			<div class="my-messages m-<!-- |g_id| -->">
+				<a href="?act=Msg&CODE=01" title="View My Inbox">
+					<i class="fa-solid fa-inbox"></i>
+					<!-- |new_msg| -->
+					messages
+				</a>
+			</div>
+			<div class="view-new-posts m-<!-- |g_id| -->">
+				<a href="?act=Search&CODE=getnew" title="View New Posts">
+					<i class="fa-solid fa-envelope-open"></i> View New Posts
+				</a>
+			</div>
+			<div class="mu-alerts m-<!-- |g_id| -->">
+				<a href="?act=UserCP&CODE=alerts" title="View All Alerts">
+					<i class="fa-solid fa-bell"></i>
+					<!-- |new_alerts| -->
+					alerts
+				</a>
+			</div>
+		</div>
+
+		<div class="togglecontainer">
+			<div class="theme-switch-wrapper">
+				<label class="theme-switch" for="checkbox">
+					<input type="checkbox" id="checkbox" title="Toggle Theme" />
+					<span class="mode-text-2"></span>
+				</label>
+			</div>
+		</div>
+	</div>
+</div>

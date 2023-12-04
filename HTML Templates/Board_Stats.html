@@ -1,0 +1,138 @@
+<div id="boardstats">
+	<div class="maintitle">Board Statistics</div>
+	<stats-grid>
+		<div class="online-now">
+			<div class="sub-heading">Online Now</div>
+			<div class="online-now-numbers">
+				<span><!-- |total_mems| --></span> members & <span><!-- |total_guests| --></span> guests &
+				<span><!-- |total_anons| --></span> anons
+			</div>
+			<div class="online-now-links">
+				<a href="?act=Online&CODE=listall&sort_key=click" title="View Active Users by Last Click">
+					<i class="fa-solid fa-arrow-pointer"></i> Last Click
+				</a>
+				<a
+					href="?act=Online&CODE=listall&sort_key=name&sort_order=asc&show_mem=reg"
+					title="View Active Users by Member Name"
+				>
+					<i class="fa-solid fa-user-tag"></i> Member Name
+				</a>
+			</div>
+			<div class="online-now-users"><!-- |online_list| --></div>
+		</div>
+
+		<div class="stats-links">
+			<a href="?act=Stats&CODE=leaders" title="View Mod Team List">
+				<div class="button-box">
+					<svg>
+						<circle id="c" r="5" />
+						<use xlink:href="#c" x="100%" />
+						<use xlink:href="#c" y="100%" />
+						<use xlink:href="#c" x="100%" y="100%" />
+					</svg>
+
+					<div class="text"><i class="fa-solid fa-clipboard-user"></i> Mod Team</div>
+				</div>
+			</a>
+			<a href="?act=Search&CODE=getactive" title="View Active Topics">
+				<div class="button-box">
+					<svg>
+						<circle id="c" r="5" />
+						<use xlink:href="#c" x="100%" />
+						<use xlink:href="#c" y="100%" />
+						<use xlink:href="#c" x="100%" y="100%" />
+					</svg>
+
+					<div class="text"><i class="fa-solid fa-bullhorn"></i> Active Topics</div>
+				</div>
+			</a>
+			<a href="?act=Members&max_results=10&sort_key=posts&sort_order=desc" title="View Top 10 Posters">
+				<div class="button-box">
+					<svg>
+						<circle id="c" r="5" />
+						<use xlink:href="#c" x="100%" />
+						<use xlink:href="#c" y="100%" />
+						<use xlink:href="#c" x="100%" y="100%" />
+					</svg>
+
+					<div class="text"><i class="fa-solid fa-ranking-star"></i> Top 10</div>
+				</div>
+			</a>
+			<a href="?act=Members" title="View Member List">
+				<div class="button-box">
+					<svg>
+						<circle id="c" r="5" />
+						<use xlink:href="#c" x="100%" />
+						<use xlink:href="#c" y="100%" />
+						<use xlink:href="#c" x="100%" y="100%" />
+					</svg>
+
+					<div class="text"><i class="fa-solid fa-address-book"></i> Member List</div>
+				</div>
+			</a>
+		</div>
+
+		<div class="birthdays">
+			<script>
+				if (`<!-- |birthdays_list| -->` !== '') {
+					document.write(`
+                    <div class="birthdays-wrapper">
+                    <div class="sub-heading"><i class="fa-solid fa-cake-candles"></i> Happy Birthday!</div>
+                        <!-- |birthdays| --></b> members are celebrating their birthday today: <br /> 
+                        <!-- |birthdays_list| -->
+                    </div>
+                `);
+				}
+			</script>
+		</div>
+
+		<div class="stats-area">
+			<div class="sub-heading">Stats For Nerds</div>
+
+			<div class="site-totals">
+				<div class="site-date">
+					site established on
+					<span>February 21st, 2011</span>
+				</div>
+				<div class="site-member">
+					newest member is
+					<span><!-- |newest_member| --></span>
+				</div>
+				<div class="site-total-values">
+					<div class="total-posts">
+						<span><!-- |total_posts| --></span>
+						total posts
+					</div>
+					<div class="total-members">
+						<span><!-- |total_mem_reg| --></span>
+						total members
+					</div>
+				</div>
+				<div class="site-most-users-ever">
+					Most users ever online
+					<date>
+						<span><!-- |most_online| --></span> on <span><!-- |most_online_date| --></span>
+					</date>
+				</div>
+				<div class="site-most-users-day">
+					Most members ever online in one day
+					<date>
+						<span><!-- |most_online_oneday| --></span> on <span><!-- |most_online_oneday_date| --></span>
+					</date>
+				</div>
+			</div>
+		</div>
+
+		<div class="online-today">
+			<div class="sub-heading">
+				Online Today:
+				<span><!-- |online_today| --></span>
+				<span id="mot_explink" style="display: inline">[<a href="javascript:expand_mot()">Expand</a>]</span
+				><span id="mot_collink" style="display: none">[<a href="javascript:collapse_mot()">Collapse</a>]</span>
+			</div>
+			<div id="mot" style="display: none">
+				<!-- |online_today_list| -->
+			</div>
+		</div>
+	</stats-grid>
+</div>

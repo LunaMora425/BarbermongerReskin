@@ -1,0 +1,32 @@
+<form action="index.php" method="post">
+	<input type="hidden" name="act" value="Members" />
+	<div align="left"><!-- |pages| --></div>
+	<br />
+	<div id="member-list" class="tableborder">
+		<div class="maintitle">Member List</div>
+
+		<p>
+			Note: List will only filter the first 1000 accounts. Not seeing someone listed? Navigate to next page and try
+			again!
+		</p>
+
+		<div id="namesearch" class="name-search"></div>
+		<div id="filters" class="filter-search"></div>
+		<div id="sortby" class="sortby-search"></div>
+
+		<div id="memberlist-wrapper"><% MEMBERLIST_ROWS %></div>
+		<!-- End content Table -->
+	</div>
+</form>
+
+<script src="https://files.jcink.net/uploads2/fizzyelf/sharedresources/memberlistFilters2.js"></script>
+<script>
+	setUpNameSearch();
+	setUpFilters({
+		Display_As_Dropdown: false,
+		Multiple_Selections: false,
+		Filter_Lists: ['Searching', 'Contact', 'Timezone'],
+		No_Value_Label: 'N/A',
+	});
+	setUpSortBy();
+</script>
