@@ -1888,6 +1888,43 @@ span.subforums {
 	align-items: center;
 }
 
+.forum-row-redirect forum-wrapper {
+	display: block;
+	background: var(--bg-forum-row);
+	margin: 15px 0;
+	border-radius: 10px 10px 10px 10px;
+	border: var(--mainBorder);
+	outline: var(--mainOutline);
+}
+
+.forum-row-redirect grid {
+	display: grid;
+	padding: 1em;
+	grid-template-columns: 1fr;
+	grid-template-areas:
+		'name'
+		'desc';
+}
+
+.forum-row-redirect name {
+	grid-area: name;
+	font-family: var(--subHeaderFontFamily);
+	font-size: 20px;
+	text-transform: uppercase;
+}
+
+.forum-row-redirect name > a {
+	font-size: unset;
+}
+
+.forum-row-redirect desc {
+	grid-area: desc;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	width: 100%;
+	text-align: center;
+}
+
 /****************************************
     Macro Icons Styling
  *****************************************/
@@ -3622,7 +3659,8 @@ input[type='reset'] {
 			'desc post-time';
 	}
 
-	.forum-row desc {
+	.forum-row desc,
+	.forum-row-redirect desc {
 		margin-bottom: 0;
 		text-align: left;
 	}
