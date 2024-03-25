@@ -3693,13 +3693,15 @@ input[type='reset'] {
 	}
 
 	#boardstats stats-grid {
-		grid-template-columns: 0.5fr 1fr 0.6fr;
-		grid-template-rows: 1fr 1fr;
-		column-gap: 10px;
+		grid-template-columns: 1fr 0.5fr;
 		row-gap: 0;
 		grid-template-areas:
-			'stats-links online-now stats-area'
-			'birthdays online-today stats-area';
+			'stats-links stats-area'
+			'online-now stats-area'
+			'online-now stats-area'
+			'online-today stats-area'
+			'online-today stats-area'
+			'online-today birthdays';
 	}
 
 	#mot {
