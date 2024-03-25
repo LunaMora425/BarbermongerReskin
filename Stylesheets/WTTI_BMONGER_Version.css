@@ -139,16 +139,12 @@ body {
  *****************************************/
 
 #mobilenav .mcp-0,
-#desktopnav .mcp-0,
 #mobilenav .acp-0,
-#desktopnav .acp-0,
-#mobilenav .m-2,
-#desktopnav .m-2 {
+#mobilenav .m-2 {
 	display: none;
 }
 
-#mobilenav .g-2,
-#desktopnav .g-2 {
+#mobilenav .g-2 {
 	display: block !important;
 }
 
@@ -160,34 +156,29 @@ body {
 	margin-right: 55px;
 }
 
-#mobilenav .g-2.logging a:last-child {
-	margin-left: 50px;
-}
-
 .icons {
 	font-size: 20px;
 	width: 30px;
 }
 
-#desktopnav {
-	display: none;
-}
-
 #mobilenav {
-	position: sticky;
+	position: fixed;
 	top: 0;
 	background-color: var(--bg-color-2);
 	border-bottom: var(--nav-border);
 	z-index: 9999;
 	width: 100%;
-	padding: 10px 0;
+	padding: 5px 0;
 }
 
 #navbar {
 	display: grid;
-	align-items: center;
-	grid-template-columns: 0.7fr 1fr 0.7fr;
+	margin: auto;
+	max-width: 1020px;
+	grid-template-columns: 0.5fr 1fr 0.5fr;
 	grid-template-areas: 'to-top mobile-menu toggle';
+	justify-items: stretch;
+	align-items: center;
 }
 
 .back-to-top {
@@ -216,6 +207,7 @@ body {
 	background: transparent;
 	color: var(--scdcolor);
 	font: 20px var(--headerFontFamily);
+	text-transform: uppercase;
 }
 
 #mobilenav .rotate {
@@ -253,8 +245,10 @@ body {
 	display: grid;
 	grid-template-columns: 1.1fr 1fr;
 	grid-row-gap: 15px;
-	grid-column-gap: 5px;
 	grid-template-areas:
+		'guidebook search'
+		'discord members'
+		'bank store'
 		'user-info user-info'
 		'admin-cp mod-cp'
 		'view-profile my-controls'
@@ -271,31 +265,30 @@ body {
 .user-info {
 	grid-area: user-info;
 	display: inline-grid;
-	margin-top: 5px;
 	width: 100%;
 	word-break: break-word;
 }
 
-.user-info a {
-	margin-top: 5px;
-}
-
 .user-info strong {
-	font: 20px var(--headerFontFamily);
+	font: 25px var(--headerFontFamily);
 	text-transform: uppercase;
 	color: var(--userInfoColor);
 	text-shadow: var(--mainTextShadow);
+	letter-spacing: 1px;
 }
 
 #mobile-userlinks .admin-cp > a,
 #mobile-userlinks .mod-cp > a,
 #mobile-userlinks .view-profile > a,
 #mobile-userlinks .my-controls > a,
-#mobile-userlinks .active-topics > a,
 #mobile-userlinks .my-messages > a,
 #mobile-userlinks .view-new-posts > a,
 #mobile-userlinks .mu-alerts > a {
-	font-size: 12px;
+	font-size: 13px;
+}
+
+#mobile-userlinks .active-topics > a {
+	font-size: 11px;
 }
 
 .admin-cp {
@@ -330,14 +323,38 @@ body {
 	grid-area: alerts;
 }
 
+.nav-guidebook {
+	grid-area: guidebook;
+}
+
+.nav-search {
+	grid-area: search;
+}
+
+.nav-discord {
+	grid-area: discord;
+}
+
+.nav-members {
+	grid-area: members;
+}
+
+.nav-bank {
+	grid-area: bank;
+}
+
+.nav-store {
+	grid-area: store;
+}
+
 .dropdown-menu {
 	position: fixed;
 	overflow-x: hidden;
 	overflow-y: hidden;
-	left: calc(100% - 94%);
-	top: 60px;
+	left: calc(100% - 99%);
+	top: 70px;
 	margin: auto;
-	width: 85%;
+	width: 95%;
 	max-height: 0;
 	-webkit-box-orient: vertical;
 	-webkit-box-direction: normal;
@@ -346,7 +363,7 @@ body {
 }
 
 .display-menu {
-	max-height: 300px;
+	max-height: 350px;
 	padding: 10px 5px 15px;
 }
 
@@ -469,7 +486,7 @@ td {
 	text-align: left;
 	max-width: 1020px;
 	padding: 0 10px 0;
-	margin: auto;
+	margin: 60px auto 5px;
 	position: relative;
 	padding-bottom: 15px;
 }
@@ -3434,28 +3451,6 @@ input[type='reset'] {
   Media Query Styles
  *****************************************/
 @media only screen and (max-width: 351px) {
-	#navbar {
-		grid-template-columns: max-content;
-	}
-
-	#navbar .mobile-menu {
-		width: 100%;
-	}
-
-	#mobile-userlinks {
-		grid-template-columns: 1.2fr 1fr;
-	}
-
-	#mobile-userlinks.display-menu {
-		max-width: 325px;
-		padding: 10px 0px 15px;
-	}
-
-	#mobile-userlinks.dropdown-menu {
-		left: calc(100% - 99%);
-		width: 100%;
-	}
-
 	.forum-row name {
 		font-size: 18px;
 	}
@@ -3572,50 +3567,25 @@ input[type='reset'] {
 
 /* Desktop Mode */
 @media only screen and (min-width: 769px) {
-	#mobilenav {
-		display: none;
-	}
-
-	#desktopnav {
-		display: block;
-		position: sticky;
-		top: 0;
-		background-color: var(--bg-color-2);
-		border-bottom: var(--nav-border);
-		z-index: 9999;
-		padding: 10px;
-	}
-
-	#desktop-navbar {
-		display: grid;
-		align-items: center;
-		grid-template-columns: 0.1fr 2fr 0.2fr;
-		grid-template-areas: 'to-top desktop-menu toggle';
-	}
-
-	#desktopnav .user-info .g-2 {
-		display: inline-flex !important;
-		gap: 10px;
-		align-items: center;
-	}
-
-	.desktop-userlinks {
-		grid-area: desktop-menu;
-		display: grid;
-		grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
-		row-gap: 5px;
+	#mobile-userlinks {
+		grid-template-columns: 1.2fr 1fr 1fr 1fr;
 		grid-template-areas:
-			'. user-info user-info user-info admin-cp mod-cp'
-			'view-profile my-controls topics messages view-new-posts alerts';
+			'user-info user-info user-info user-info'
+			'view-profile my-controls guidebook discord'
+			'topics messages search bank'
+			'view-new-posts alerts members store'
+			'admin-cp mod-cp . .';
 	}
 
-	.user-info {
-		display: flex;
-		margin-top: 0;
-		width: 100%;
-		justify-content: center;
-		align-items: stretch;
-		gap: 50px;
+	.dropdown-menu {
+		left: calc(100% - 94%);
+		top: 60px;
+		margin: auto;
+		width: 85%;
+	}
+
+	#mobile-userlinks .active-topics > a {
+		font-size: 13px;
 	}
 
 	.maintitle {
@@ -4053,31 +4023,21 @@ input[type='reset'] {
 	}
 }
 
-@media only screen and (min-width: 769px) and (max-width: 1024px) {
-	.desktop-userlinks {
-		grid-area: desktop-menu;
-		display: grid;
-		row-gap: 5px;
+@media only screen and (min-width: 1025px) {
+	#mobile-userlinks {
+		grid-template-columns: 3fr 1.3fr 1fr 1fr 1fr;
 		grid-template-areas:
-			'user-info user-info user-info user-info admin-cp mod-cp'
-			'view-profile my-controls topics messages view-new-posts alerts';
+			'user-info view-profile my-controls guidebook discord'
+			'user-info topics messages search bank'
+			'user-info view-new-posts alerts members store'
+			'user-info admin-cp mod-cp . .';
 	}
 
-	.view-profile a,
-	.my-controls a,
-	.active-topics a,
-	.my-messages a,
-	.view-new-posts a,
-	.mu-alerts a {
-		display: flex;
-		flex-direction: column;
-	}
-}
-
-@media only screen and (min-width: 769px) and (max-width: 1290px) {
-	.theme-switch {
-		flex-direction: column;
-		align-items: center;
+	#mobile-userlinks.dropdown-menu {
+		width: 1020px;
+		position: absolute;
+		left: 50%;
+		transform: translateX(-50%);
 	}
 }
 

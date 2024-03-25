@@ -34,10 +34,8 @@
 		document.body.setAttribute('data-theme', 'dark');
 	} else if (currentTheme === 'light') {
 		document.querySelector('.mode-text-1').innerHTML = darkModeText;
-		document.querySelector('.mode-text-2').innerHTML = darkModeText;
 	} else {
 		document.querySelector('.mode-text-1').innerHTML = lightModeText;
-		document.querySelector('.mode-text-2').innerHTML = lightModeText;
 	}
 
 	if (currentTheme) {
@@ -47,10 +45,8 @@
 		if (currentTheme === 'light') {
 			toggleSwitch.checked = true;
 			document.querySelector('.mode-text-1').innerHTML = darkModeText;
-			document.querySelector('.mode-text-2').innerHTML = darkModeText;
 		} else {
 			document.querySelector('.mode-text-1').innerHTML = lightModeText;
-			document.querySelector('.mode-text-2').innerHTML = lightModeText;
 		}
 	}
 
@@ -62,7 +58,6 @@
 		document.body.setAttribute('data-theme', theme);
 		localStorage.theme = theme;
 		document.querySelector('.mode-text-1').innerHTML = themeText;
-		document.querySelector('.mode-text-2').innerHTML = themeText;
 	}
 
 	toggleSwitch.addEventListener('change', switchTheme, false);
