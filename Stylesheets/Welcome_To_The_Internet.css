@@ -2560,6 +2560,7 @@ span.post-icon {
 	width: max-content;
 	height: max-content;
 	max-width: 280px;
+	max-height: 66px;
 }
 
 .normal-links {
