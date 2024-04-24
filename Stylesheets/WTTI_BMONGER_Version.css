@@ -3473,6 +3473,12 @@ input[type='reset'] {
 	.wrapmini {
 		width: 50%;
 	}
+
+	select[name='f'] {
+		width: 100%;
+		max-width: 90%;
+		box-sizing: border-box;
+	}
 }
 
 @media only screen and (max-width: 768px) {
