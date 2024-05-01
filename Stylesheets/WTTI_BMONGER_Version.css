@@ -2315,13 +2315,7 @@ span.post-icon {
 	height: 31px;
 }
 
-.resource-links > a > img {
-	width: max-content;
-	height: max-content;
-	max-width: 280px;
-	max-height: 66px;
-}
-
+.resource-links,
 .normal-links {
 	display: flex;
 	flex-wrap: wrap;
@@ -2329,6 +2323,13 @@ span.post-icon {
 	justify-content: center;
 	align-items: center;
 	gap: 10px;
+}
+
+.resource-links > a > img {
+	width: max-content;
+	height: max-content;
+	max-width: 280px;
+	max-height: 66px;
 }
 
 /****************************************
