@@ -2556,7 +2556,8 @@ span.post-icon {
 	height: 31px;
 }
 
-.resource-links, .normal-links {
+.resource-links,
+.normal-links {
 	display: flex;
 	flex-wrap: wrap;
 	align-content: center;
