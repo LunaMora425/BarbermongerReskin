@@ -32,6 +32,7 @@
 	if (!currentTheme) {
 		localStorage.setItem('theme', 'dark');
 		document.body.setAttribute('data-theme', 'dark');
+		document.querySelector('.mode-text-1').innerHTML = lightModeText;
 	} else if (currentTheme === 'light') {
 		document.querySelector('.mode-text-1').innerHTML = darkModeText;
 	} else {
