@@ -1,523 +1,558 @@
 <script>
-	/* Toggle Mobile Menu */
-	document.querySelector('.button-action').addEventListener('click', () => {
-		document.getElementById('mobile-userlinks').classList.toggle('display-menu');
-		document.querySelector('.rotate').classList.toggle('down');
-	});
+ /* Toggle Mobile Menu */
+ document.querySelector('.button-action').addEventListener('click', () => {
+  document.getElementById('mobile-userlinks').classList.toggle('display-menu');
+  document.querySelector('.rotate').classList.toggle('down');
+ });
 
-	/* Toggle CBox */
-	function toggleCbox() {
-		document.getElementById('cboxdiv').classList.toggle('display-cbox');
-	}
+ /* Toggle CBox */
+ function toggleCbox() {
+  document.getElementById('cboxdiv').classList.toggle('display-cbox');
+ }
 </script>
 <script>
-	/* Scroll to top & scroll to bottom */
-	function scrollToTop() {
-		window.scrollTo({ top: 0, behavior: 'smooth' });
-	}
-	function scrollToBottom() {
-		document.getElementById('affiliates-index').scrollIntoView({ behavior: 'smooth' });
-	}
+ /* Scroll to top & scroll to bottom */
+ function scrollToTop() {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+ }
+ function scrollToBottom() {
+  document
+   .getElementById('affiliates-index')
+   .scrollIntoView({ behavior: 'smooth' });
+ }
 </script>
 <script>
-	/* Light Mode Toggle, from CodePen
-	 * https://codepen.io/ananyaneogi/pen/zXZyMP
-	 * heavily modified by Luna for BM */
-	const toggleSwitch = document.querySelector('.theme-switch input[type="checkbox"]');
-	const currentTheme = localStorage.getItem('theme');
-	const darkModeText = `Dark Mode <i class="fa-regular fa-moon icons"></i>`;
-	const lightModeText = `Light Mode <i class="fa-regular fa-sun icons"></i>`;
+ /* Light Mode Toggle, from CodePen
+  * https://codepen.io/ananyaneogi/pen/zXZyMP
+  * heavily modified by Luna for BM */
+ const toggleSwitch = document.querySelector(
+  '.theme-switch input[type="checkbox"]',
+ );
+ const currentTheme = localStorage.getItem('theme');
+ const darkModeText = `Dark Mode <i class="fa-regular fa-moon icons"></i>`;
+ const lightModeText = `Light Mode <i class="fa-regular fa-sun icons"></i>`;
 
-	// on first page load, default to dark theme if no theme selected, otherwise initialize light mode
-	if (!currentTheme) {
-		localStorage.setItem('theme', 'dark');
-		document.body.setAttribute('data-theme', 'dark');
-		document.querySelector('.mode-text-1').innerHTML = lightModeText;
-	} else if (currentTheme === 'light') {
-		document.querySelector('.mode-text-1').innerHTML = darkModeText;
-	} else {
-		document.querySelector('.mode-text-1').innerHTML = lightModeText;
-	}
+ // on first page load, default to dark theme if no theme selected, otherwise initialize light mode
+ if (!currentTheme) {
+  localStorage.setItem('theme', 'dark');
+  document.body.setAttribute('data-theme', 'dark');
+  document.querySelector('.mode-text-1').innerHTML = lightModeText;
+ } else if (currentTheme === 'light') {
+  document.querySelector('.mode-text-1').innerHTML = darkModeText;
+ } else {
+  document.querySelector('.mode-text-1').innerHTML = lightModeText;
+ }
 
-	if (currentTheme) {
-		document.documentElement.setAttribute('data-theme', currentTheme);
-		document.body.setAttribute('data-theme', currentTheme);
+ if (currentTheme) {
+  document.documentElement.setAttribute('data-theme', currentTheme);
+  document.body.setAttribute('data-theme', currentTheme);
 
-		if (currentTheme === 'light') {
-			toggleSwitch.checked = true;
-			document.querySelector('.mode-text-1').innerHTML = darkModeText;
-		} else {
-			document.querySelector('.mode-text-1').innerHTML = lightModeText;
-		}
-	}
+  if (currentTheme === 'light') {
+   toggleSwitch.checked = true;
+   document.querySelector('.mode-text-1').innerHTML = darkModeText;
+  } else {
+   document.querySelector('.mode-text-1').innerHTML = lightModeText;
+  }
+ }
 
-	function switchTheme(e) {
-		const theme = e.target.checked ? 'light' : 'dark';
-		const themeText = theme === 'light' ? darkModeText : lightModeText;
+ function switchTheme(e) {
+  const theme = e.target.checked ? 'light' : 'dark';
+  const themeText = theme === 'light' ? darkModeText : lightModeText;
 
-		document.documentElement.setAttribute('data-theme', theme);
-		document.body.setAttribute('data-theme', theme);
-		localStorage.theme = theme;
-		document.querySelector('.mode-text-1').innerHTML = themeText;
-	}
+  document.documentElement.setAttribute('data-theme', theme);
+  document.body.setAttribute('data-theme', theme);
+  localStorage.theme = theme;
+  document.querySelector('.mode-text-1').innerHTML = themeText;
+ }
 
-	toggleSwitch.addEventListener('change', switchTheme, false);
+ toggleSwitch.addEventListener('change', switchTheme, false);
 </script>
 <script>
-	/* change logos based on theme
-	 * written by Luna to work with the theme switcher */
+ /* change logos based on theme
+  * written by Luna to work with the theme switcher */
 
-	const body = document.querySelector('body');
-	const img = document.getElementById('logo-img');
-	const circusLogoDark = 'https://files.jcink.net/uploads/barbermonger/Logos/CircusLogoDark.png';
-	const circusLogoLight = 'https://files.jcink.net/uploads/barbermonger/Logos/CircusLogoLight.png';
-	const classicLogoDark = 'https://files.jcink.net/uploads/barbermonger/Logos/ClassicLogoDark.png';
-	const classicLogoLight = 'https://files.jcink.net/uploads/barbermonger/Logos/ClassicLogoLight.png';
-	const talkShowLogoDark = 'https://files.jcink.net/uploads/barbermonger/Logos/BMTalkShowDark.png';
-	const talkShowLogoLight = 'https://files.jcink.net/uploads/barbermonger/Logos/BMTalkShowLight.png';
-	const bMongerLogoOG = 'https://files.jcink.net/uploads/barbermonger/Logos/BMongerOGLogo.png';
-	const bMongerLogoDark = 'https://files.jcink.net/uploads/barbermonger/Logos/BMongerOGLogo_Dark.png';
-	const aprilFoolsLogo = 'https://files.jcink.net/uploads/barbermonger/Logos/bmonger.png';
+ const body = document.querySelector('body');
+ const img = document.getElementById('logo-img');
+ const circusLogoDark =
+  'https://files.jcink.net/uploads/barbermonger/Logos/CircusLogoDark.png';
+ const circusLogoLight =
+  'https://files.jcink.net/uploads/barbermonger/Logos/CircusLogoLight.png';
+ const classicLogoDark =
+  'https://files.jcink.net/uploads/barbermonger/Logos/ClassicLogoDark.png';
+ const classicLogoLight =
+  'https://files.jcink.net/uploads/barbermonger/Logos/ClassicLogoLight.png';
+ const talkShowLogoDark =
+  'https://files.jcink.net/uploads/barbermonger/Logos/BMTalkShowDark.png';
+ const talkShowLogoLight =
+  'https://files.jcink.net/uploads/barbermonger/Logos/BMTalkShowLight.png';
+ const bMongerLogoOG =
+  'https://files.jcink.net/uploads/barbermonger/Logos/BMongerOGLogo.png';
+ const bMongerLogoDark =
+  'https://files.jcink.net/uploads/barbermonger/Logos/BMongerOGLogo_Dark.png';
+ const aprilFoolsLogo =
+  'https://files.jcink.net/uploads/barbermonger/Logos/bmonger.png';
 
-	if (!currentTheme) {
-		img.src = circusLogoDark;
-	} else if (currentTheme === 'light') {
-		switch (true) {
-			case body.classList.contains('skin-7'):
-				img.src = classicLogoLight;
-				break;
-			case body.classList.contains('skin-8'):
-				img.src = talkShowLogoLight;
-				break;
-			case body.classList.contains('skin-9'):
-				img.src = bMongerLogoOG;
-				break;
-			default:
-				img.src = circusLogoLight;
-		}
-	} else {
-		switch (true) {
-			case body.classList.contains('skin-7'):
-				img.src = classicLogoDark;
-				break;
-			case body.classList.contains('skin-8'):
-				img.src = talkShowLogoDark;
-				break;
-			case body.classList.contains('skin-9'):
-				img.src = bMongerLogoDark;
-				break;
-			default:
-				img.src = circusLogoDark;
-		}
-	}
+ if (!currentTheme) {
+  img.src = circusLogoDark;
+ } else if (currentTheme === 'light') {
+  switch (true) {
+   case body.classList.contains('skin-7'):
+    img.src = classicLogoLight;
+    break;
+   case body.classList.contains('skin-8'):
+    img.src = talkShowLogoLight;
+    break;
+   case body.classList.contains('skin-9'):
+    img.src = bMongerLogoOG;
+    break;
+   default:
+    img.src = circusLogoLight;
+  }
+ } else {
+  switch (true) {
+   case body.classList.contains('skin-7'):
+    img.src = classicLogoDark;
+    break;
+   case body.classList.contains('skin-8'):
+    img.src = talkShowLogoDark;
+    break;
+   case body.classList.contains('skin-9'):
+    img.src = bMongerLogoDark;
+    break;
+   default:
+    img.src = circusLogoDark;
+  }
+ }
 
-	const observer = new MutationObserver(function (mutations) {
-		mutations.forEach(function (mutation) {
-			if (mutation.attributeName === 'data-theme') {
-				const themeValue = mutation.target.dataset.theme;
+ const observer = new MutationObserver(function (mutations) {
+  mutations.forEach(function (mutation) {
+   if (mutation.attributeName === 'data-theme') {
+    const themeValue = mutation.target.dataset.theme;
 
-				img.alt = 'Logo';
+    img.alt = 'Logo';
 
-				if (themeValue === 'light') {
-					switch (true) {
-						case body.classList.contains('skin-7'):
-							img.src = classicLogoLight;
-							break;
-						case body.classList.contains('skin-8'):
-							img.src = talkShowLogoLight;
-							break;
-						case body.classList.contains('skin-9'):
-							img.src = bMongerLogoOG;
-							break;
-						default:
-							img.src = circusLogoLight;
-					}
-				} else {
-					switch (true) {
-						case body.classList.contains('skin-7'):
-							img.src = classicLogoDark;
-							break;
-						case body.classList.contains('skin-8'):
-							img.src = talkShowLogoDark;
-							break;
-						case body.classList.contains('skin-9'):
-							img.src = bMongerLogoDark;
-							break;
-						default:
-							img.src = circusLogoDark;
-					}
-				}
-			}
-		});
-	});
+    if (themeValue === 'light') {
+     switch (true) {
+      case body.classList.contains('skin-7'):
+       img.src = classicLogoLight;
+       break;
+      case body.classList.contains('skin-8'):
+       img.src = talkShowLogoLight;
+       break;
+      case body.classList.contains('skin-9'):
+       img.src = bMongerLogoOG;
+       break;
+      default:
+       img.src = circusLogoLight;
+     }
+    } else {
+     switch (true) {
+      case body.classList.contains('skin-7'):
+       img.src = classicLogoDark;
+       break;
+      case body.classList.contains('skin-8'):
+       img.src = talkShowLogoDark;
+       break;
+      case body.classList.contains('skin-9'):
+       img.src = bMongerLogoDark;
+       break;
+      default:
+       img.src = circusLogoDark;
+     }
+    }
+   }
+  });
+ });
 
-	observer.observe(body, { attributes: true, attributeFilter: ['data-theme'] });
+ observer.observe(body, { attributes: true, attributeFilter: ['data-theme'] });
 </script>
 <script>
-	/* Recent Topics Clip, base Jcink code
-	 * modified by Luna for BM use case */
-	$('#recent-topics').appendTo('#recent-topics-clip');
+ /* Recent Topics Clip, base Jcink code
+  * modified by Luna for BM use case */
+ $('#recent-topics').appendTo('#recent-topics-clip');
 
-	// Read the cookies and expand the recent-topics-clip
-	if (document.cookie.indexOf('Cat999') >= 0) {
-		const expanded = document.querySelector('.recent-topics-toggle');
-		const displayCat = document.querySelector('#cat_999');
-		expanded.classList.remove('collapsed');
-		displayCat.style.display = 'block';
-	}
+ // Read the cookies and expand the recent-topics-clip
+ if (document.cookie.indexOf('Cat999') >= 0) {
+  const expanded = document.querySelector('.recent-topics-toggle');
+  const displayCat = document.querySelector('#cat_999');
+  expanded.classList.remove('collapsed');
+  displayCat.style.display = 'block';
+ }
 
-	// Expand recent-topics-clip and set the cookies
-	function rtexpand(cnum) {
-		var cat = $('#cat_' + cnum);
-		var catMain = $('#main_' + cnum);
-		if (cat.is(':hidden')) {
-			cat.slideToggle(300);
-			catMain.parent().parent().removeClass('collapsed');
-			ccreateCookie('Cat' + cnum, 'Expanded', 30);
-		} else {
-			cat.slideToggle(400);
-			catMain.parent().parent().addClass('collapsed');
-			cdeleteCookie('Cat' + cnum);
-		}
-	}
-</script>
-
-<script>
-	/* Remove the leading comma from the maintitle on the post view */
-	if (document.body.id === 'ST' && document.body.classList.contains('act-ST')) {
-		const topicDesc = document.querySelector('.topic-desc');
-		topicDesc.textContent = topicDesc.textContent.replace(', ', '');
-	}
-</script>
-
-<script>
-	/* Spotify Embed Script, by Cory
-	 * http://jcodesresources.com/index.php?showtopic=991 */
-	$('div.postcolor iframe[src*="spotify.com"]').each(function () {
-		const src = this.src;
-		if (src.includes('open.spotify.com')) {
-			const trackType = src.split('/')[3];
-			const trackId = src.split('/').pop().split('?')[0];
-			const newSrc = `https://open.spotify.com/embed/${trackType}/${trackId}?utm_source=generator`;
-			this.src = newSrc;
-		}
-	});
+ // Expand recent-topics-clip and set the cookies
+ function rtexpand(cnum) {
+  var cat = $('#cat_' + cnum);
+  var catMain = $('#main_' + cnum);
+  if (cat.is(':hidden')) {
+   cat.slideToggle(300);
+   catMain.parent().parent().removeClass('collapsed');
+   ccreateCookie('Cat' + cnum, 'Expanded', 30);
+  } else {
+   cat.slideToggle(400);
+   catMain.parent().parent().addClass('collapsed');
+   cdeleteCookie('Cat' + cnum);
+  }
+ }
 </script>
 
 <script>
-	/*add missing bbcode buttons to post form by FizzyElf  -- https://fizzyelf.jcink.net  */
-	$('#bbcode-buttons')
-		.append(
-			`<input type="button" class="codebuttons die" value="LINE" onclick="jBBCode.addTag('[HR]')" name="HR" onmouseover="document.REPLIER.helpbox.value='Insert Horizontal Line';">`,
-		)
-		.find('input[name=U]')
-		.after(
-			`<input type="button" class="codebuttons" value=" S " onclick="simpletag('S')" name="S" style="text-decoration:line-through;" onmouseover="document.REPLIER.helpbox.value='Insert Strikethrough Text';">`,
-		);
+ /* Remove the leading comma from the maintitle on the post view */
+ if (document.body.id === 'ST' && document.body.classList.contains('act-ST')) {
+  const topicDesc = document.querySelector('.topic-desc');
+  topicDesc.textContent = topicDesc.textContent.replace(', ', '');
+ }
 </script>
 
 <script>
-	if (location.href.match(/Post&CODE/)) {
-		const colorPicker = document.querySelector('select[name="fcolor"]');
-		const defaultColors = [
-			'AliceBlue',
-			'AntiqueWhite',
-			'Aqua',
-			'Aquamarine',
-			'Azure',
-			'Beige',
-			'Bisque',
-			'Black',
-			'BlanchedAlmond',
-			'BlueViolet',
-			'Brown',
-			'Burlywood',
-			'CadetBlue',
-			'Chartreuse',
-			'Chocolate',
-			'Coral',
-			'CornflowerBlue',
-			'Cornsilk',
-			'Crimson',
-			'Cyan',
-			'DarkBlue',
-			'DarkCyan',
-			'DarkGoldenrod',
-			'DarkGray',
-			'DarkGreen',
-			'DarkKhaki',
-			'DarkMagenta',
-			'DarkOliveGreen',
-			'DarkOrange',
-			'DarkOrchid',
-			'DarkRed',
-			'DarkSalmon',
-			'DarkSeaGreen',
-			'DarkSlateBlue',
-			'DarkSlateGray',
-			'DarkTurquoise',
-			'DarkViolet',
-			'DeepPink',
-			'DeepSkyBlue',
-			'DimGray',
-			'DodgerBlue',
-			'Firebrick',
-			'FloralWhite',
-			'ForestGreen',
-			'Fuschia',
-			'Gainsboro',
-			'GhostWhite',
-			'Gold',
-			'Goldenrod',
-			'GreenYellow',
-			'Honeydew',
-			'HotPink',
-			'IndianRed',
-			'Indigo',
-			'Ivory',
-			'Khaki',
-			'Lavender',
-			'LavenderBlush',
-			'LawnGreen',
-			'LemonChiffon',
-			'LightBlue',
-			'LightCoral',
-			'LightCyan',
-			'LightGoldenrodYellow',
-			'LightGreen',
-			'LightGray',
-			'LightPink',
-			'LightSalmon',
-			'LightSeaGreen',
-			'LightSkyBlue',
-			'LightSlateGray',
-			'LightSteelBlue',
-			'LightYellow',
-			'Lime',
-			'LimeGreen',
-			'Linen',
-			'Magenta',
-			'Maroon',
-			'MediumAquamarine',
-			'MediumBlue',
-			'MediumOrchid',
-			'MediumPurple',
-			'MediumSeaGreen',
-			'MediumSlateBlue',
-			'MediumSpringGreen',
-			'MediumTurquoise',
-			'MediumVioletRed',
-			'MidnightBlue',
-			'MintCream',
-			'MintyRose',
-			'Moccasin',
-			'NavajoWhite',
-			'Navy',
-			'OldLace',
-			'OliveDrab',
-			'OrangeRed',
-			'Orchid',
-			'PaleGoldenrod',
-			'PaleGreen',
-			'PaleTurquoise',
-			'PaleVioletRed',
-			'PapayaWhip',
-			'PeachPuff',
-			'Peru',
-			'Pink',
-			'Plum',
-			'PowderBlue',
-			'RosyBrown',
-			'RoyalBlue',
-			'SaddleBrown',
-			'Salmon',
-			'SandyBrown',
-			'SeaGreen',
-			'SeaShell',
-			'Sienna',
-			'Silver',
-			'SkyBlue',
-			'SlateBlue',
-			'Snow',
-			'SpringGreen',
-			'SteelBlue',
-			'Tan',
-			'Teal',
-			'Thistle',
-			'Tomato',
-			'Turquoise',
-			'Violet',
-			'Wheat',
-			'White',
-			'Whitesmoke',
-			'YellowGreen',
-		];
-		defaultColors.forEach((color) => {
-			const option = document.createElement('option');
-			option.value = color;
-			option.style.color = color;
-			option.textContent = color;
-			colorPicker.appendChild(option);
-		});
-	}
+ /* Spotify Embed Script, by Cory
+  * http://jcodesresources.com/index.php?showtopic=991 */
+ $('div.postcolor iframe[src*="spotify.com"]').each(function () {
+  const src = this.src;
+  if (src.includes('open.spotify.com')) {
+   const trackType = src.split('/')[3];
+   const trackId = src.split('/').pop().split('?')[0];
+   const newSrc = `https://open.spotify.com/embed/${trackType}/${trackId}?utm_source=generator`;
+   this.src = newSrc;
+  }
+ });
+</script>
+
+<script>
+ /*add missing bbcode buttons to post form by FizzyElf  -- https://fizzyelf.jcink.net  */
+ $('#bbcode-buttons')
+  .append(
+   `<input type="button" class="codebuttons die" value="LINE" onclick="jBBCode.addTag('[HR]')" name="HR" onmouseover="document.REPLIER.helpbox.value='Insert Horizontal Line';">`,
+  )
+  .find('input[name=U]')
+  .after(
+   `<input type="button" class="codebuttons" value=" S " onclick="simpletag('S')" name="S" style="text-decoration:line-through;" onmouseover="document.REPLIER.helpbox.value='Insert Strikethrough Text';">`,
+  );
+</script>
+
+<script>
+ if (location.href.match(/Post&CODE/)) {
+  const colorPicker = document.querySelector('select[name="fcolor"]');
+  const defaultColors = [
+   'AliceBlue',
+   'AntiqueWhite',
+   'Aqua',
+   'Aquamarine',
+   'Azure',
+   'Beige',
+   'Bisque',
+   'Black',
+   'BlanchedAlmond',
+   'BlueViolet',
+   'Brown',
+   'Burlywood',
+   'CadetBlue',
+   'Chartreuse',
+   'Chocolate',
+   'Coral',
+   'CornflowerBlue',
+   'Cornsilk',
+   'Crimson',
+   'Cyan',
+   'DarkBlue',
+   'DarkCyan',
+   'DarkGoldenrod',
+   'DarkGray',
+   'DarkGreen',
+   'DarkKhaki',
+   'DarkMagenta',
+   'DarkOliveGreen',
+   'DarkOrange',
+   'DarkOrchid',
+   'DarkRed',
+   'DarkSalmon',
+   'DarkSeaGreen',
+   'DarkSlateBlue',
+   'DarkSlateGray',
+   'DarkTurquoise',
+   'DarkViolet',
+   'DeepPink',
+   'DeepSkyBlue',
+   'DimGray',
+   'DodgerBlue',
+   'Firebrick',
+   'FloralWhite',
+   'ForestGreen',
+   'Fuschia',
+   'Gainsboro',
+   'GhostWhite',
+   'Gold',
+   'Goldenrod',
+   'GreenYellow',
+   'Honeydew',
+   'HotPink',
+   'IndianRed',
+   'Indigo',
+   'Ivory',
+   'Khaki',
+   'Lavender',
+   'LavenderBlush',
+   'LawnGreen',
+   'LemonChiffon',
+   'LightBlue',
+   'LightCoral',
+   'LightCyan',
+   'LightGoldenrodYellow',
+   'LightGreen',
+   'LightGray',
+   'LightPink',
+   'LightSalmon',
+   'LightSeaGreen',
+   'LightSkyBlue',
+   'LightSlateGray',
+   'LightSteelBlue',
+   'LightYellow',
+   'Lime',
+   'LimeGreen',
+   'Linen',
+   'Magenta',
+   'Maroon',
+   'MediumAquamarine',
+   'MediumBlue',
+   'MediumOrchid',
+   'MediumPurple',
+   'MediumSeaGreen',
+   'MediumSlateBlue',
+   'MediumSpringGreen',
+   'MediumTurquoise',
+   'MediumVioletRed',
+   'MidnightBlue',
+   'MintCream',
+   'MintyRose',
+   'Moccasin',
+   'NavajoWhite',
+   'Navy',
+   'OldLace',
+   'OliveDrab',
+   'OrangeRed',
+   'Orchid',
+   'PaleGoldenrod',
+   'PaleGreen',
+   'PaleTurquoise',
+   'PaleVioletRed',
+   'PapayaWhip',
+   'PeachPuff',
+   'Peru',
+   'Pink',
+   'Plum',
+   'PowderBlue',
+   'RosyBrown',
+   'RoyalBlue',
+   'SaddleBrown',
+   'Salmon',
+   'SandyBrown',
+   'SeaGreen',
+   'SeaShell',
+   'Sienna',
+   'Silver',
+   'SkyBlue',
+   'SlateBlue',
+   'Snow',
+   'SpringGreen',
+   'SteelBlue',
+   'Tan',
+   'Teal',
+   'Thistle',
+   'Tomato',
+   'Turquoise',
+   'Violet',
+   'Wheat',
+   'White',
+   'Whitesmoke',
+   'YellowGreen',
+  ];
+  defaultColors.forEach((color) => {
+   const option = document.createElement('option');
+   option.value = color;
+   option.style.color = color;
+   option.textContent = color;
+   colorPicker.appendChild(option);
+  });
+ }
 </script>
 
 <script type="text/javascript">
-	// CODE AREA SCRIPT BY NICOLE/THUNDERSTRUCK OF CTTW @ JCINK
-	// https://nicolecodes.tumblr.com/post/160955802246/code-box
-	// thank you to stackoverflow for the selectText function
+ // CODE AREA SCRIPT BY NICOLE/THUNDERSTRUCK OF CTTW @ JCINK
+ // https://nicolecodes.tumblr.com/post/160955802246/code-box
+ // thank you to stackoverflow for the selectText function
 
-	$('table#CODE-WRAP').addClass('nicole-code');
-	$('table#CODE-WRAP').attr('cellpadding', '0');
-	$('table#CODE-WRAP #CODE').wrapInner('<div class="code-scroll"></div>');
-	$('table.nicole-code #CODE')
-		.parent('tr')
-		.prev('tr')
-		.children('td')
-		.html(
-			'<div class="code-top"><div class="code-title">Code <span class="code-toggle">• toggle height</span></div> <div class="code-highlight">click here to highlight code</div></div>',
-		);
+ $('table#CODE-WRAP').addClass('nicole-code');
+ $('table#CODE-WRAP').attr('cellpadding', '0');
+ $('table#CODE-WRAP #CODE').wrapInner('<div class="code-scroll"></div>');
+ $('table.nicole-code #CODE')
+  .parent('tr')
+  .prev('tr')
+  .children('td')
+  .html(
+   '<div class="code-top"><div class="code-title">Code <span class="code-toggle">• toggle height</span></div> <div class="code-highlight">click here to highlight code</div></div>',
+  );
 
-	$('table.nicole-code .code-scroll').each(function () {
-		if ($(this).height() < 250) {
-			$(this)
-				.closest('tr')
-				.prev('tr')
-				.children('td')
-				.children('.code-top')
-				.children('.code-title')
-				.children('.code-toggle')
-				.hide();
-		} else {
-		}
-	});
+ $('table.nicole-code .code-scroll').each(function () {
+  if ($(this).height() < 250) {
+   $(this)
+    .closest('tr')
+    .prev('tr')
+    .children('td')
+    .children('.code-top')
+    .children('.code-title')
+    .children('.code-toggle')
+    .hide();
+  } else {
+  }
+ });
 
-	$('table.nicole-code .code-toggle').click(function () {
-		if ($(this).closest('tr').next('tr').children('td').children('.code-scroll').hasClass('auto-code')) {
-			$(this).closest('tr').next('tr').children('td').children('.code-scroll').removeClass('auto-code');
-		} else {
-			$(this).closest('tr').next('tr').children('td').children('.code-scroll').addClass('auto-code');
-		}
-	});
+ $('table.nicole-code .code-toggle').click(function () {
+  if (
+   $(this)
+    .closest('tr')
+    .next('tr')
+    .children('td')
+    .children('.code-scroll')
+    .hasClass('auto-code')
+  ) {
+   $(this)
+    .closest('tr')
+    .next('tr')
+    .children('td')
+    .children('.code-scroll')
+    .removeClass('auto-code');
+  } else {
+   $(this)
+    .closest('tr')
+    .next('tr')
+    .children('td')
+    .children('.code-scroll')
+    .addClass('auto-code');
+  }
+ });
 
-	jQuery.fn.selectText = function () {
-		var doc = document,
-			element = this[0],
-			range,
-			selection;
-		if (doc.body.createTextRange) {
-			range = document.body.createTextRange();
-			range.moveToElementText(element);
-			range.select();
-		} else if (window.getSelection) {
-			selection = window.getSelection();
-			range = document.createRange();
-			range.selectNodeContents(element);
-			selection.removeAllRanges();
-			selection.addRange(range);
-		}
-	};
+ jQuery.fn.selectText = function () {
+  var doc = document,
+   element = this[0],
+   range,
+   selection;
+  if (doc.body.createTextRange) {
+   range = document.body.createTextRange();
+   range.moveToElementText(element);
+   range.select();
+  } else if (window.getSelection) {
+   selection = window.getSelection();
+   range = document.createRange();
+   range.selectNodeContents(element);
+   selection.removeAllRanges();
+   selection.addRange(range);
+  }
+ };
 
-	$(function () {
-		$('table.nicole-code .code-highlight').click(function () {
-			$(this).closest('tr').next('tr').children('td').children('.code-scroll').selectText();
-		});
-	});
+ $(function () {
+  $('table.nicole-code .code-highlight').click(function () {
+   $(this)
+    .closest('tr')
+    .next('tr')
+    .children('td')
+    .children('.code-scroll')
+    .selectText();
+  });
+ });
 
-	// END CODE AREA SCRIPT
+ // END CODE AREA SCRIPT
 </script>
 
 <script>
-	/* Custom UCP Menu, base by Lux
-	 * https://github.com/DawnEggleton/JcinkSkinTemplate/blob/main/source/js/defaultsMenus.js */
+ /* Custom UCP Menu, base by Lux
+  * https://github.com/DawnEggleton/JcinkSkinTemplate/blob/main/source/js/defaultsMenus.js */
 
-	if ($('body#UserCP').length > 0) {
-		document.querySelector('#ucpmenu').innerHTML = `
+ if ($('body#UserCP').length > 0) {
+  document.querySelector('#ucpmenu').innerHTML = `
 		<div class="maintitle">Menu</div><div class="outer-grid"><div class="outer-grid-item"><b class="ucp-heading">Account</b><div class="inner-grid"><div class="inner-grid-item"><a href="?act=UserCP&CODE=01">Edit Profile</a></div><div class="inner-grid-item"><a href="?act=UserCP&CODE=24">Edit Avatar</a></div><div class="inner-grid-item"><a href="?act=UserCP&CODE=22">Edit Signature</a></div><div class="inner-grid-item"><a href="?act=UserCP&CODE=52">Change Username</a></div><div class="inner-grid-item"><a href="?act=UserCP&CODE=28">Change Password</a></div><div class="inner-grid-item"><a href="?act=UserCP&CODE=08">Change Email</a></div></div></div><div class="outer-grid-item-2"><b class="ucp-heading">Tracking</b><a href="?act=UserCP&CODE=alerts">Alerts</a><a href="?act=UserCP&CODE=50">Forums</a><a href="?act=UserCP&CODE=26">Topics</a></div><div class="outer-grid-item-3"><b class="ucp-heading">Settings</b><a href="?act=UserCP&CODE=04">Board Settings</a><a href="?act=UserCP&CODE=alerts_settings">Alert Settings</a><a href="?act=UserCP&CODE=02">Email Settings</a></div><div class="outer-grid-item-4"><b class="ucp-heading">Messenger</b><a href="?act=Msg&CODE=01">Inbox & Settings</a></div></div>
 		`;
-	}
+ }
 </script>
 
 <script>
-	/* Custom Messages Menu, base by Lux
-	 * https://github.com/DawnEggleton/JcinkSkinTemplate/blob/main/source/js/defaultsMenus.js */
+ /* Custom Messages Menu, base by Lux
+  * https://github.com/DawnEggleton/JcinkSkinTemplate/blob/main/source/js/defaultsMenus.js */
 
-	if ($('body#Msg').length > 0) {
-		document.querySelector('#ucpmenu').innerHTML = `
+ if ($('body#Msg').length > 0) {
+  document.querySelector('#ucpmenu').innerHTML = `
 		<div class="maintitle">Menu</div><div class="outer-grid"><div class="outer-grid-item"><b class="ucp-heading">Inbox</b><a href="?act=Msg&CODE=04">Compose New Message</a><a href="?act=Msg&CODE=01">Go to Inbox</a><a href="?act=Msg&CODE=01&VID=sent"><i class="fa-solid fa-arrow-turn-up fa-rotate-90"></i>Sent Items</a><a href="?act=Msg&CODE=20">Saved (Unsent) PMs</a><a href="?act=Msg&CODE=30">Message Tracker</a></div><div class="outer-grid-item"><b class="ucp-heading">Settings</b><a href="javascript:window.open('index.php?showuser=<!-- |id| -->&CODE=friends','Friends','width=620,height=460,resizable=yes,scrollbars=yes');void(0);">My Friends/Contacts</a><a href="?act=Msg&CODE=delete">Empty PM Folders</a><a href="?act=Msg&CODE=07">Edit Storage Folders</a><a href="?act=Msg&CODE=14">Archive Messages</a></div><div class="outer-grid-item"><b class="ucp-heading">User CP</b><a href="?act=UserCP&CODE=00">Home & Settings</a></div></div>
 		`;
-	}
+ }
 </script>
 
 <script>
-	/* Replaces the default Jcink Search Page with a CSS Grid layout */
+ /* Replaces the default Jcink Search Page with a CSS Grid layout */
 
-	if ($('body').attr('id') === 'Search' && $('body').hasClass('code-00')) {
-		window.onload = function () {
-			const originalSelect = document.querySelector('select[name="forums[]"]');
-			const newSelect = document.createElement('select');
-			newSelect.name = originalSelect.name;
-			newSelect.className = originalSelect.className;
-			newSelect.multiple = originalSelect.multiple;
-			originalSelect.childNodes.forEach(function (option, index) {
-				if (option.nodeType === Node.ELEMENT_NODE && option.tagName === 'OPTION') {
-					const newOption = document.createElement('option');
-					newOption.value = option.value;
-					newOption.text = option.text;
-					newOption.form = option.form;
-					newOption.class = option.class;
-					if (option.value === 'all') {
-						newOption.selected = option.selected;
-						newOption.defaultSelected = option.defaultSelected;
-					}
-					newSelect.appendChild(newOption);
-				}
-			});
+ if ($('body').attr('id') === 'Search' && $('body').hasClass('code-00')) {
+  window.onload = function () {
+   const originalSelect = document.querySelector('select[name="forums[]"]');
+   const newSelect = document.createElement('select');
+   newSelect.name = originalSelect.name;
+   newSelect.className = originalSelect.className;
+   newSelect.multiple = originalSelect.multiple;
+   originalSelect.childNodes.forEach(function (option, index) {
+    if (option.nodeType === Node.ELEMENT_NODE && option.tagName === 'OPTION') {
+     const newOption = document.createElement('option');
+     newOption.value = option.value;
+     newOption.text = option.text;
+     newOption.form = option.form;
+     newOption.class = option.class;
+     if (option.value === 'all') {
+      newOption.selected = option.selected;
+      newOption.defaultSelected = option.defaultSelected;
+     }
+     newSelect.appendChild(newOption);
+    }
+   });
 
-			document.querySelector('form[name="sForm"]').innerHTML = `
-			<form action="/index.php?act=Search&CODE=01" method="post" name="sForm" onsubmit='document.getElementById("perf_search").disabled="true"'><div id="search-grid"><div class="keyword-search-heading"><div class="maintitle">Search Keywords</div></div><div class="keyword-search"><div class="pformstrip">search by keywords</div><input type="text" maxlength="100" name="keywords" id="keywords" class="forminput"><div><label for="keywords">Enter a keyword or phrase to search by.</label>[<a href="#" title="Find out how to improve your search with boolean operators" onclick="win_pop()">Advanced Usage Help</a>]</div></div><div class="member-search"><div class="pformstrip">filter by member name (optional)</div><input type="text" maxlength="100" name="namesearch" class="forminput"><div><input type="checkbox" name="matchtopics" id="matchtopics" value="1" class="checkbox"><label for="matchtopics">Search topics started by this member only</label></div></div><div class="search-options-heading"><div class="maintitle">Search Options</div></div><div class="search-where"><div class="pformstrip">search where</div>${newSelect.outerHTML}<div><input type="checkbox" name="searchsubs" value="1" id="searchsubs" checked="checked"><label for="searchsubs">Search in child forums if sub category is chosen?</label></div></div><div class="refine-search"><div class="pformstrip">refine search</div><div class="fieldset-search-box"><fieldset class="search"><legend><strong>Search posts from...</strong></legend><select name="prune" class="forminput"><option value="1">Today</option><option value="7">7 days ago and...</option><option value="30">30 days ago and...</option><option value="60">60 days ago and...</option><option value="90">90 days ago and...</option><option value="180">180 days ago and...</option><option value="365">365 days ago and...</option><option value="0" selected="selected">Any date</option></select><div><label><input type="radio" name="prune_type" id="prune_older" value="older" class="radiobutton"> Older</label></div><div><label><input type="radio" name="prune_type" id="prune_newer" value="newer" class="radiobutton" checked="checked"> Newer</label></div></fieldset></div><div class="fieldset-search-box"><fieldset class="search"><legend><strong>Sort results by...</strong></legend><select name="sort_key" class="forminput"><option value="last_post">Last Posting Date</option><option value="posts">Number of Replies</option><option value="starter_name">Poster Name</option><option value="forum_id">Forum Name</option></select><div><label><input type="radio" name="sort_order" id="sort_desc" class="radiobutton" value="desc" checked="checked"> descending order</label></div><div><label><input type="radio" name="sort_order" id="sort_asc" class="radiobutton" value="asc"> ascending order</label></div></fieldset></div><div class="fieldset-search-box"><fieldset class="search"><legend><strong>Search Where</strong></legend><div><label><input type="radio" name="search_in" class="radiobutton" id="search_in_posts" value="posts" checked="checked"> Search entire post</label></div><div><label><input type="radio" name="search_in" class="radiobutton" id="search_in_titles" value="titles"> Search titles only</label></div></fieldset></div><div class="fieldset-search-box"><fieldset class="search"><legend><strong>Result Type</strong></legend><div><label><input type="radio" name="result_type" class="radiobutton" value="topics" id="result_topics" checked="checked"> Show results as topics</label></div><div><label><input type="radio" name="result_type" class="radiobutton" value="posts" id="result_posts"> Show results as posts</label></div></fieldset></div></div><div class="submit-search-form"><input type="submit" value="Perform the search" class="forminput" id="perf_search" onclick='document.getElementById("perf_search").value="Peforming search... please wait"'></div></div></form>
+   document.querySelector('form[name="sForm"]').innerHTML = `
+			<form action="/index.php?act=Search&CODE=01" method="post" name="sForm" onsubmit='document.getElementById("perf_search").disabled="true"'><div id="search-grid"><div class="keyword-search-heading"><div class="maintitle">Search Keywords</div></div><div class="keyword-search"><div class="pformstrip">search by keywords</div><input type="text" maxlength="100" name="keywords" id="keywords" class="forminput"><div><label for="keywords">Enter a keyword or phrase to search by.</label>[<a href="#" title="Find out how to improve your search with boolean operators" onclick="win_pop()">Advanced Usage Help</a>]</div></div><div class="member-search"><div class="pformstrip">filter by member name (optional)</div><input type="text" maxlength="100" name="namesearch" class="forminput"><div><input type="checkbox" name="matchtopics" id="matchtopics" value="1" class="checkbox"><label for="matchtopics">Search topics started by this member only</label></div></div><div class="search-options-heading"><div class="maintitle">Search Options</div></div><div class="search-where"><div class="pformstrip">search where</div>${newSelect.outerHTML}<div><input type="checkbox" name="searchsubs" value="1" id="searchsubs" checked="checked"><label for="searchsubs">Search in child forums if sub category is chosen?</label></div></div><div class="refine-search"><div class="pformstrip">refine search</div><div class="fieldset-search-box"><fieldset class="search"><legend><strong>Search posts from...</strong></legend><select name="prune" class="forminput"><option value="1">Today</option><option value="7">7 days ago and...</option><option value="30">30 days ago and...</option><option value="60">60 days ago and...</option><option value="90">90 days ago and...</option><option value="180">180 days ago and...</option><option value="365">365 days ago and...</option><option value="0" selected="selected">Any date</option></select><div><label><input type="radio" name="prune_type" id="prune_older" value="older" class="radiobutton"> Older</label></div><div><label><input type="radio" name="prune_type" id="prune_newer" value="newer" class="radiobutton" checked="checked"> Newer</label></div></fieldset></div><div class="fieldset-search-box"><fieldset class="search"><legend><strong>Sort results by...</strong></legend><select name="sort_key" class="forminput"><option value="last_post">Last Posting Date</option><option value="posts">Number of Replies</option><option value="starter_name">Poster Name</option><option value="forum_id">Forum Name</option></select><div><label><input type="radio" name="sort_order" id="sort_desc" class="radiobutton" value="desc" checked="checked"> descending order</label></div><div><label><input type="radio" name="sort_order" id="sort_asc" class="radiobutton" value="asc"> ascending order</label></div></fieldset></div><div class="fieldset-search-box"><fieldset class="search"><legend><strong>Search Where</strong></legend><div><label><input type="radio" name="search_in" class="radiobutton" id="search_in_posts" value="posts" checked="checked"> Search entire post</label></div><div><label><input type="radio" name="search_in" class="radiobutton" id="search_in_titles" value="titles"> Search titles only</label></div></fieldset></div><div class="fieldset-search-box"><fieldset class="search"><legend><strong>Result Type</strong></legend><div><label><input type="radio" name="result_type" class="radiobutton" value="topics" id="result_topics" checked="checked"> Show results as topics</label></div><div><label><input type="radio" name="result_type" class="radiobutton" value="posts" id="result_posts"> Show results as posts</label></div></fieldset></div></div><div class="submit-search-form"><input type="submit" value="Perform the search" class="forminput" id="perf_search" onclick='document.getElementById("perf_search").value="Performing search... please wait"'></div></div></form>
 			`;
-		};
-	}
+  };
+ }
 </script>
 
 <script>
-	/* Functional Post Icons as Topics Tags, by Cory
-	 * https://jcodesresources.com/index.php?showtopic=44
-	 * heavily modified by Luna for BM use case */
-	$(function () {
-		var tIcons = [
-			'<{P_ICON1}>',
-			'<{P_ICON2}>',
-			'<{P_ICON3}>',
-			'<{P_ICON4}>',
-			'<{P_ICON5}>',
-			'<{P_ICON6}>',
-			'<{P_ICON7}>',
-			'<{P_ICON8}>',
-			'<{P_ICON9}>',
-			'<{P_ICON10}>',
-			'<{P_ICON11}>',
-			'<{P_ICON12}>',
-			'<{P_ICON13}>',
-			'<{P_ICON14}>',
-		];
+ /* Functional Post Icons as Topics Tags, by Cory
+  * https://jcodesresources.com/index.php?showtopic=44
+  * heavily modified by Luna for BM use case */
+ $(function () {
+  var tIcons = [
+   '<{P_ICON1}>',
+   '<{P_ICON2}>',
+   '<{P_ICON3}>',
+   '<{P_ICON4}>',
+   '<{P_ICON5}>',
+   '<{P_ICON6}>',
+   '<{P_ICON7}>',
+   '<{P_ICON8}>',
+   '<{P_ICON9}>',
+   '<{P_ICON10}>',
+   '<{P_ICON11}>',
+   '<{P_ICON12}>',
+   '<{P_ICON13}>',
+   '<{P_ICON14}>',
+  ];
 
-		// ONLY runs on the post or edit pages
-		// Builds the Topic Icons bar on the post page for users to select from.
-		// Then, because we're unable to use the post icon database for any of this,
-		// Cory's code appends the selected icons to the topic title in the format of
-		// [ti]#[/ti] where # is the number of the icon selected from the tIcons array.
-		if (
-			location.href.indexOf('act=Post&CODE=00') !== -1 ||
-			location.href.indexOf('act=Post&CODE=08') !== -1 ||
-			$('body').hasClass('code-09') ||
-			$('body').hasClass('code-01')
-		) {
-			$('#posting-form td.pformstrip:first')
-				.parent('tr')
-				.before(
-					`<tr id="icons">
+  // ONLY runs on the post or edit pages
+  // Builds the Topic Icons bar on the post page for users to select from.
+  // Then, because we're unable to use the post icon database for any of this,
+  // Cory's code appends the selected icons to the topic title in the format of
+  // [ti]#[/ti] where # is the number of the icon selected from the tIcons array.
+  if (
+   location.href.indexOf('act=Post&CODE=00') !== -1 ||
+   location.href.indexOf('act=Post&CODE=08') !== -1 ||
+   $('body').hasClass('code-09') ||
+   $('body').hasClass('code-01')
+  ) {
+   $('#posting-form td.pformstrip:first')
+    .parent('tr')
+    .before(
+     `<tr id="icons">
 						<td class="pformleft">
 							Topic Icon
 							<br>
@@ -533,328 +568,352 @@
 							</form>
 						</td>
 					</tr>`,
-				);
+    );
 
-			for (var i = 0; i < tIcons.length; i++) {
-				var index = tIcons.indexOf(tIcons[i]);
-				$('#label-holder').append(
-					'<label><input type="checkbox" name="tic-' +
-						index +
-						'" value="[ti]' +
-						index +
-						'[/ti]">' +
-						tIcons[i] +
-						'</label>',
-				);
-			}
+   for (var i = 0; i < tIcons.length; i++) {
+    var index = tIcons.indexOf(tIcons[i]);
+    $('#label-holder').append(
+     '<label><input type="checkbox" name="tic-' +
+      index +
+      '" value="[ti]' +
+      index +
+      '[/ti]">' +
+      tIcons[i] +
+      '</label>',
+    );
+   }
 
-			// if this is not the topic starter, don't show the topic icons bar
-			if ($('input[name="TopicTitle"]').length === 0) {
-				$('#icons').hide();
-			}
+   // if this is not the topic starter, don't show the topic icons bar
+   if ($('input[name="TopicTitle"]').length === 0) {
+    $('#icons').hide();
+   }
 
-			// if you are editing the topic starter
-			if ($('input[name="TopicTitle"]').length !== 0) {
-				//removes from topic title
-				$('input[name="TopicTitle"]').val(
-					$('input[name="TopicTitle"]')
-						.val()
-						.replace(/\[ti\]([0-9]+)\[\/ti\]/gi, ''),
-				);
+   // if you are editing the topic starter
+   if ($('input[name="TopicTitle"]').length !== 0) {
+    //removes from topic title
+    $('input[name="TopicTitle"]').val(
+     $('input[name="TopicTitle"]')
+      .val()
+      .replace(/\[ti\]([0-9]+)\[\/ti\]/gi, ''),
+    );
 
-				// removes from post box
-				$('textarea[name="Post"]').val(
-					$('textarea[name="Post"]')
-						.val()
-						.replace(/\[hc\](.*?)\[\/hc\]/i, ''),
-				);
+    // removes from post box
+    $('textarea[name="Post"]').val(
+     $('textarea[name="Post"]')
+      .val()
+      .replace(/\[hc\](.*?)\[\/hc\]/i, ''),
+    );
 
-				//removes from post preview
-				if ($('body').attr('id') === 'Post' && ($('body').hasClass('code-09') || $('body').hasClass('code-08'))) {
-					const regex = /\[hc\](.*?)\[\/hc\]/i;
-					const postcolorDiv = $('.postcolor');
-					const hiddenContentDiv = $('#hidden-content');
-					const match = postcolorDiv.text().match(regex);
-					if (match) {
-						const text = match[1];
-						hiddenContentDiv.text(text);
-						$('.postcolor:contains([/hc])').html($('.postcolor:contains([/hc])').html().replace(match[0], ''));
-					}
-				}
+    //removes from post preview
+    if (
+     $('body').attr('id') === 'Post' &&
+     ($('body').hasClass('code-09') || $('body').hasClass('code-08'))
+    ) {
+     const regex = /\[hc\](.*?)\[\/hc\]/i;
+     const postcolorDiv = $('.postcolor');
+     const hiddenContentDiv = $('#hidden-content');
+     const match = postcolorDiv.text().match(regex);
+     if (match) {
+      const text = match[1];
+      hiddenContentDiv.text(text);
+      $('.postcolor:contains([/hc])').html(
+       $('.postcolor:contains([/hc])').html().replace(match[0], ''),
+      );
+     }
+    }
 
-				//removes from post preview when posting new topic
-				if ($('body').attr('id') === 'Post' && $('body').hasClass('code-01')) {
-					const regex = /\[hc\](.*?)\[\/hc\]/i;
-					const postcolorDiv = $('.postcolor');
-					const match = postcolorDiv.text().match(regex);
-					if (match) {
-						$('.postcolor:contains([/hc])').html($('.postcolor:contains([/hc])').html().replace(match[0], ''));
-					}
-				}
-			}
+    //removes from post preview when posting new topic
+    if ($('body').attr('id') === 'Post' && $('body').hasClass('code-01')) {
+     const regex = /\[hc\](.*?)\[\/hc\]/i;
+     const postcolorDiv = $('.postcolor');
+     const match = postcolorDiv.text().match(regex);
+     if (match) {
+      $('.postcolor:contains([/hc])').html(
+       $('.postcolor:contains([/hc])').html().replace(match[0], ''),
+      );
+     }
+    }
+   }
 
-			// if value=1 (which is "Add Icon") is checked,
-			// append the selected icons to the topic title
-			// then, if this is the topic starter, append the icon text to the post
-			// so that the icons are searchable via SEO/Jcink search
-			// if value=0 (which is "No Icon") then empty out any icons that may be in the
-			// topic title already, and the second function never runs at all
-			$('form[name="REPLIER"]').submit(function () {
-				if ($('input[name="tic"][value="1"]').is(':checked')) {
-					var ticVal = '';
-					$('#t_icons input[name^="tic-"]:checked').each(function () {
-						ticVal += $(this).val();
-					});
-					$('input[name="TopicTitle"]').val($('input[name="TopicTitle"]').val() + ticVal);
+   // if value=1 (which is "Add Icon") is checked,
+   // append the selected icons to the topic title
+   // then, if this is the topic starter, append the icon text to the post
+   // so that the icons are searchable via SEO/Jcink search
+   // if value=0 (which is "No Icon") then empty out any icons that may be in the
+   // topic title already, and the second function never runs at all
+   $('form[name="REPLIER"]').submit(function () {
+    if ($('input[name="tic"][value="1"]').is(':checked')) {
+     var ticVal = '';
+     $('#t_icons input[name^="tic-"]:checked').each(function () {
+      ticVal += $(this).val();
+     });
+     $('input[name="TopicTitle"]').val(
+      $('input[name="TopicTitle"]').val() + ticVal,
+     );
 
-					if ($('input[name="TopicTitle"]').length !== 0) {
-						const regex = /\[ti\]([0-9]+)\[\/ti\]/g;
-						const matches = ticVal.match(regex);
-						const numbers = matches.map((match) => match.replace(/\[ti\]|\[\/ti\]/g, ''));
+     if ($('input[name="TopicTitle"]').length !== 0) {
+      const regex = /\[ti\]([0-9]+)\[\/ti\]/g;
+      const matches = ticVal.match(regex);
+      const numbers = matches.map((match) =>
+       match.replace(/\[ti\]|\[\/ti\]/g, ''),
+      );
 
-						const iconTexts = tIcons.map((icon) => $(icon).text());
-						let hiddenContent = '';
-						for (let i = 0; i < numbers.length; i++) {
-							const index = parseInt(numbers[i]);
-							hiddenContent += `#${iconTexts[index]},`;
-						}
+      const iconTexts = tIcons.map((icon) => $(icon).text());
+      let hiddenContent = '';
+      for (let i = 0; i < numbers.length; i++) {
+       const index = parseInt(numbers[i]);
+       hiddenContent += `#${iconTexts[index]},`;
+      }
 
-						var postTextarea = $('textarea[name="Post"]');
-						postTextarea.val(postTextarea.val() + `[hc]${hiddenContent}[/hc]`);
-					}
-				} else {
-					$('input[name="TopicTitle"]').val(
-						$('input[name="TopicTitle"]')
-							.val()
-							.replace(/\[ti\]([0-9]+)\[\/ti\]/gi, ''),
-					);
-				}
-			});
-		}
+      var postTextarea = $('textarea[name="Post"]');
+      postTextarea.val(postTextarea.val() + `[hc]${hiddenContent}[/hc]`);
+     }
+    } else {
+     $('input[name="TopicTitle"]').val(
+      $('input[name="TopicTitle"]')
+       .val()
+       .replace(/\[ti\]([0-9]+)\[\/ti\]/gi, ''),
+     );
+    }
+   });
+  }
 
-		// On the forum view ONLY, split the icons from the topic title and append them
-		// to the post icons bar. This code is heavily customized to BM's use case since
-		// I made the topic row structure from scratch.
-		if ($('body').attr('id') === 'SF' && $('body').hasClass('act-SF')) {
-			$('a:contains([/ti])').each(function () {
-				$(this).html(
-					$(this)
-						.html()
-						.replace(/\[ti\]([0-9]+)\[\/ti\]/gi, '<span class="t_icon">$1</span>'),
-				);
+  // On the forum view ONLY, split the icons from the topic title and append them
+  // to the post icons bar. This code is heavily customized to BM's use case since
+  // I made the topic row structure from scratch.
+  if ($('body').attr('id') === 'SF' && $('body').hasClass('act-SF')) {
+   $('a:contains([/ti])').each(function () {
+    $(this).html(
+     $(this)
+      .html()
+      .replace(/\[ti\]([0-9]+)\[\/ti\]/gi, '<span class="t_icon">$1</span>'),
+    );
 
-				$(this)
-					.find('span.t_icon')
-					.each(function () {
-						var num = $(this).text();
-						$(this).replaceWith(tIcons[num]);
-					});
+    $(this)
+     .find('span.t_icon')
+     .each(function () {
+      var num = $(this).text();
+      $(this).replaceWith(tIcons[num]);
+     });
 
-				var spanHolder = $('<div>');
+    var spanHolder = $('<div>');
 
-				$(this)
-					.find('span')
-					.each(function () {
-						// Get the class name and content of the span element
-						var className = $(this).attr('class');
-						var content = $(this).text();
-						// Append the class name and content to the new div element
-						spanHolder.append('<span class="' + className + '">' + content + '</span>');
-					});
+    $(this)
+     .find('span')
+     .each(function () {
+      // Get the class name and content of the span element
+      var className = $(this).attr('class');
+      var content = $(this).text();
+      // Append the class name and content to the new div element
+      spanHolder.append(
+       '<span class="' + className + '">' + content + '</span>',
+      );
+     });
 
-				var topicRowParent = $(this).parent().parent().parent().parent();
-				var className = topicRowParent.attr('class').split(' ')[1];
+    var topicRowParent = $(this).parent().parent().parent().parent();
+    var className = topicRowParent.attr('class').split(' ')[1];
 
-				$('#topics-icons-' + className).append(spanHolder.html());
+    $('#topics-icons-' + className).append(spanHolder.html());
 
-				$(this).find('span.post-icon').remove();
-			});
-		}
+    $(this).find('span.post-icon').remove();
+   });
+  }
 
-		// removes the tags from the "Get last post" link on the index
-		if ($('body').attr('id') === 'idx') {
-			$('lastpost a').each(function () {
-				const $this = $(this);
-				const text = $this.text();
-				const regex = /\[ti\]([^\[]+)\[\/ti\]/gi;
-				const regex2 = /\[ti.*/i;
-				if (regex.test(text)) {
-					const newText = text.replace(regex, '');
-					$this.text(newText);
-					$this.attr('title', newText);
-				}
-				if (regex2.test(text)) {
-					const newText = text.replace(regex2, '');
-					$this.text(newText);
-					$this.attr('title', newText);
-				}
-			});
-		}
+  // removes the tags from the "Get last post" link on the index
+  if ($('body').attr('id') === 'idx') {
+   $('lastpost a').each(function () {
+    const $this = $(this);
+    const text = $this.text();
+    const regex = /\[ti\]([^\[]+)\[\/ti\]/gi;
+    const regex2 = /\[ti.*/i;
+    if (regex.test(text)) {
+     const newText = text.replace(regex, '');
+     $this.text(newText);
+     $this.attr('title', newText);
+    }
+    if (regex2.test(text)) {
+     const newText = text.replace(regex2, '');
+     $this.text(newText);
+     $this.attr('title', newText);
+    }
+   });
+  }
 
-		// If any <a> tag or maintitle contains a post icon marker, add the actual marker
-		// This will run everywhere but the forum view per the code above
-		$('a:contains([/ti]), .maintitle:contains([/ti])').each(function () {
-			$(this).html(
-				$(this)
-					.html()
-					.replace(/\[ti\]([0-9]+)\[\/ti\]/gi, '<span class="t_icon">$1</span>'),
-			);
+  // If any <a> tag or maintitle contains a post icon marker, add the actual marker
+  // This will run everywhere but the forum view per the code above
+  $('a:contains([/ti]), .maintitle:contains([/ti])').each(function () {
+   $(this).html(
+    $(this)
+     .html()
+     .replace(/\[ti\]([0-9]+)\[\/ti\]/gi, '<span class="t_icon">$1</span>'),
+   );
 
-			$(this)
-				.find('span.t_icon')
-				.each(function () {
-					var num = $(this).text();
-					$(this).replaceWith(tIcons[num]);
-				});
+   $(this)
+    .find('span.t_icon')
+    .each(function () {
+     var num = $(this).text();
+     $(this).replaceWith(tIcons[num]);
+    });
 
-			if ($('body').attr('id') === 'Post') {
-				if ($('#navstrip a:has(span)')) {
-					$('#navstrip a:has(span)').find('span.post-icon').remove();
-				}
-			}
-		});
+   if ($('body').attr('id') === 'Post') {
+    if ($('#navstrip a:has(span)')) {
+     $('#navstrip a:has(span)').find('span.post-icon').remove();
+    }
+   }
+  });
 
-		// Load the previous icon choices based on what's currently in the maintitle
-		// only when on the posting-form page
-		// The way this code block is set up means that the icons will have to stay available
-		// from the maintitle while on the post page or else the choices will always reset.
-		$('#posting-form .maintitle:has(span.post-icon) span.post-icon').each(function () {
-			var text = $(this).text();
-			$('input[name="tic"][value="1"]').attr('checked', 'checked');
-			$('#t_icons label:contains(' + text + ')')
-				.find('input')
-				.attr('checked', 'checked');
-		});
+  // Load the previous icon choices based on what's currently in the maintitle
+  // only when on the posting-form page
+  // The way this code block is set up means that the icons will have to stay available
+  // from the maintitle while on the post page or else the choices will always reset.
+  $('#posting-form .maintitle:has(span.post-icon) span.post-icon').each(
+   function () {
+    var text = $(this).text();
+    $('input[name="tic"][value="1"]').attr('checked', 'checked');
+    $('#t_icons label:contains(' + text + ')')
+     .find('input')
+     .attr('checked', 'checked');
+   },
+  );
 
-		// If the a tag title contains a post icon marker, remove it
-		if ($('title:contains([/ti])').length) {
-			$('title:contains([/ti])').html(
-				$('title:contains([/ti])')
-					.html()
-					.replace(/\[ti\]([0-9]+)\[\/ti\]/gi, ''),
-			);
-		}
+  // If the a tag title contains a post icon marker, remove it
+  if ($('title:contains([/ti])').length) {
+   $('title:contains([/ti])').html(
+    $('title:contains([/ti])')
+     .html()
+     .replace(/\[ti\]([0-9]+)\[\/ti\]/gi, ''),
+   );
+  }
 
-		// Styles the Recent Topics post icons
-		if ($('body').attr('id') === 'idx') {
-			$('#recent-topics a strong').each(function () {
-				$(this).children().wrapAll('<div class="hold-tags"></div>');
-			});
-		}
+  // Styles the Recent Topics post icons
+  if ($('body').attr('id') === 'idx') {
+   $('#recent-topics a strong').each(function () {
+    $(this).children().wrapAll('<div class="hold-tags"></div>');
+   });
+  }
 
-		//Styles the Alerts post icons
-		if ($('body').attr('id') === 'UserCP' && $('body').hasClass('code-alerts')) {
-			$('.alert-text a:has(span)').each(function () {
-				$(this).children().wrapAll('<div class="hold-tags"></div>');
-			});
-		}
+  //Styles the Alerts post icons
+  if ($('body').attr('id') === 'UserCP' && $('body').hasClass('code-alerts')) {
+   $('.alert-text a:has(span)').each(function () {
+    $(this).children().wrapAll('<div class="hold-tags"></div>');
+   });
+  }
 
-		//Styles the Topics Sub post icons
-		if ($('body').attr('id') === 'UserCP' && $('body').hasClass('code-26')) {
-			$('td.row3 a:has(span)').each(function () {
-				$(this).children().wrapAll('<div class="hold-tags"></div>');
-			});
-		}
+  //Styles the Topics Sub post icons
+  if ($('body').attr('id') === 'UserCP' && $('body').hasClass('code-26')) {
+   $('td.row3 a:has(span)').each(function () {
+    $(this).children().wrapAll('<div class="hold-tags"></div>');
+   });
+  }
 
-		//Styles the Active Topics post icons
-		if ($('body').attr('id') === 'Search' && $('body').hasClass('code-getactive')) {
-			$('td a:has(span)').each(function () {
-				$(this).children().wrapAll('<div class="hold-tags"></div>');
-			});
-		}
+  //Styles the Active Topics post icons
+  if (
+   $('body').attr('id') === 'Search' &&
+   $('body').hasClass('code-getactive')
+  ) {
+   $('td a:has(span)').each(function () {
+    $(this).children().wrapAll('<div class="hold-tags"></div>');
+   });
+  }
 
-		//Styles the View Online Users post icons
-		if ($('body').attr('id') === 'Online' && $('body').hasClass('code-listall')) {
-			$('td a:has(span)').each(function () {
-				$(this).children().wrapAll('<div class="hold-tags"></div>');
-			});
-		}
+  //Styles the View Online Users post icons
+  if ($('body').attr('id') === 'Online' && $('body').hasClass('code-listall')) {
+   $('td a:has(span)').each(function () {
+    $(this).children().wrapAll('<div class="hold-tags"></div>');
+   });
+  }
 
-		//Styles the Search & View New Posts post icons
-		if ($('body').attr('id') === 'Search' && $('body').hasClass('code-show')) {
-			$('td a:has(span)').each(function () {
-				$(this).children().wrapAll('<div class="hold-tags"></div>');
-			});
+  //Styles the Search & View New Posts post icons
+  if ($('body').attr('id') === 'Search' && $('body').hasClass('code-show')) {
+   $('td a:has(span)').each(function () {
+    $(this).children().wrapAll('<div class="hold-tags"></div>');
+   });
 
-			$('.maintitle a:has(span)').each(function () {
-				$(this).children().wrapAll('<div class="hold-tags"></div>');
-			});
+   $('.maintitle a:has(span)').each(function () {
+    $(this).children().wrapAll('<div class="hold-tags"></div>');
+   });
 
-			$('td.post1').each(function () {
-				const regex = /\[hc\](.*?)\[\/hc\]/i;
-				const match = $(this).text().match(regex);
-				if (match) {
-					$(this).html($(this).html().replace(match[0], ''));
-				}
-			});
-		}
+   $('td.post1').each(function () {
+    const regex = /\[hc\](.*?)\[\/hc\]/i;
+    const match = $(this).text().match(regex);
+    if (match) {
+     $(this).html($(this).html().replace(match[0], ''));
+    }
+   });
+  }
 
-		//Styles the Post View post icons
-		//also takes the tags added to the post, moves them to a hidden spot so they are still searchable,
-		//and removes them from the post view
-		if ($('body').attr('id') === 'ST' && $('body').hasClass('act-ST')) {
-			$('.maintitle .topic-title:has(span)').each(function () {
-				$(this).children().wrapAll('<div class="hold-tags"></div>');
-			});
+  //Styles the Post View post icons
+  //also takes the tags added to the post, moves them to a hidden spot so they are still searchable,
+  //and removes them from the post view
+  if ($('body').attr('id') === 'ST' && $('body').hasClass('act-ST')) {
+   $('.maintitle .topic-title:has(span)').each(function () {
+    $(this).children().wrapAll('<div class="hold-tags"></div>');
+   });
 
-			const regex = /\[hc\](.*?)\[\/hc\]/i;
-			const postcolorDiv = $('.postcolor');
-			const hiddenContentDiv = $('#hidden-content');
-			const match = postcolorDiv.text().match(regex);
-			if (match) {
-				const text = match[1];
-				hiddenContentDiv.text(text);
-				$('.postcolor:contains([/hc])').html($('.postcolor:contains([/hc])').html().replace(match[0], ''));
-			}
-		}
+   const regex = /\[hc\](.*?)\[\/hc\]/i;
+   const postcolorDiv = $('.postcolor');
+   const hiddenContentDiv = $('#hidden-content');
+   const match = postcolorDiv.text().match(regex);
+   if (match) {
+    const text = match[1];
+    hiddenContentDiv.text(text);
+    $('.postcolor:contains([/hc])').html(
+     $('.postcolor:contains([/hc])').html().replace(match[0], ''),
+    );
+   }
+  }
 
-		const bodyClassTrue =
-			$('body').hasClass('code-09') ||
-			$('body').hasClass('code-08') ||
-			$('body').hasClass('code-02') ||
-			$('body').hasClass('code-14') ||
-			$('body').hasClass('code-06');
+  const bodyClassTrue =
+   $('body').hasClass('code-09') ||
+   $('body').hasClass('code-08') ||
+   $('body').hasClass('code-02') ||
+   $('body').hasClass('code-14') ||
+   $('body').hasClass('code-06');
 
-		// styles the post preview post icons
-		if ($('body').attr('id') === 'Post' && bodyClassTrue) {
-			$('td.maintitle:has(span)').each(function () {
-				$(this).children().wrapAll('<div class="hold-tags"></div>');
-			});
+  // styles the post preview post icons
+  if ($('body').attr('id') === 'Post' && bodyClassTrue) {
+   $('td.maintitle:has(span)').each(function () {
+    $(this).children().wrapAll('<div class="hold-tags"></div>');
+   });
 
-			if ($('input[name="TopicTitle"]').length === 0) {
-				const regex = /\[hc\](.*?)\[\/hc\]/i;
-				const match = $('.postcolor').text().match(regex);
-				$('.postcolor:contains([/hc])').html($('.postcolor:contains([/hc])').html().replace(match[0], ''));
-			}
+   if ($('input[name="TopicTitle"]').length === 0) {
+    const regex = /\[hc\](.*?)\[\/hc\]/i;
+    const match = $('.postcolor').text().match(regex);
+    $('.postcolor:contains([/hc])').html(
+     $('.postcolor:contains([/hc])').html().replace(match[0], ''),
+    );
+   }
 
-			if ($('body').hasClass('code-06')) {
-				$('textarea[name="Post"]').val(
-					$('textarea[name="Post"]')
-						.val()
-						.replace(/\[hc\](.*?)\[\/hc\]/i, ''),
-				);
-			}
-		}
+   if ($('body').hasClass('code-06')) {
+    $('textarea[name="Post"]').val(
+     $('textarea[name="Post"]')
+      .val()
+      .replace(/\[hc\](.*?)\[\/hc\]/i, ''),
+    );
+   }
+  }
 
-		//Styles the Report post icons
-		if ($('body').attr('id') === 'report' && $('body').hasClass('act-report')) {
-			$('td.row1 a:has(span)').each(function () {
-				$(this).children().wrapAll('<div class="hold-tags"></div>');
-			});
-		}
-	});
+  //Styles the Report post icons
+  if ($('body').attr('id') === 'report' && $('body').hasClass('act-report')) {
+   $('td.row1 a:has(span)').each(function () {
+    $(this).children().wrapAll('<div class="hold-tags"></div>');
+   });
+  }
+ });
 </script>
 
 <script>
-	/* Creates a hidden div on the post page to append the topic tags to
-	 * written to work with the Functional Topic Tags code above */
-	if (document.body.id === 'ST' && document.body.classList.contains('act-ST')) {
-		const tableborderDiv = document.querySelector('#innerwrapper').querySelector('.tableborder');
-		const maintitleDiv = tableborderDiv.querySelector('.maintitle');
-		const newDiv = document.createElement('div');
-		newDiv.id = 'hidden-content';
-		newDiv.style.display = 'none';
+ /* Creates a hidden div on the post page to append the topic tags to
+  * written to work with the Functional Topic Tags code above */
+ if (document.body.id === 'ST' && document.body.classList.contains('act-ST')) {
+  const tableborderDiv = document
+   .querySelector('#innerwrapper')
+   .querySelector('.tableborder');
+  const maintitleDiv = tableborderDiv.querySelector('.maintitle');
+  const newDiv = document.createElement('div');
+  newDiv.id = 'hidden-content';
+  newDiv.style.display = 'none';
 
-		tableborderDiv.insertBefore(newDiv, maintitleDiv);
-	}
+  tableborderDiv.insertBefore(newDiv, maintitleDiv);
+ }
 </script>
