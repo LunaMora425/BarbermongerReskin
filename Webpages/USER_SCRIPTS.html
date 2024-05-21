@@ -552,22 +552,7 @@
    $('#posting-form td.pformstrip:first')
     .parent('tr')
     .before(
-     `<tr id="icons">
-						<td class="pformleft">
-							Topic Icon
-							<br>
-							<span style="font-size: 10px; font-style: italic;">
-								Note: More Selected means Shorter Topic Titles. Missing icons? Shorten title.
-							</span>
-						</td>
-						<td class="pformleft">
-							<form id="t_icons">
-								<label><input type="radio" name="tic" value="0" checked="checked">No Icon</label>
-								<label><input type="radio" name="tic" value="1">Add Icon</label>
-								<div id="label-holder"></div>
-							</form>
-						</td>
-					</tr>`,
+     `<tr id="icons"><td class="pformleft">Topic Icon<br><span style="font-size:10px;font-style:italic">Note: More Selected means Shorter Topic Titles. Missing icons? Shorten title.</span></td><td class="pformleft"><form id="t_icons"><label><input type="radio" name="tic" value="0" checked>No Icon</label><label><input type="radio" name="tic" value="1">Add Icon</label><div id="label-holder"></div></form></td></tr>`,
     );
 
    for (var i = 0; i < tIcons.length; i++) {
