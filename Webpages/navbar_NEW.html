@@ -1,110 +1,142 @@
 <div id="mobilenav">
-	<div id="navbar">
-		<div class="back-to-top">
-			<i class="fas fa-arrow-up icons" onclick="scrollToTop()" title="Back to Top"></i>
-			<i class="fas fa-arrow-down icons" onclick="scrollToBottom()" title="Down to Bottom"></i>
-			<a href="/index.php" title="Site Index"><i class="fas fa-home icons"></i></a>
-		</div>
-		<div class="togglecontainer">
-			<div class="theme-switch-wrapper">
-				<label class="theme-switch" for="checkbox">
-					<input type="checkbox" id="checkbox" title="Toggle Theme" />
-					<span class="mode-text-1"></span>
-				</label>
-			</div>
-		</div>
-		<div class="mobile-menu">
-			<button class="button-action">
-				Menu
-				<i class="fa-solid fa-circle-chevron-down rotate" title="Toggle Menu"></i>
-			</button>
-		</div>
-	</div>
-	<div id="mobile-userlinks" class="dropdown-menu">
-		<div class="user-info">
-			<a class="g-<!-- |g_id| -->" style="display: none">
-				<strong> HI GUEST! </strong>
-			</a>
-			<div class="g-<!-- |g_id| --> logging" style="display: none">
-				<a href="/index.php?act=Login&CODE=00" title="Log In">
-					LOG IN <i class="fa-solid fa-arrow-right-to-bracket fa-lg"></i>
-				</a>
-				<a href="/index.php?act=Reg&CODE=00" title="Register">
-					REGISTER <i class="fa-solid fa-image-portrait fa-lg"></i>
-				</a>
-			</div>
+ <div id="navbar">
+  <div class="back-to-top">
+   <i
+    class="fas fa-arrow-up icons"
+    onclick="scrollToTop()"
+    title="Back to Top"></i>
+   <i
+    class="fas fa-arrow-down icons"
+    onclick="scrollToBottom()"
+    title="Down to Bottom"></i>
+   <a href="/index.php" title="Site Index"><i class="fas fa-home icons"></i></a>
+  </div>
+  <div class="togglecontainer">
+   <div class="theme-switch-wrapper">
+    <label class="theme-switch" for="checkbox">
+     <input type="checkbox" id="checkbox" title="Toggle Theme" />
+     <span class="mode-text-1"></span>
+    </label>
+   </div>
+  </div>
+  <div class="mobile-menu">
+   <button class="button-action">
+    Menu
+    <i class="fa-solid fa-circle-chevron-down rotate" title="Toggle Menu"></i>
+   </button>
+  </div>
+ </div>
+ <div id="mobile-userlinks" class="dropdown-menu">
+  <div class="user-info">
+   <a class="g-<!-- |g_id| -->" style="display: none">
+    <strong> HI GUEST! </strong>
+   </a>
+   <div class="g-<!-- |g_id| --> logging" style="display: none">
+    <a href="/index.php?act=Login&CODE=00" title="Log In">
+     LOG IN <i class="fa-solid fa-arrow-right-to-bracket fa-lg"></i>
+    </a>
+    <a href="/index.php?act=Reg&CODE=00" title="Register">
+     REGISTER <i class="fa-solid fa-image-portrait fa-lg"></i>
+    </a>
+   </div>
 
-			<strong class="m-<!-- |g_id| -->">
-				<!-- |name| -->
-			</strong>
-			<a href="?act=Login&CODE=03" title="Log Out" id="log-out" class="m-<!-- |g_id| -->">
-				Log Out <i class="fa-solid fa-arrow-right-from-bracket fa-lg"></i>
-			</a>
-		</div>
+   <strong class="m-<!-- |g_id| -->">
+    <!-- |name| -->
+   </strong>
+   <a
+    href="?act=Login&CODE=03"
+    title="Log Out"
+    id="log-out"
+    class="m-<!-- |g_id| -->">
+    Log Out <i class="fa-solid fa-arrow-right-from-bracket fa-lg"></i>
+   </a>
+  </div>
 
-		<div class="view-profile m-<!-- |g_id| -->">
-			<a href="?showuser=<!-- |id| -->" title="View Profile"> <i class="fa-solid fa-circle-user"></i> View Profile </a>
-		</div>
-		<div class="my-controls m-<!-- |g_id| -->">
-			<a href="?act=UserCP&CODE=00" title="User CP"> <i class="fa-solid fa-gear"></i> User CP </a>
-		</div>
-		<div class="active-topics m-<!-- |g_id| -->">
-			<a href="?act=Search&CODE=getactive" title="View Active Topics">
-				<i class="fa-solid fa-bullhorn"></i> View Active Topics
-			</a>
-		</div>
-		<div class="my-messages m-<!-- |g_id| -->">
-			<a href="?act=Msg&CODE=01" title="View Inbox">
-				<i class="fa-solid fa-inbox"></i>
-				<!-- |new_msg| -->
-				messages
-			</a>
-		</div>
-		<div class="view-new-posts m-<!-- |g_id| -->">
-			<a href="?act=Search&CODE=getnew" title="View New Posts">
-				<i class="fa-solid fa-envelope-open"></i> View New Posts
-			</a>
-		</div>
-		<div class="mu-alerts m-<!-- |g_id| -->">
-			<a href="?act=UserCP&CODE=alerts" title="View All Alerts">
-				<i class="fa-solid fa-bell"></i>
-				<!-- |new_alerts| -->
-				alerts
-			</a>
-		</div>
-		<div class="admin-cp m-<!-- |g_id| -->">
-			<a href="/admin.php" class="acp-<!-- |g_access_cp| -->" target="_blank" title="Admin CP">
-				<i class="fa-solid fa-screwdriver-wrench"></i> Admin CP
-			</a>
-		</div>
-		<div class="mod-cp m-<!-- |g_id| -->">
-			<a href="?act=modcp" class="mcp-<!-- |g_access_cp| -->" title="Mod CP">
-				<i class="fa-solid fa-hammer"></i> Mod CP
-			</a>
-		</div>
+  <div class="view-profile m-<!-- |g_id| -->">
+   <a href="?showuser=<!-- |id| -->" title="View Profile">
+    <i class="fa-solid fa-circle-user"></i> View Profile
+   </a>
+  </div>
+  <div class="my-controls m-<!-- |g_id| -->">
+   <a href="?act=UserCP&CODE=00" title="User CP">
+    <i class="fa-solid fa-gear"></i> User CP
+   </a>
+  </div>
+  <div class="active-topics m-<!-- |g_id| -->">
+   <a href="?act=Search&CODE=getactive" title="View Active Topics">
+    <i class="fa-solid fa-bullhorn"></i> View Active Topics
+   </a>
+  </div>
+  <div class="my-messages m-<!-- |g_id| -->">
+   <a href="?act=Msg&CODE=01" title="View Inbox">
+    <i class="fa-solid fa-inbox"></i
+    ><!-- |new_msg| -->
+    messages
+   </a>
+  </div>
+  <div class="view-new-posts m-<!-- |g_id| -->">
+   <a href="?act=Search&CODE=getnew" title="View New Posts">
+    <i class="fa-solid fa-envelope-open"></i> View New Posts
+   </a>
+  </div>
+  <div class="mu-alerts m-<!-- |g_id| -->">
+   <a href="?act=UserCP&CODE=alerts" title="View All Alerts">
+    <i class="fa-solid fa-bell"></i>
+    <!-- |new_alerts| -->
+    alerts
+   </a>
+  </div>
+  <div class="admin-cp m-<!-- |g_id| -->">
+   <a
+    href="/admin.php"
+    class="acp-<!-- |g_access_cp| -->"
+    target="_blank"
+    title="Admin CP">
+    <i class="fa-solid fa-screwdriver-wrench"></i> Admin CP
+   </a>
+  </div>
+  <div class="mod-cp m-<!-- |g_id| -->">
+   <a href="?act=modcp" class="mcp-<!-- |g_access_cp| -->" title="Mod CP">
+    <i class="fa-solid fa-hammer"></i
+    ><!-- |modcp_issues| -->
+    Mod CP
+   </a>
+  </div>
 
-		<div class="nav-guidebook">
-			<a href="?showforum=36" title="View Site Rules"> <i class="fa-solid fa-scale-balanced"></i> Site Rules </a>
-		</div>
+  <div class="nav-guidebook">
+   <a href="?showforum=36" title="View Site Rules">
+    <i class="fa-solid fa-scale-balanced"></i> Site Rules
+   </a>
+  </div>
 
-		<div class="nav-search">
-			<a href="?act=Search" title="Link to Jcink Search"> <i class="fa-solid fa-magnifying-glass"></i> Search </a>
-		</div>
+  <div class="nav-search">
+   <a href="?act=Search" title="Link to Jcink Search">
+    <i class="fa-solid fa-magnifying-glass"></i> Search
+   </a>
+  </div>
 
-		<div class="nav-discord">
-			<a href="https://discord.gg/barbermonger" title="Link to Discord"> <i class="fab fa-discord"></i> Discord </a>
-		</div>
+  <div class="nav-discord">
+   <a href="https://discord.gg/barbermonger" title="Link to Discord">
+    <i class="fab fa-discord"></i> Discord
+   </a>
+  </div>
 
-		<div class="nav-members">
-			<a href="?act=Members" title="Link to Member List"> <i class="fa-solid fa-address-book"></i> Member List </a>
-		</div>
+  <div class="nav-members">
+   <a href="?act=Members" title="Link to Member List">
+    <i class="fa-solid fa-address-book"></i> Member List
+   </a>
+  </div>
 
-		<div class="nav-bank">
-			<a href="?showtopic=10943" title="Link to Donation Thread"> <i class="fa-solid fa-piggy-bank"></i> Donate </a>
-		</div>
+  <div class="nav-bank">
+   <a href="?showtopic=10943" title="Link to Donation Thread">
+    <i class="fa-solid fa-piggy-bank"></i> Donate
+   </a>
+  </div>
 
-		<div class="nav-store">
-			<a href="?c=511882" title="Link to RP Resources"> <i class="fa-solid fa-clipboard-user"></i> Resources </a>
-		</div>
-	</div>
+  <div class="nav-store">
+   <a href="?c=511882" title="Link to RP Resources">
+    <i class="fa-solid fa-clipboard-user"></i> Resources
+   </a>
+  </div>
+ </div>
 </div>
