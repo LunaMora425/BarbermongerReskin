@@ -513,6 +513,10 @@ a:hover {
 	text-decoration: none;
 }
 
+a:not([name]):empty {
+	display: none;
+  }
+
 /****************************************
     Profile styles 
  *****************************************/
